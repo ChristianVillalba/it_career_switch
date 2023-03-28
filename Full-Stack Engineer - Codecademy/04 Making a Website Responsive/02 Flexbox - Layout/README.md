@@ -26,9 +26,22 @@ To designate an element as a flex container:
         * stretch — if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).
     * flex-grow: allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.
     * flex-shrink: specify which elements will shrink and in what proportions
-    * flex-basis
-    * flex
-    * flex-wrap
-    * align-content
-    * flex-direction
-    * flex-flow
+    * flex-basis: specify the width of an item before it stretches or shrinks
+    * flex: allows you to declare flex-grow, flex-shrink, and flex-basis all in one line.
+        * The flex property is different from the flex value used for the display property.
+        * 3 values: flex-grow, flex-shrink, and flex-basis
+        * 2 values: (2 int) flex-grow and flex-shrink
+        * 2 values: (1 int 1 units) flex-grow and flex-basis
+    * flex-wrap: we might want flex items to move to the next line when necessary. instead of shrink to fit its container.
+        * wrap: if don’t fit into a row will move down to the next line
+        * wrap-reverse:  but the order of rows within a flex container is reversed (last child wild be on first row)
+        * nowrap: prevents items from wrapping. Default value.
+    * align-content: align-content to space the rows from top to bottom;
+    * flex-direction: with the value of column, the flex items will be ordered vertically, not horizontally
+        * row — elements will be positioned from left to right across the parent element starting from the top left corner (default).
+        * row-reverse — elements will be positioned from right to left across the parent element starting from the top right corner.
+        * column — elements will be positioned from top to bottom of the parent element starting from the top left corner.
+        * column-reverse — elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.
+    * flex-flow: flex-flow property is used to declare both the flex-wrap and flex-direction properties in one line
+        * 2 values: flex-direction and flex-wrap
+        * All values for flex-direction and flex-wrap are accepted.
