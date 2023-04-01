@@ -16,9 +16,53 @@ We can assign other properties to lay out the grid to suit your needs:
   * Define the columns of our grid
   * By default, grids contain only one column
   * We need to explicitly define the number of rows and columns in our grid.
+  *  When using percentages in these two properties: 
+     * Rows are defined as a percentage of the grid’s height 
+     * Columns are defined as a percentage of its width.
+  ```css
+  .grid {
+  display: grid;
+  width: 500px;
+  grid-template-columns: 20px 40% 60px;
+  }
+  ```
+  
 * `grid-template-rows`
+  * To specify the number and size of the rows 
+  * It is almost identical to grid-template-columns 
+  ```css
+  .grid {
+  display: grid;
+  width: 1000px;
+  height: 500px;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 10% 20% 600px;
+  }
+  ```
 * `grid-template`
+  * It can replace `grid-template-rows` & `grid-template-columns`
+  * The values before the slash will determine the size of each row
+  * The values after the slash determine the size of each column
+  ```css
+  .grid {
+    display: grid;
+    width: 1000px;
+    height: 500px;
+    grid-template: 200px 300px / 20% 10% 70%;
+  }
+  ```
+* Fraction [as unit]
+  * By using the `fr` unit, we can define the size of columns and rows as a fraction of the grid’s length  
+  ```css
+  .grid {
+    display: grid;
+    width: 1000px;
+    height: 400px;
+    grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr;
+  }
+  ```
 * `grid-template-area`
+* 
 * `row-gap / column-gap / gap`
 * `grid-row-start / grid-row-end`
 * `grid-column-start / grid-column-end`
