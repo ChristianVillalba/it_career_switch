@@ -61,8 +61,22 @@ We can assign other properties to lay out the grid to suit your needs:
     grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr;
   }
   ```
+* Repeat [function]
+  * The repeat() function was created specifically for CSS Grid
+  * The properties that define the number of rows and columns in a grid can take a function as a value
+  * The **repeat function** will duplicate the specifications for rows or columns a given number of times.
+  * Repeat is particularly useful with `fr`
+     * eg: `repeat(5, 1fr)` would split your table into five equal rows or columns.
+  * The second value can have multiple values
+  ```css
+  .grid {
+    display: grid;
+    width: 300px;
+   grid-template: repeat(3, 1fr) / 3fr 50% 1fr;
+  }
+* Minmax [function]
+  * Th
 * `grid-template-area`
-* 
 * `row-gap / column-gap / gap`
 * `grid-row-start / grid-row-end`
 * `grid-column-start / grid-column-end`
