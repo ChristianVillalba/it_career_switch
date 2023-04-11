@@ -38,3 +38,23 @@
   print(drummer.title)
   # prints "Rockstar"
    ```
+  
+### Methods
+* Methods are functions that are defined as part of a class
+* The first argument in a method is always the object that is calling the method
+      * Convention recommends to name this first argument `self`
+      * Methods always have at least this one argument
+* We define methods similarly to functions, except that they are indented to be **part of the class**
+* Methods with Arguments
+     * Methods can also take more arguments than just `self`
+   ```python
+   class DistanceConverter:
+     kms_in_a_mile = 1.609
+     def how_many_kms(self, miles):
+       return miles * self.kms_in_a_mile
+
+   converter = DistanceConverter()
+   kms_in_5_miles = converter.how_many_kms(5)
+   print(kms_in_5_miles)
+   # prints "8.045"
+   ```
