@@ -107,3 +107,41 @@
 *  `getattr()` 
    * Returns the actual value  
    * `getattr(object, “attribute”, default)`
+      *  Object : the object whose attribute we want to evaluate
+      *  Attribute : name of attribute we want to evaluate
+      *  Default : the value that is returned if the attribute does not exist (note: this parameter is optional)
+   ```python
+   hasattr(attributeless, "fake_attribute")
+   # returns False
+
+   getattr(attributeless, "other_fake_attribute", 800)
+   # returns 800, the default value
+   ```
+
+### Self
+* **Instance variables** are powerful when you can guarantee a **rigidity to the data** the object is holding (insted of using key:value pairs)
+* We can write our classes to structure the data that we need and write methods that will interact with that data in a meaningful way.
+   * This is the strength of writing object-oriented programs
+
+### Everything is an Object
+* `dir()` function checks an object’s attributes 
+* Python automatically adds a number of attributes to all objects that get created
+
+### String Representation
+* This default string representation gives don't give us some useful information to debug our code
+   *  eg: where the class is defined and our computer’s memory address where this object is stored
+* `__repr__()`
+   * String Representation of the class to be
+   * It can only have one parameter, `self`, and must return a **string**
+   ```python
+   class Employee():
+     def __init__(self, name):
+       self.name = name
+
+     def __repr__(self):
+       return self.name
+
+   argus = Employee("Argus Filch")
+   print(argus)
+   # prints "Argus Filch"
+   ```
