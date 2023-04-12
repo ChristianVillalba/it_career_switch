@@ -45,7 +45,7 @@
       * Convention recommends to name this first argument `self`
       * Methods always have at least this one argument
 * We define methods similarly to functions, except that they are indented to be **part of the class**
-* Methods with Arguments
+* Methods with **Arguments**
      * Methods can also take more arguments than just `self`
    ```python
    class DistanceConverter:
@@ -58,3 +58,52 @@
    print(kms_in_5_miles)
    # prints "8.045"
    ```
+   
+### Constructors
+* There are several methods that we can define in a Python class that have special behavior.
+   * They have two underscores `__` on either side of them
+* Methods that are used to prepare an object being instantiated are called **constructors**
+   * “constructor” is used to describe similar features in other OOP languages
+   * Programmers who refer to a constructor in Python are talking about `__init__()` method
+* `__init__()`
+   *  It initializes a newly created object
+   *  It is called every time the class is instantiated
+     * Methods can also take more arguments than just `self`
+   ```python
+   class NameOfClass():
+      def __init__(self, param1, param2):
+         self.param1 = param1
+         self.param2 = param2
+      def some_method(self):
+         print(self.param1)
+   ```
+   
+ ### Instance Variables
+ * A **Class** is a schematic for a data type
+ * An **Object** is an **instance of a class**
+ * Each instance of a class (Object) can hold **different kinds of data**
+ * The **data held by an object** is referred to as an **Instance Variable**
+ * **Instance variables** are **specific to the object** they are attached to.
+   ```python
+   class Store:
+     pass
+
+   alternative_rocks = Store()
+   isabelles_ices = Store()
+
+   alternative_rocks.store_name = "Alternative Rocks"
+   isabelles_ices.store_name = "Isabelle's Ices"
+   ```
+  
+### Attribute Functions
+* Instance variables and class variables are both accessed similarly in Python
+* **AttributeError** when attempt to access an **attribute** that is **not** class var or inst var
+* `hasattr()` 
+   * Checks if an object has an attribute or not 
+   * Returns Bolean Value
+   * `hasattr(object, “attribute”)`
+      *  object : the object we are testing to see if it has a certain attribute
+      *  attribute : name of attribute we want to see if it exists
+*  `getattr()` 
+   * Returns the actual value  
+   * `getattr(object, “attribute”, default)`
