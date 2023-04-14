@@ -16,8 +16,8 @@ We can assign other properties to lay out the grid to suit your needs:
   * Define the columns of our grid
   * By default, grids contain only one column
   * We need to explicitly define the number of rows and columns in our grid.
-  *  When using percentages in these two properties: 
-     * Rows are defined as a percentage of the grid’s height 
+  *  When using percentages in these two properties:
+     * Rows are defined as a percentage of the grid’s height
      * Columns are defined as a percentage of its width.
   ```css
   .grid {
@@ -26,10 +26,10 @@ We can assign other properties to lay out the grid to suit your needs:
   grid-template-columns: 20px 40% 60px;
   }
   ```
-  
+
 * `grid-template-rows`
-  * To specify the number and size of the rows 
-  * It is almost identical to grid-template-columns 
+  * To specify the number and size of the rows
+  * It is almost identical to grid-template-columns
   ```css
   .grid {
   display: grid;
@@ -74,8 +74,44 @@ We can assign other properties to lay out the grid to suit your needs:
     width: 300px;
    grid-template: repeat(3, 1fr) / 3fr 50% 1fr;
   }
+  ```
 * Minmax [function]
-  * Th
+  * It prevents a row or column from getting too big or too small
+  * To use it, we need a grid with a variable width
+  ```css
+  .grid {
+    display: grid;
+    grid-template-columns: 100px minmax(100px, 500px) 100px;
+  }
+    /* the first and third columns will always be 100 pixels  */
+    /* The second column, however, will vary in size as the overall grid resizes (between 100px and 500px) */
+  ```
+* Grid Gap
+  * `row-gap` & `column-gap` : put blank space between every row and column in the grid
+  * `gap` : that can set the row and column gap at the same time
+    * First value: distance between rows
+    * Second value:  distance between columns
+    ```css
+    .grid {
+      display: grid;
+      width: 320px;
+      grid-template-columns: repeat(3, 1fr);
+      /* row-gap: 20px; */
+      /* column-gap: 5px; */
+      gap: 20px 5px;
+    }
+    ```  
+* Grid Items
+  * We can drastically change the look of our grid by making grid items take up more than one row and one column
+    * Previously, the items placed in the grid have always taken up exactly one square
+  * By manipulating both the parent and the child elements, we can create beautiful layouts with ease
+* Multiple Row Items
+  * `grid-row-start` and `grid-row-end` : make single grid items take up multiple rows
+
+
+
+
+* Th
 * `grid-template-area`
 * `row-gap / column-gap / gap`
 * `grid-row-start / grid-row-end`
