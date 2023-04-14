@@ -107,7 +107,17 @@ We can assign other properties to lay out the grid to suit your needs:
   * By manipulating both the parent and the child elements, we can create beautiful layouts with ease
 * Multiple Row Items
   * `grid-row-start` and `grid-row-end` : make single grid items take up multiple rows
-
+    * Remember, we are no longer applying CSS to the outer grid container
+    * We’re adding CSS to the elements sitting inside the grid
+  * The value for `grid-row-start` should be the row at which you want the grid item to begin
+  * The value for `grid-row-end` should be one greater than the row at which you want the grid item to end
+    ```css
+    .item {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      /* .item will take up two rows in the grid, rows 1 and 2. */
+    }
+    ```
 
 
 
