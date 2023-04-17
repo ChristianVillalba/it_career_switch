@@ -118,9 +118,46 @@ We can assign other properties to lay out the grid to suit your needs:
       /* .item will take up two rows in the grid, rows 1 and 2. */
     }
     ```
-
-
-
+* Grid Row
+  * `grid-row` as shorthand for `grid-row-start` and grid-row-end`
+    ```css
+    .item {
+      grid-row-start: 4;
+      grid-row-end: 6;
+    }
+    /* same as */
+    .item {
+    grid-row: 4 / 6;
+    }
+    ```
+* Grid Column
+  * `grid-column-start`, `grid-column-end` and `grid-column` work identically to the row properties. 
+* Span
+  * Inside grid-row or grid-column properties
+  * we can use the keyword `span` to start or end a column or row
+  * It avoids off-by-one errors (miscalculating the ending grid line)
+    ```css
+    .item {
+    grid-column: 4 / span 2;
+    /* item element should begin in column four and take up two columns of space */
+    /* item would occupy columns four and five */
+    }
+    ```
+* Grid Area
+  * We can refactor even more using the property `grid-area`
+  * It will set the starting and ending positions for both the rows and columns
+  * It takes four values separated by slashes
+    3. Bird
+    1. McHale
+    8. Parish
+  
+    ```css
+    .item {
+      grid-area: 2 / 3 / 4 / span 5;
+    }
+    ```
+  
+  
 * Th
 * `grid-template-area`
 * `row-gap / column-gap / gap`
