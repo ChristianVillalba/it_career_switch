@@ -147,20 +147,14 @@ We can assign other properties to lay out the grid to suit your needs:
   * We can refactor even more using the property `grid-area`
   * It will set the starting and ending positions for both the rows and columns
   * It takes four values separated by slashes
-    3. Bird
-    1. McHale
-    8. Parish
-  
+    1.  grid-row-start
+    2.  grid-column-start
+    3.  grid-row-end
+    4.  grid-column-end
+
     ```css
     .item {
       grid-area: 2 / 3 / 4 / span 5;
     }
     ```
   
-  
-* Th
-* `grid-template-area`
-* `row-gap / column-gap / gap`
-* `grid-row-start / grid-row-end`
-* `grid-column-start / grid-column-end`
-* `grid-area`
