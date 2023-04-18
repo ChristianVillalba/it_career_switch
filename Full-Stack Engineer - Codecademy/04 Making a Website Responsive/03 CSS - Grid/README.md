@@ -1,4 +1,6 @@
-# GRID ESSENTIALS
+# GRID
+
+## GRID: ESSENTIALS
 
 We can elegantly lay out elements on a web page using CSS.      
 The **Box Model** and **Display & Positioning** explain some possible ways to style layout.
@@ -131,7 +133,7 @@ We can assign other properties to lay out the grid to suit your needs:
     }
     ```
 * Grid Column
-  * `grid-column-start`, `grid-column-end` and `grid-column` work identically to the row properties. 
+  * `grid-column-start`, `grid-column-end` and `grid-column` work identically to the row properties.
 * Span
   * Inside grid-row or grid-column properties
   * we can use the keyword `span` to start or end a column or row
@@ -157,4 +159,9 @@ We can assign other properties to lay out the grid to suit your needs:
       grid-area: 2 / 3 / 4 / span 5;
     }
     ```
-  
+
+______
+______
+
+
+## GRID: ADVANCED
