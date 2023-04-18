@@ -1,6 +1,9 @@
 # GRID
+______
+______
 
 ## GRID: ESSENTIALS
+______
 
 We can elegantly lay out elements on a web page using CSS.      
 The **Box Model** and **Display & Positioning** explain some possible ways to style layout.
@@ -28,7 +31,6 @@ We can assign other properties to lay out the grid to suit your needs:
   grid-template-columns: 20px 40% 60px;
   }
   ```
-
 * `grid-template-rows`
   * To specify the number and size of the rows
   * It is almost identical to grid-template-columns
@@ -153,15 +155,57 @@ We can assign other properties to lay out the grid to suit your needs:
     2.  grid-column-start
     3.  grid-row-end
     4.  grid-column-end
-
     ```css
     .item {
       grid-area: 2 / 3 / 4 / span 5;
     }
     ```
-
 ______
 ______
-
 
 ## GRID: ADVANCED
+______
+
+* `grid-template-areas`
+  * It allows you to name sections of your web page to use as values
+      *  In the grid-row-start, grid-row-end, grid-column-start, grid-column-end, and grid-area properties.
+  * This property is declared on grid containers.
+  ```html
+  <div class="container">
+    <header>Welcome!</header>
+    <nav>Links!</nav>
+    <section class="info">Info!</section>
+    <section class="services">Services!</section>
+    <footer>Contact us!</footer>
+  </div>
+  ```
+  ```css
+  .container {
+    display: grid;
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    grid-template-areas: "header header"
+                         "nav nav"
+                         "info services"
+                         "footer footer";
+    grid-template-rows: 300px 120px 800px 120px;
+    grid-template-columns: 1fr 3fr;
+  }
+
+header {
+ grid-area: header;
+}
+nav {
+ grid-area: nav;
+}
+.info {
+ grid-area: info;
+}
+.services {
+ grid-area: services;
+}
+footer {
+ grid-area: footer;
+}
+  ```
