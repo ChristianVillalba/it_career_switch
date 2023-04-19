@@ -193,19 +193,21 @@ ______
     grid-template-columns: 1fr 3fr;
   }
 
-header {
- grid-area: header;
-}
-nav {
- grid-area: nav;
-}
-.info {
- grid-area: info;
-}
-.services {
- grid-area: services;
-}
-footer {
- grid-area: footer;
-}
+  header {
+   grid-area: header;
+  }
+  nav {
+   grid-area: nav;
+  }
+  .info {
+   grid-area: info;
+  }
+  .services {
+   grid-area: services;
+  }
+  footer {
+   grid-area: footer;
+  }
   ```
+* Overlapping Elements  
+  *  `grid-area` property with grid row names is the easiest way to overlap elements
