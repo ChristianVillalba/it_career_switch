@@ -211,3 +211,23 @@ ______
   ```
 * Overlapping Elements  
   *  `grid-area` property with grid row names is the easiest way to overlap elements
+  Justify Items
+  We have referred to “two-dimensional grid-based layout” several times throughout this course.
+
+  There are two axes in a grid layout — the column (or block) axis and the row (or inline) axis.
+
+The column axis stretches from top to bottom across the web page.
+
+The row axis stretches from left to right across the web page.
+
+In the following four exercises, we will learn and use properties that rely on an understanding of grid axes.
+
+justify-items is a property that positions grid items along the inline, or row, axis. This means that it positions items from left to right across the web page. This property is declared on grid containers.
+
+justify-items accepts these values:
+
+start — aligns grid items to the left side of the grid area
+end — aligns grid items to the right side of the grid area
+center — aligns grid items to the center of the grid area
+stretch — stretches all items to fill the grid area
+There are several other values that justify-items accepts, which you can read about on the Mozilla Developer Network. The definitions for these values can also be found in the documentation. It is important to note that the page with the definitions includes some values that are not accepted in CSS Grid layout.
