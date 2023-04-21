@@ -211,7 +211,7 @@ ______
   ```
 * Overlapping Elements  
   *  `grid-area` property with grid row names is the easiest way to overlap elements
-*  Justify Items
+* Justify Items
   * There are two axes in a grid layout:
       * The column axis (from top to bottom)
       * the row axis (left to right)
@@ -223,3 +223,17 @@ ______
       * `center` — aligns grid items to the center of the grid area
       * `stretch` — stretches all items to fill the grid area
       *  other values: [Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout#Justifying_Items_on_the_Inline_or_Row_Axis)
+* Justify Content
+  * Justify Items: position elements within their columns
+  * Justify Content: position a grid within its parent element
+  * `justify-content` to position the entire grid along the row axis
+      * This property is declared on grid containers.
+  * `justify-content` accepts these **values**:
+      * `start` — aligns grid to the left side of the grid container
+      * `end` — aligns grid to the right side of the grid container
+      * `center` — aligns grid to the center of the grid container
+      * `stretch` — stretches the grid items to increase the size of the grid to expand horizontally across the container
+      * `space-around` — includes an equal amount of space on each side of a grid element
+      * `space-between` — includes an equal amount of space between grid items and no space at either end
+      * `space-evenly` — places an even amount of space between grid items and at either end
+      *  other values: [Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#values)
