@@ -237,3 +237,23 @@ ______
       * `space-between` — includes an equal amount of space between grid items and no space at either end
       * `space-evenly` — places an even amount of space between grid items and at either end
       *  other values: [Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#values)
+* Align Items
+  * `align-items` position grid items from top to bottom
+      * This property is declared on grid containers.
+  * `align-items` accepts these values:
+      * `start` — aligns grid items to the top side of the grid area
+      * `end` — aligns grid items to the bottom side of the grid area
+      * `center` — aligns grid items to the center of the grid area
+      * `stretch` — stretches all items to fill the grid area
+* Align Content
+  * `align-content` positions the rows from top to bottom
+      * This property is declared on grid containers.
+  * `align-items` accepts these values:
+      * `start` — aligns grid to the top side of the grid container
+      * `end` — aligns grid to the bottom side of the grid container
+      * `center` — aligns grid to the center of the grid container
+      * `stretch` — stretches the grid items to increase the size of the grid to expand vertically across the container
+      * `space-around` — includes an equal amount of space on each side of a grid element, resulting in double the amount of space between elements as there is before the first and after the last element
+      * `space-between` — includes an equal amount of space between grid items and no space at either end
+      * `space-evenly` — places an even amount of space between grid items and at either end
+      *  other values: [Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#values)
