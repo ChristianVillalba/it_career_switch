@@ -264,3 +264,19 @@ ______
     * `align-self` position individual element respect to the column axis
     * `align-self` and `justify-self` accept the same values as `align-items` and `justify-items`:
         * `start`, `end`, `center` & `stretch`
+* Grid Auto Rows and Grid Auto Columns
+    * `grid-auto-rows` and `grid-auto-columns` specify the size of grid tracks added implicitly (by default)
+    * `grid-auto-rows` specifies the height of implicitly added grid rows.
+    * `grid-auto-columns` specifies the width of implicitly added grid columns
+    * `grid-auto-rows` and `grid-auto-columns` accept the same values as their explicit counterparts, `grid-template-rows` and `grid-template-columns`:
+        * pixels (`px`)
+        * percentages (`%`)
+        * fractions (`fr`)
+        * the `repeat()` function
+* Grid Auto Flow    
+    * We can specify the order in which rows and columns are rendered implicitly (by default)
+    * `grid-auto-flow` values:
+        * `row` — specifies the new elements should fill rows from left to right and create new rows when there are too many elements (default)
+        * `column` — specifies the new elements should fill columns from top to bottom and create new columns when there are too many elements
+        * `dense` — invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added
+        * `dense` can be paired with `row` or `column` eg: `auto-flow: row dense;`
