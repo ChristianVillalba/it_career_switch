@@ -257,3 +257,10 @@ ______
       * `space-between` — includes an equal amount of space between grid items and no space at either end
       * `space-evenly` — places an even amount of space between grid items and at either end
       *  other values: [Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#values)
+* Justify Self and Align Self
+    * The `justify-items` and `align-items` specify how all grid items contained within a single container will position themselves
+    * `justify-self` position individual element respect to the row axis
+        * This property will override `justify-items`
+    * `align-self` position individual element respect to the column axis
+    * `align-self` and `justify-self` accept the same values as `align-items` and `justify-items`:
+        * `start`, `end`, `center` & `stretch`
