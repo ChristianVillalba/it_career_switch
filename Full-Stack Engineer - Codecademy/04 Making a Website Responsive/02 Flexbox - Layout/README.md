@@ -24,6 +24,9 @@ To designate an element as a **flex container**:
         * `center` — the center of all elements will be positioned halfway between the top and bottom of the parent container.
         * `baseline` — the bottom of the content of all items will be aligned with each other.
         * `stretch` — if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).
+    * `align-self: ...` apply to individual items. **flex items vertically**.
+        * This property accepts the same values as **align-items** for the specific item.
+        * Values  `flex-start | flex-end | center | baseline | stretech`
     * `flex-grow` — allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.
     * `flex-shrink` — specify which elements will shrink and in what proportions
     * `flex-basis` — specify the width of an item before it stretches or shrinks
