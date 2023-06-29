@@ -123,7 +123,7 @@ We can assign other properties to lay out the grid to suit your needs:
     }
     ```
 * Grid Row
-  * `grid-row` as shorthand for `grid-row-start` and grid-row-end`
+  * `grid-row` as shorthand for `grid-row-start` and `grid-row-end`
     ```css
     .item {
       grid-row-start: 4;
@@ -138,7 +138,7 @@ We can assign other properties to lay out the grid to suit your needs:
   * `grid-column-start`, `grid-column-end` and `grid-column` work identically to the row properties.
 * Span
   * Inside grid-row or grid-column properties
-  * we can use the keyword `span` to start or end a column or row
+  * We can use the keyword `span` to start or end a column or row
   * It avoids off-by-one errors (miscalculating the ending grid line)
     ```css
     .item {
