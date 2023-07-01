@@ -92,8 +92,49 @@ function funName( myDefaultValue = "Default") {
             return area 
         }
         ```
-* Single Line Arrwo Function (refractored)
+* Single Line Arrow Function (refractored / concise body)
     * ```javascript
         const calculateArea = (width, height) => width * height;
         ``` 
-    
+## Scope
+
+* It refers to where variables can be accessed,  and is determined by 
+    * where  they are declared
+    * how they are declared
+* **Blocks** are statements that exist within curly braces `{}`.
+* **Global scope** refers to the context within which variables are accessible to every part of the program.
+* **Global variables** are variables that exist within global scope.
+* **Block scope** refers to the context within which variables are accessible only within the block they are defined.
+* **Local variables** are variables that exist within block scope
+* **Global namespace** is the space in our code that contains globally scoped information
+* **Scope pollution** is when too many variables exist in a namespace or variable names are reused
+
+## Arrays
+
+* Arrays are **lists** that store data in JavaScript.
+* Arrays are created with brackets `[]`.
+* Each item of an array is at a numbered position, **index**, starting at 0.
+* We can access one item in an array using its index, with syntax like: `myArray[0]`
+* We can also change an item in an array using its index, with syntax like `myArray[0] = 'new string';`
+* Arrays have a length property: how many items are in an array.
+* Arrays have their own methods
+    * Eg: `.push()` and `.pop()`, which add and remove items from an array.
+    * Eg: `.slice()` and `.shift()`, you can find documentation at the MDN website.
+    * Some built-in methods are mutating, meaning the method will change the array, while others are not mutating. You can always check the documentation.
+* Variables that contain arrays can be declared with `let` or `const`. 
+    * **Arrays** declared  with `const`,  are still mutable. 
+    * However, a **variable** declared with `const` cannot be reassigned.
+* Arrays mutated inside of a function will keep that change even outside the function.
+* Arrays can be nested inside other arrays.
+* To access elements in nested arrays chain indices using bracket notation
+
+## Loops
+
+* Loops perform repetitive actions so we don’t have to code that process manually every time.
+* A nested for loop is a loop inside another loop
+* `while` loops allow for different types of stopping conditions
+* **Stopping conditions** are crucial for avoiding infinite loops.
+* do...while loops run code at least once— only checking the stopping condition after the first execution
+* The `break` keyword allows programs to leave a loop during the execution of its block
+
+## objects
