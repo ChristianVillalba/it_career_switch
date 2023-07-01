@@ -52,4 +52,48 @@ ______
 
 ## Functions
 
-* A function is a reusable block of code that groups together a sequence of statements to perform a specific task
+* A function is a **reusable block of code** that groups together a sequence of statements to **perform a specific task**
+```javascript
+function funName (Param1, Param2) {
+    code to be executed;
+}
+```
+* A parameter is a named variable inside a function’s block which will be assigned the value of the argument passed in when the function is invoked:
+```javascript
+function helloName (name , surname) {
+    console.log("Hello, + name + " " + surname );
+}
+helloName(Christian, Villalba)
+// Hello, Christian Villalba
+```
+* Calling the function:
+```javascript
+funName() // We are calling (executing) our function
+funName // It returns the function we wrote
+```
+* ES6 introduces new ways of handling arbitrary parameters through default parameters
+```javascript
+function funName( myDefaultValue = "Default") {
+    ...
+}
+```
+* **Return statement**: to return a value from a function
+* Define a function using function expressions:
+    * ```javascript
+        const calculateArea = function (width, height) {
+            const area = width * height;
+            return area 
+        }
+        ```
+* Arrow Functions
+    * ```javascript
+        const calculateArea = (width, height) => {
+            let area = width * height;
+            return area 
+        }
+        ```
+* Single Line Arrwo Function (refractored)
+    * ```javascript
+        const calculateArea = (width, height) => width * height;
+        ``` 
+    
