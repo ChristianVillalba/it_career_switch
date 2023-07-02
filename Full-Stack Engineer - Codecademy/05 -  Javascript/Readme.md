@@ -1,4 +1,4 @@
-# Review: Media Queries
+# JavaScrip
 ______
 
 ## Introduction to JS
@@ -119,7 +119,11 @@ function funName( myDefaultValue = "Default") {
 * Arrays have a length property: how many items are in an array.
 * Arrays have their own methods
     * Eg: `.push()` and `.pop()`, which add and remove items from an array.
-    * Eg: `.slice()` and `.shift()`, you can find documentation at the MDN website.
+    * `.slice()` returns a shallow copy of a portion of an array into a new array object     
+    The original array will not be modified 
+    * `.shift()` removes the first element from an array and returns it.       
+    It changes length of the array.
+    * You can find documentation at the MDN website.
     * Some built-in methods are mutating, meaning the method will change the array, while others are not mutating. You can always check the documentation.
 * Variables that contain arrays can be declared with `let` or `const`. 
     * **Arrays** declared  with `const`,  are still mutable. 
@@ -131,10 +135,29 @@ function funName( myDefaultValue = "Default") {
 ## Loops
 
 * Loops perform repetitive actions so we don’t have to code that process manually every time.
-* A nested for loop is a loop inside another loop
-* `while` loops allow for different types of stopping conditions
+    * Loops automatically iterate a block of code based on coditions.
+* `for` loops are appropriate when loopin a predeterminated number of times.
+* A **nested for loop** is a loop inside another loop.
+    * They allow us to run multiple for loops at once.
+* `while` loops evaluate a condition as long is true, and stopping when the condition if false.
+    * while loops allow for different types of stopping conditions
+* `do ... while` statement to run a code block at least once. 
+    * Then loop as long as a condition remains true
 * **Stopping conditions** are crucial for avoiding infinite loops.
 * do...while loops run code at least once— only checking the stopping condition after the first execution
 * The `break` keyword allows programs to leave a loop during the execution of its block
 
 ## objects
+
+* **Objects** store collections of **key-value pairs**.
+* Each `key: value` pair is a **property**. 
+    * When a **property** is a **function** it is known as a **method**.
+* An **object literal** is composed of comma-separated key-value pairs surrounded by curly braces.
+* You can access, add or edit a property within an object by using dot notation `.` or bracket notation`[]`.
+* We can add methods to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+* We can navigate complex, nested objects by chaining operators.
+* Objects are **mutable**. 
+    * We can change their properties even when they’re declared with const.
+* Objects are passed by reference.
+    * When we make changes to an object passed into a function, those **changes are permanent**.
+* We can iterate through objects using the `for...in` syntax.
