@@ -58,6 +58,7 @@ function funName (Param1, Param2) {
     code to be executed;
 }
 ```
+* **A Parameter** allow a function to accept data.
 * A parameter is a named variable inside a function’s block which will be assigned the value of the argument passed in when the function is invoked:
 ```javascript
 function helloName (name , surname) {
@@ -147,17 +148,45 @@ function funName( myDefaultValue = "Default") {
 * do...while loops run code at least once— only checking the stopping condition after the first execution
 * The `break` keyword allows programs to leave a loop during the execution of its block
 
-## objects
+## Objects
 
-* **Objects** store collections of **key-value pairs**.
+* **Objects** store unordered collections of **key-value pairs**.
 * Each `key: value` pair is a **property**. 
     * When a **property** is a **function** it is known as a **method**.
 * An **object literal** is composed of comma-separated key-value pairs surrounded by curly braces.
+    *   ```javascript
+        let myObj = {
+            key1 : value1,
+            key2 : value2,
+        }
+        ```
 * You can access, add or edit a property within an object by using dot notation `.` or bracket notation`[]`.
-* We can add methods to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+* We can **add methods** to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+    * `myObj["newKeyProperty"] = "newValue"`
+* We can copy all of the properties of an object into a new object
+    * `Object.assing()`
 * We can navigate complex, nested objects by chaining operators.
 * Objects are **mutable**. 
     * We can change their properties even when they’re declared with const.
 * Objects are passed by reference.
     * When we make changes to an object passed into a function, those **changes are permanent**.
 * We can iterate through objects using the `for...in` syntax.
+<br>
+
+* Calling object: the object that a method belongs to is called the 
+* The `this` keyword refers to the calling object and can be used to access properties of the calling object
+* Methods do not automatically have access to other internal properties of the calling object.
+* The value of `this` depends on where the `this` is being accessed from.
+* We **canNOT** use **arrow functions** as **methods** if we want to access other internal properties.
+* JavaScript objects do not have built-in privacy.
+    * Rather there are conventions to notify other developers about the intent of the code.
+* The usage of an **underscore** before a property name means that the original developer did    
+ **NOT** intend for that property to be **changed**.
+* Setters and getter methods allow for more detailed ways of accessing and assigning properties.
+* **Factory functions** A function that returns an Object
+    * Allow us to create object instances quickly and repeatedly.
+* There are different ways to use object destructuring: 
+    * The property value shorthand 
+    * Destructured assignment.
+* Check Object Documentation for more info.
+
