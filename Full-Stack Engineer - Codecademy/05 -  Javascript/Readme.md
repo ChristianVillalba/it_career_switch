@@ -37,7 +37,7 @@ ______
 * **Template literals** (In ES6) use backticks \` and `${}` to interpolate values into a string.
 * The `typeof` keyword returns the data type (as a string) of a value.
 
-## CONDITIONAL STATEMENTS
+## Conditional Statements
 
 * An `if` statement checks a condition and will execute a task if that condition evaluates to **true**
 * `if`...`else` statements make binary decisions and execute different code blocks based on a provided condition.
@@ -190,3 +190,24 @@ function funName( myDefaultValue = "Default") {
     * Destructured assignment.
 * Check Object Documentation for more info.
 
+## Higher-Order Functions
+
+* **Abstraction** allows us to write complicated code in a way that’s easy to reuse, debug, and understand for human readers.
+* We can work with **functions** the same way we work with **any other type of data** 
+    * Including reassigning them to new variables.
+* JavaScript functions are **first-class objects**
+    * They have **properties and methods** like any other object.
+* **Functions** can be **passed into other functions** as parameters.
+* A **higher-order function** is a function that either accepts functions as parameters, returns a function, or both.
+    * **Callback Function** The returned function or the function accepted as parameter
+
+## Iterators
+
+* All iterator methods take a **callback function**
+    * It can be a pre-defined function, a function expression, or an arrow function.
+* You can visit the Mozilla Developer Network to learn more about iterator methods (and all other parts of JavaScript!).
+* `.forEach()` is used to execute the same code on every element in an array but does not change the array and returns undefined.
+* `.map()` executes the same code on every element in an array and returns a new array with the updated elements.
+* `.filter()` checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
+* `.findIndex()` returns the index of the first element of an array that satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.
+* `.reduce()` iterates through an array and takes the values of the elements and returns a single value.
