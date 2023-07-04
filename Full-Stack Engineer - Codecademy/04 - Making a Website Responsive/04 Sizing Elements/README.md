@@ -2,18 +2,28 @@
 ______
 ______
 
-## Review: Relative Measurements
+## Relative Measurements
 
-* Content on a website can be sized relative to other elements using **relative measurements**
-* Relative units of measurement are useful for a responsive design in a website
-he unit of em sizes font relative to the font size of a parent element.     
-<br>
-* `rem` size is font relative to the font size of a root element. That root element is the `<html>` element.
-* `%` Percentages are commonly used to size box-model features, like the width, height, padding, or margin of an element.
-    * When percentages are used to size width and height, child elements will be sized relative to the dimensions of their parent (remember that parent dimensions must first be set).
-    * Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the width of a parent element.
-* The minimum and maximum width of elements can be set using `min-width` and `max-width`.
-* The minimum and maximum height of elements can be set using `min-height` and `max-height`.
-* When the height of an image or video is set, then its width can be set to `auto` so that the media scales proportionally. 
+* Content on a website can be sized relative to other elements on the page using relative measurements.
+* `em` (16px) sizes font relative to the font size of a parent element.
+* `rem`(16px by default) sizes font relative to the font size of a root element.
+    * Adaptable & reliable
+    * Easier to debug
+* `%` Percentages are commonly used to size box-model features
+    * eg: width, height, padding, or margin of an element
+* `%` to size width and height, child elements will be sized relative to the dimensions of their parent
+    * The parent dimensions must first be set
+* `min-width` & `max-width`: set The minimum and maximum width of element
+* `min-height` & `max-height`: set The minimum and maximum height of element
+* When the height/width of an **image or video** is set:
+    * Its width/height (the opposite value) can be set to `auto`: the media scales proportionally.
     * Reversing these two properties and values will also achieve the same result.
-* A background image of an HTML element will scale proportionally when its `background-size` property is set to `cover`
+* A **background image** of an HTML element will scale proportionally when its `background-size` property is set to `cover`
+```css
+  body {
+    background-image: url('#');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+```
