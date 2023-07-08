@@ -87,5 +87,8 @@
     * they are **stored** in the origin/branch-name branch, **waiting to be merged**.
 <br />
 
-* Collaborative Workflow Tip:
+* Git & GitHub Tips:
     * [How to write the perfect pull request - GitHub](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
+    * [How to use Git Rebase](https://www.freecodecamp.org/news/how-to-use-git-rebase/)
+
+
