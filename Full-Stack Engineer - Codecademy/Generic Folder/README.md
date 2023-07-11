@@ -55,6 +55,10 @@
 ## Props
 
 * We can pass a **prop** by giving an attribute to a component instance.
+    * Props **evaluate** to an Object data type.
+    * Props **are accessible** in a Component via props Objects (key-values).
+        * **Porps names** are **keys**
+        * **Props values** are **values** (passed via JSX)
     * If there are not props passed to a Component:
         * The component will use default values for any missing props.
 * In this lesson I learned:
@@ -68,3 +72,84 @@
     * Accessing `props.children`.
         * It will **return everything** between a component's opening and closing tags
     * Assigning default values to props.
+
+## Stateful and Stateless Components
+
+* **Stateful Component:** Component that holds some state. 
+* **Stateless components:** by contrast, have no state. 
+* Note that both types of components can use props.
+* Changing Props and State
+    * Props:
+        * A component should **never change** its own props directly
+        * A **parent component** should change the props.
+    * State:
+        * A component **keeps track** of its own **state** and can **change** it at any time
+* Passing State Change Functions as Props
+    * If a React parent component defines a function that **changes its state**:
+        * That function can be passed to a child component
+        * And called within the component to updating the parent component’s state
+        ```javascript
+        function Name() {
+        const [name, setName] = useState('');
+
+        const handleNameChange = (e) => {
+            setName(e.target.value);
+        }
+
+        return (
+            <div>
+            <input onChange={handleNameChange} />
+            <p>{name}</p>
+            </div>
+        );       
+        }
+        ```
+* Event Handlers and State in React
+    * **Event handler functions** in React are often **used to update state**.
+        * Functions often receive an event as an argument, which is used to update state values correctly.
+        ```javascript
+        function MyComponent() {
+            const [ text, setText ] = useState("");
+
+            const handleChange(event) => {
+                setText(event.target.value);
+            }
+            
+            return (
+                <div>
+                <input onChange={handleChange} value={text} />
+                <p>You typed {text}</p>
+                </div>
+            );
+        }
+        ```
+* Using Stateless Updaters and Presenters   
+    * A common React programming pattern:
+        * Use a **parent stateful component** to manage state and define state-updating methods.
+        * Then, it will render **stateless child components**.
+        * One or more of those child components will be responsible for **updating** the parent state
+            * Via methods passed as props.
+        * One or more of those child components will be responsible for **displaying** that state
+        
+## Component Lifecycle Methods
+
+* The three major phases of a component’s lifecycle:
+    1. Mounting
+        * The component is being initialized and put into the DOM for the first time.
+        * The `constructor`, `render()`, and `componentDidMount()` are called during this phase
+    2. Updating
+        * The component updates as a result of changed state or changed props. 
+        * In this phase, `render()` and `componentDidUpdate()` are called.
+    3. Unmounting
+        * The component is being removed from the DOM.
+        * It is a good time to clean things up. `componentWillUnmount()` is called here. 
+* Extra notes:
+    * set up side-effects when a component mounts, use componentDidMount()
+
+
+
+
+
+
+
+
