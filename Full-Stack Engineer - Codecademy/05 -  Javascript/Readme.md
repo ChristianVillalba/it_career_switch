@@ -211,3 +211,73 @@ function funName( myDefaultValue = "Default") {
 * `.filter()` checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
 * `.findIndex()` returns the index of the first element of an array that satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.
 * `.reduce()` iterates through an array and takes the values of the elements and returns a single value.
+
+## Classes
+
+* **Classes** are templates for **Objects**.
+    * JavaScript is an object-oriented programming **(OOP)**
+* Javascript calls a `constructor` method when we create a new instance of a **class**.
+    * ```javascript
+        class Dog {
+            constructor(name) {  //  constructor() :everytime we create a new instance of Dog (class)
+                this._name = name; // this : refers to an instance of that class (name)
+                this._behavior = 0; // we create a property "behavior" initialized to zero.
+            }
+        }
+        ```
+* **Instance:**  an object that contains the property names and methods of a class
+    * ```javascript
+        // ...continuing from the class Dog above
+        const halley = new Dog('Halley'); 
+        // Create new Dog instance
+        console.log(halley.name); // Log the name value saved to halley
+        // Output: 'Halley'
+        ```
+* **Methods:** Class method and getter syntax is the same as it is for objects 
+    * Except we can **not** include **commas** between methods.
+        * ```javascript
+            incrementBehavior() {
+            this._behavior++;
+            }
+        ```
+    * Methods can have access and manupulate data from classes.
+        * ```javascript
+            let nikko = new Dog('Nikko'); 
+            // Create dog named Nikko
+            nikko.incrementBehavior(); 
+            // Add 1 to nikko instance's behavior
+        ```
+
+* **Inheritance** is when we create a parent class with **properties and methods** that we can **extend** to child classes.
+    * We use the `extends` keyword to create a subclass.
+    * All of the parent methods are available to the child class.
+    * ```javascript
+        class Animal {
+            constructor(name) {
+                this._name = name;
+                this._behavior = 0;
+            }
+            
+            get name() {
+                return this._name;
+            }
+            
+            get behavior() {
+                return this._behavior;
+            }
+            
+            incrementBehavior() {
+                this._behavior++;
+            }
+        } 
+
+        class Cat extends Animal {
+            constructor(name, usesLitter) {
+                super(name);
+                this._usesLitter = usesLitter;
+            }
+        }
+        ```
+
+* The `super` keyword calls the `constructor()` of a parent class.
+* **Static methods** are called on the class, but not on instances of the class.
