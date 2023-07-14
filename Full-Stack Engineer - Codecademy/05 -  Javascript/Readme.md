@@ -216,7 +216,9 @@ function funName( myDefaultValue = "Default") {
 
 * **Classes** are templates for **Objects**.
     * JavaScript is an object-oriented programming **(OOP)**
+    * Classes mae it easy to create multiple objects that share property names and methods.
 * Javascript calls a `constructor` method when we create a new instance of a **class**.
+    * It sets the property values for each instance.
     * ```javascript
         class Dog {
             constructor(name) {  //  constructor() :everytime we create a new instance of Dog (class)
@@ -226,6 +228,7 @@ function funName( myDefaultValue = "Default") {
         }
         ```
 * **Instance:**  an object that contains the property names and methods of a class
+    * `new` creates an instance of the needed class
     * ```javascript
         // ...continuing from the class Dog above
         const halley = new Dog('Halley'); 
@@ -249,23 +252,21 @@ function funName( myDefaultValue = "Default") {
         ```
 
 * **Inheritance** is when we create a parent class with **properties and methods** that we can **extend** to child classes.
+    * The purpose is basically share data and methods between objects.
     * We use the `extends` keyword to create a subclass.
-    * All of the parent methods are available to the child class.
+    * All of the parent **methods, getter and setters** are available to the child class.
     * ```javascript
         class Animal {
             constructor(name) {
                 this._name = name;
                 this._behavior = 0;
             }
-            
             get name() {
                 return this._name;
             }
-            
             get behavior() {
                 return this._behavior;
             }
-            
             incrementBehavior() {
                 this._behavior++;
             }
@@ -280,4 +281,25 @@ function funName( myDefaultValue = "Default") {
         ```
 
 * The `super` keyword calls the `constructor()` of a parent class.
+    * It sets the **properties** in the parent class to the subclass.
+    * It must be called **before** `this` is used
 * **Static methods** are called on the class, but not on instances of the class.
+
+## Implementing Modules using ES6 Syntax
+
+* Modules are reusable pieces of code in a file that can be exported and then imported for use in another file.
+    * **A modular program** is one whose Components...   
+        * can be separated, 
+        * used individually 
+        * recombined to create a complex system.
+
+
+
+
+
+
+
+
+
+
+
