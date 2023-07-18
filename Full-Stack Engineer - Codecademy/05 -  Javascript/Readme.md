@@ -292,6 +292,10 @@ function funName( myDefaultValue = "Default") {
         * can be separated, 
         * used individually 
         * recombined to create a complex system.
+* We can import modules using `import`
+    * Exporting multiple named values at once: you must surround the values with `{}`
+* We can export modules using `export`
+* We can rename variables when importing them using `as`
 
 
 
