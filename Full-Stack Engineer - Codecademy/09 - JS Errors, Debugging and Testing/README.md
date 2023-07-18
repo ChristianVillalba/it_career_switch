@@ -108,9 +108,58 @@
     * **End to end tests:**  test the whole application including the external services it depends on.
 
 ## JS: Error Handling
-<!-- Continue here -->
 
-## AUTOMATE AND ORGANIZE TESTS: Mocha
+* There are two categories of programming mistakes
+    * Those that don’t prevent our code from running 
+    * Errors that will break our code
+* We can’t always stop errors before they occur, 
+    * But we can include a backup plan in our program to anticipate and respond to the errors
+* **Error handling** is the process of programmatically anticipating and addressing errors. 
+<br />
+
+* Runtime Errors: 
+    * Errors contain useful messages that tell us why our program isn’t working or why the error was thrown.
+    * When we execute code and a line of code throws an error, that error is referred to as a **runtime error**. 
+<br />
+
+* Constructing an Error
+    * **JavaScript Errors** are objects that have a **name** and **message property**
+        * Creating an error does **not** cause our program to **stop**
+        * `Error() `or `new Error()`
+        *   ```javascript
+            console.log(Error('Your password is too weak.'));
+            <!-- or -->
+            console.log(new Error('Your password is too weak.'));
+            ```
+        
+    * `throw`: the error is thrown and code after the throw statement will not execute
+        *   ```javascript
+            throw Error('Something wrong happened');
+            // Error: Something wrong happened
+            
+            console.log('This will never run');
+            ```
+    * The try...catch Statement
+        * try...catch statement to anticipate and handle errors
+            * We evaluate code in the `try` block and if the code throws an error, 
+            * The code inside the `catch` block will handle the error for us.
+        *   ```javascript
+            try { 
+                // we insert code that we anticipate might throw an error
+                throw Error('This error will get caught');
+            } catch (e) { 
+                // Accepts the thrown error from the try block . 
+                //The e represents the thrown error.
+                console.log(e); // Prints: This error will get caught
+            }
+            
+            console.log('The thrown error that was caught in the try...catch statement!');
+            // Prints: 'The thrown error that was caught in the try...catch statement!'
+            ```
+        * try...catch statement for built-in JavaScript errors is really beneficial when we need to use data from an external source that’s not written directly in our program.
+        * The code thrown after an uncaught Error will stop our code
+
+## Automate and Organize Test: Mocha  
 
 Mocha is used for organizing and automating test that provide useful feedback when errors occur.    
 [Mocha Documentation](https://mochajs.org/#getting-started)     
@@ -164,8 +213,8 @@ In the Terminal
     const assert = require('assert');
 
     describe('+', () => {
-    it('returns the sum of its arguments', () => {
-        assert.ok(3 + 4 === 7);
+        it('returns the sum of its arguments', () => {
+            assert.ok(3 + 4 === 7);
         });
     });
     ```
