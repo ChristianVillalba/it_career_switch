@@ -261,11 +261,15 @@
     * Powerfully improves the **readability and scalabilit**y of our code.
 <br />
 
-* `synac`: declare an async function
+* `async`: declare an async function
 * Inside an async function we use the `await`
     * It pauses execution of our function until an asynchronous action completes and the awaited promise is no longer pending
     * `await` returns the resolved value of the awaited promise
     * We can write **multiple await statements** to produce code that reads like synchronous code.
+    * Benefits:
+        * It reads more similarly to synchronous code.
+        * It let us easily store and refer back to the resolved values of earlier promises in a promise chain.
+        * It let us catch rejected promise errors with the exact same syntax we use to catch other types of errors. 
 * We use try...catch statements within our async functions for error handling
 * We should still take advantage of **concurrency** by writing async functions that allow **asynchronous actions** to happen in concurrently whenever possible.
 
