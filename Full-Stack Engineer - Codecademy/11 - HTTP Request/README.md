@@ -1,4 +1,4 @@
-# HTTP Requests, Web API, REST, JSON
+# HTTP Requests, Web API, REST, JSON, Requests with ES6
 
 ## HTTP 
 * **HTTP (Hypertext Transfer Protocol)**is used to structure requests and responses over the internet. 
@@ -47,3 +47,24 @@
         * Because REST systems interact through standard operations on resources, they do not rely on the implementation of interfaces.
 
 ## JSON
+* JSON (javaScript Object Notation)  standard that facilitates storing and transfer data between all programming languages.
+    * JSON is heavily used to facilitate data transfer in web applications between a client, such as a web browser, and a server.
+
+## Requests with ES6
+
+* There are many types of **HTTP requests**. 
+    * The four most commonly used types of **HTTP requests** are **GET, POST, PUT, and DELETE**.
+    * In this lesson, we’ll cover GET and POST requests:
+        * **GET request**: we’re retrieving, or getting, information from some source (usually a website).
+        * **POST request**: we’re posting information to a source that will process the information and send it back.
+    * JavaScript uses an event loop to handle asynchronous function calls.
+        * The functions that make **requests** that need to wait for servers to respond then get sent to a separate queue.
+        * Once the stack has cleared, then the functions in the queue are executed.
+        * Note: Web developers use the event loop to create a smoother browsing experience by deciding when to call functions and how to handle asynchronous events. 
+<br />
+
+* GET Requests using `fetch()`
+    * **Creates a request Object**     that contains relevant information that an API needs.
+    * **Sends that request Object**     to the API endpoint provided.
+    * **Returns a Promise**     that ultimately resolves to a response object
+        * It contains the status of the promise with information the API sent back.
