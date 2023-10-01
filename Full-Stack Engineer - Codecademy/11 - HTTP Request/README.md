@@ -68,3 +68,6 @@
     * **Sends that request Object**     to the API endpoint provided.
     * **Returns a Promise**     that ultimately resolves to a response object
         * It contains the status of the promise with information the API sent back.
+<br />
+
+* POST Requests using Fetch
