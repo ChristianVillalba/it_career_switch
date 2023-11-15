@@ -1,7 +1,7 @@
 # HTTP Requests, Web API, REST, JSON, Requests with ES6
 
 ## HTTP 
-* **HTTP (Hypertext Transfer Protocol)**is used to structure requests and responses over the internet. 
+* **HTTP (Hypertext Transfer Protocol)** is used to structure requests and responses over the internet. 
     * HTTP requires **data to be transferred** from one point to another over the network.
     * The transfer of resources happens using **TCP (Transmission Control Protocol)**.
 * **TCP (Transmission Control Protocol)** is used to manage many types of internet connections in which one computer or device wants to send something to another. 
@@ -70,4 +70,13 @@
         * It contains the status of the promise with information the API sent back.
 <br />
 
-* POST Requests using Fetch
+* REQUESTS WITH FETCH API
+   * GET and POST requests can be created in a variety of ways.
+   * We can use `fetch()` and `async`/`await` to asynchronous request data from APIs.
+   * **Promises** are a type of **JS Obj that represents data** that will eventually be returned from a **request**.
+   * The `fetch()` function can be used to **create requests** and will **return promises**.
+   * We can **chain** `.then()` methods **to handle promises** returned by the fetch() function.
+   * The `async` keyword is used to create **asynchronous functions** that will return promises.
+   * The` await` keyword:
+        * It can **only** be used with functions declared with the `async` keyword.
+        * It suspends the program while waiting for a promise to resolve.
