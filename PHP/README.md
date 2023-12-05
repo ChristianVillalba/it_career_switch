@@ -47,3 +47,5 @@ PHP is designed to interact with HTML to generate dynamic websites.
     * Multiply	$x = $x * $y	$x *= $y
     * Divide	$x = $x / $y	$x /= $y
     * Mod	$x = $x % $y	$x %= $y
+
+## PHP FUNCTIONS
