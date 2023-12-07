@@ -49,3 +49,23 @@ PHP is designed to interact with HTML to generate dynamic websites.
     * Mod	$x = $x % $y	$x %= $y
 
 ## PHP FUNCTIONS
+
+* We can think of programs as series of instructions to be performed by the computer. 
+* A function is a set of instructions we package as a unit, often with a name, so that we can reuse it.
+<br />
+
+* Defining Functions
+    * ```php
+        <?php
+        function greetLearner()
+        {
+        echo "Hello, Learner! \n";
+        echo "I hope you're enjoying PHP! \n";
+        }
+        ```
+* Invoking functions
+    * ```php
+        <!-- ... -->
+        greetLearner()
+        greetLearner()
+        ```
