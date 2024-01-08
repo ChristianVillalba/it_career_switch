@@ -88,3 +88,47 @@ PHP is designed to interact with HTML to generate dynamic websites.
 * Build-In PHP Functions
     *  built-in functions are functions provided by PHP
     *  built-in functions often don’t follow the function naming conventions
+
+## PHP & HTML
+
+* Introduction to use PHP to generate HTML. 
+    * This will become even more powerful as we learn how to get **information from the client** and use that to **create dynamic websites**
+* The front-end of a website consists of JavaScript, CSS, HTML, images, and other static assets sent to the client.
+* **The browser** is the **client**
+    * It sends a request to the back-end for all the assets needed to view and interact with the website.
+* The back-end consists of a web server and all the logic and data needed to create and maintain a website or web application.
+* **PHP** is a **back-end language**.
+* **PHP** can be used to **generate HTML files**.
+* We **embed PHP scripts** within HTML by inserting PHP code between the opening `<?php` and closing `?>` tags.
+
+### PHP shorthand
+
+* The PHP shorthand for loops uses a colon `:`  to open the code block.
+    * Instead of a bracket `{`
+* The shorthand uses keywords to close the code block instead of a bracket `}`:
+    * Use `endfor` to close a for loop
+    * Use `endforeach` to close a foreach loop
+    * Use `endwhile` to close a while loop
+* The closing keyword needs to be followed by a semicolon `:`.
+* Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` b**efore using PHP variables** in the loop
+* Check: *Loops in Html > reviewLesson.php*
+* Check: *Cafe Menu > index.php*
+
+### HTML FORM HANDLING IN PHP
+
+* **Superglobals** are automatic global variables which are **available in all scopes** throughout a script.
+* Request Superglobals
+    * PHP has functionality to ease processing of HTML requests. 
+* The list of superglobals in PHP 
+    * $GLOBALS
+    * $_SERVER
+    * $_GET
+    * $_POST
+    * $_FILES
+    * $_COOKIE
+    * $_SESSION
+    * $_REQUEST
+    * $_ENV
+* `$_GET` - this contains an associative array of variables passed to the current script using **query parameters** in the **URL**
+* `$_POST` - this contains an associative array of variables passed to the current script using **a form submitted** using the **“POST” method**
+* `$_REQUEST` - this contains the contents of `$_GET`, `$_POST`, and `$_COOKIE`
