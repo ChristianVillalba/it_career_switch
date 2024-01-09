@@ -132,3 +132,81 @@ PHP is designed to interact with HTML to generate dynamic websites.
 * `$_GET` - this contains an associative array of variables passed to the current script using **query parameters** in the **URL**
 * `$_POST` - this contains an associative array of variables passed to the current script using **a form submitted** using the **“POST” method**
 * `$_REQUEST` - this contains the contents of `$_GET`, `$_POST`, and `$_COOKIE`
+* `<?=` is shorthand for `<?php` echo.
+* The array keys in the PHP request superglobals are set by the `name` attributes in the HTML form, which need to be unique.
+* The `action` attribute is used to specify which file should handle data from the form request.
+* Check: *HtmlForms > ReviewExercise*
+
+### HTML FORM HANDLING IN PHP
+
+* *I am too stupid to understand regular expressions, but here I come (again):*
+* **Regular expressions** are special sequences of characters that describe a pattern of text that is to be matched
+* **Literals** to match the exact characters that we desire
+* **Alternation**, using the pipe symbol `|`, allows us to match the text preceding or following the `|`
+* **Character sets** `[]`, let us match one character from a series of characters
+* **Wildcards**`.`, will match any single character (letter, number, symbol or whitespace)
+* **Ranges** allow us to specify a range of characters in which we can make a match
+**Shorthand character classes** like `\w`, `\d` and `\s` represent the ranges representing word characters, digit characters, and whitespace characters, respectively
+* **Groupings** `()`, group parts of a regular expression together, and allows us to limit alternation to part of a regex
+* **Fixed quantifiers** `{}`, let us indicate the exact quantity or a range of quantity of a character we wish to match
+* **Optional quantifiers** `?`, allow us to indicate a character in a regex is optional, or can appear either 0 times or 1 time
+* **The Kleene star** `*`, is a quantifier that matches the preceding character 0 or more times
+* **The Kleene plus** `+`, matches the preceding character 1 or more times
+* **The anchor symbols** hat `^` and dollar sign `$` are used to match text at the start and end of a string, respectively
+
+### INTRODUCTION TO PHP FORM VALIDATION
+
+* **Sanitize the data** Transform it into a safe and standardized format.
+* We can use the built-in PHP 
+    * `trim()` 
+        * function to remove any whitespace
+    * `htmlspecialchars()` 
+        * Transforms HTML elements into HTML entities (characters that represent HTML elements but won’t display as HTML), 
+        * The PHP interpreter doesn’t recognize them as HTML. 
+        * This prevents, for example, a man-in-the-middle attack in which malicious HTML is injected into a user’s  view of our site.
+    * `filter_var()` 
+        * The most powerful PHP function for sanitizing data
+        * This function operates on a variable and passes it through a “filter” that produces the desired outcome.
+        * As its first argument, filter_var() takes a variable. As its second, it takes an ID representing the type of filtering that should be performed.
+        * [PHP Sanitize filters Documentation](https://www.php.net/manual/en/filter.filters.sanitize)
+        * eg: `FILTER_SANITIZE_EMAIL`  
+        * It filtered out any characters not allowed in emails. Once sanitized, we can safely display user inputs.
+        * We can use `filter_var()` to validate as well as sanitize
+            * Check: *basicValidation > index.php*
+        * `filter_var()` accepts an optional third argument , often called `$options`, that allows us to fine-tune the operation of a given filter. 
+            * Check: *HtmlForms Php > OptionsInValidation > index.php*
+    * **Regex**
+        * A very common method for **validating data** is to **compare** the input to a pattern we define with a **regular expression**
+        * Check: *HtmlForms Php > CustomValidation > index.php*
+* Validating Against Back-end Data 
+    * Modern websites and web applications need to store a lot of data, they usually interact with databases on the back-end.
+    * An important application of this kind of validation is handling the creation of a user’s account
+    * Check: *HtmlForms Php > ValidationWithDatabase > index.php*
+* Sanitizing for Back-end Storage
+    * We always need to sanitize all data before storing it in our own databases.
+    * `preg_replace()` to sanitize data formatting (built-in func)
+* **Rerouting**
+    * the user has submitted a valid form
+        * `header()` function performs redirects
+        * Argument: str `"Location: url"`
+        *  `exit` to terminate the current script
+    * ```php
+        if (/* Is the submission data validated? */) {
+        header("Location: https://www.best-puppy-pix.com/");
+        exit;
+        }
+        ```
+
+### CLASSES AND OBJECTS
+
+* **Classes** are defined using the `class` keyword.
+* Functions defined within a class become methods and variables within the class are considered properties.
+* **Functions** defined within a class become **methods** and **variables** within the class are considered properties.
+* There are three levels of visibility for class members:
+    * `public` (default) - accessible from outside of the class
+    * `protected` - only accessible within the class or its descendants
+    * `private` - only accessible within the defining class
+* Members can be defined to be `static`.
+* Static members are accessed using the Scope Resolution Operator `::`.
+* Classes are instantiated into objects using the `new` keyword.
+* Members of an object are accessed using the Object Operator `->`.
