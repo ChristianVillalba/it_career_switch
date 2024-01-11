@@ -24,3 +24,18 @@ In this lesson we covered:
 * How to use bcrypt in order to generate a salt and hash a plaintext password.
 * How to use bcrypt in order to compare a retrieved password with a password stored in the database.
 * How to implement bcrypt in an actual application and use it via user requests to authenticate users.
+
+### Review: User Authentication and Authorization
+
+Authentication and authorization are key pieces to securing any web application that works with user data.      
+They’re so important that Broken Authentication and Broken Access Control make up two of the OWASP Top Ten’s most critical security risks to web applications.      * 
+Verifying who your users are and what they’re allowed to do will help create a safe and secure user experience.
+
+Having completed this unit, you are now able to:
+
+* Define Authentication, Authorization, and * Encryption
+* Explain the purpose of user sessions
+* Implement Sessions in Express using * express-session
+* Allow users to log into an Express app using passport-local
+* Secure user passwords with hashing and salts using bcrypt.js
+* Add OAuth 2.0 as a login option to an Express app using oauth2-server
