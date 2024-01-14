@@ -1,0 +1,38 @@
+-- 1. Create a table named friends
+CREATE TABLE friends (
+    id INTEGER,
+    name TEXT,
+    birthday DATE
+);
+
+-- 2. Add Ada Lovelace to friends
+INSERT INTO friends (id, name, birthday)
+VALUES (123456, 'Ada Lovelace', '1815-12-10');
+
+-- 3. Add two of your friends to the table
+-- Assuming randomly generated IDs for your friends
+INSERT INTO friends (id, name, birthday)
+VALUES (789012, 'Alan Turing', '1912-06-23'),
+       (345678, 'Angela Yu', '2000-01-01');
+
+-- 4. Add a new column named email
+ALTER TABLE friends
+ADD COLUMN email TEXT;
+
+-- 5. Update the email address for everyone in your table
+-- Assuming randomly generated emails for each friend
+UPDATE friends
+SET email = 'ada@example.com'
+WHERE name = 'Ada Lovelace';
+
+UPDATE friends
+SET email = 'alan@example.com'
+WHERE name = 'Alan Turing';
+
+UPDATE friends
+SET email = 'angela@example.com'
+WHERE name = 'Angela Yu';
+
+-- 6. Let’s take a look at the result one last time
+SELECT *
+FROM friends;
