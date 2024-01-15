@@ -66,3 +66,77 @@
     * `DELETE FROM` deletes rows from a table.
 * Check: *manipulation.sqlite*
 
+### QUERIES
+
+* How to query data from a database using SQL. 
+    * `SELECT` is the clause we use every time we want to query information from a database.
+    * `AS` renames a column or table.
+    * `DISTINCT` return unique values.
+    * `WHERE` is a popular command that lets you filter the results of the query based on conditions that you specify.
+    * `LIKE` and BETWEEN are special operators.
+    * `AND` and `OR` combines multiple conditions.
+    * `ORDER` BY sorts the result.
+    * `LIMIT` specifies the maximum number of rows that the query will return.
+    * `CASE` creates different outputs.
+
+### AGGREGATE FUNCTIONS
+
+* **SQL Queries** can also **perform calculations** on the raw data to answer specific data questions.
+* `COUNT()`: count the number of rows
+* `SUM()`: the sum of the values in a column
+* `MAX()`/`MIN()`: the largest/smallest value
+* `AVG()`: the average of the values in a column
+* `ROUND()`: round the values in the column
+
+* **Calculations** performed on multiple rows of a table are called **aggregates (functions)**.
+* `GROUP BY` is a clause used with aggregate functions to combine data from one or more columns.
+* `HAVING` limit the results of a query based on an aggregate property.
+
+### MULTIPLE TABLES
+
+* Relationships between tables in relational databases and how to query information from multiple tables using SQL:
+* `JOIN` will combine rows from different tables if the join condition is true.
+* `LEFT JOIN` will return every row in the left table, and if the join condition is not met, NULL values are used to fill in the columns from the right table.
+* **Primary key** is a column that serves a unique identifier for the rows in the table.
+* **Foreign key** is a column that contains the primary key to another table.
+* `CROSS JOIN` lets us combine all rows of one table with all rows of another table.
+* `UNION` stacks one dataset on top of another.
+* `WITH` allows us to define one or more temporary tables that can be used in the final query.
+
+### Designing Relational Databases
+
+* PostgreSQL is a popular database management system that stores information on a dedicated database server instead of on a local file system.
+* A **database schema** is documentation that helps its audience such as a database designer, administrator and other users interact with a database.    Like an architectural blueprint
+* When designing a database schema consider the following steps:
+    * Define the purpose of your database
+    * Find the information that make up the database
+    * Organize your information into tables
+    * Structure your tables into columns of information
+    * Avoid redundant data that leads to inaccuracy and waste in space
+    * Identify the relationships between your tables and implement them
+* FREE: **online database design tools**
+    * DbDiagram.io - a free, simple tool to draw ER diagrams by just writing code, designed for developers and data analysts.
+    * SQLDBM - SQL Database Modeler
+    * DB Designer - online database schema design and modeling tool
+
+###  DATABASE RELATIONSHIPS
+
+One-to-One Relationship
+One-to-Many Relationship
+Many-to-Many
+
+### Trigger
+
+* A database trigger is procedural code that is automatically executed in response to certain events on a particular table or view in a database. 
+* The trigger is mostly used for maintaining the integrity of the information on the database.
+    * Triggers are associated with a specific table, view or foreign table.
+    * Triggers execute a specified function when certain operations are performed on the table (INSERT, UPDATE, DELETE, TRUNCATE).
+    * **Triggers** can run before, after or instead of the operation attempts to alter the row.
+    * A trigger set `FOR EACH ROW` is called once for every row modified.
+    * `FOR EACH STATEMENT` executes once for the entire operation (0 modified rows would still trigger this).
+    * Triggers can specify a boolean `WHEN` condition to see when they should be fired.
+    * Multiple triggers of the same kind can exist on the same table. If so they are triggered in alphabetical order.
+    * `SELECT` statements do not modify rows so no trigger can be set on a SELECT statement.
+    * One SQL command can trigger more than one kind of trigger.
+    * Use the `DROP TRIGGER` command to **remove a trigger**.
+    * You can query the `information_schema.triggers` **table** to get a list of triggers in the system.
