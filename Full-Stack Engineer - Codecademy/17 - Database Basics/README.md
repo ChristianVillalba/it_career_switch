@@ -121,9 +121,9 @@
 
 ###  DATABASE RELATIONSHIPS
 
-One-to-One Relationship
-One-to-Many Relationship
-Many-to-Many
+* One-to-One Relationship
+* One-to-Many Relationship
+* Many-to-Many
 
 ### Trigger
 
