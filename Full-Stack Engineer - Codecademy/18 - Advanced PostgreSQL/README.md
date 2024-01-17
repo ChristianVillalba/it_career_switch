@@ -22,7 +22,7 @@
         *  Allow you to maintain **referential integrity** between two tables by validating the entry in one also appears in the other. 
         * **Referential integrity** depends on `FOREIGN KEY` constraints.
 
-###  DATABASE SECURITY
+### DATABASE SECURITY
 * **The principle of least privilege** that suggests all applications and users should have only the minimum permissions required for their function.
 * To adhere to this principle in PostgreSQL:
     * Most user’s privileges are restricted 
@@ -33,3 +33,45 @@
     * bypasses all permission checks that other users face before being allowed to perform an action
     * superuser designation can be passed along to any number of other users in the DB.
 * Introduction to Database Permissions
+
+### Indexes
+* An **index**is an organization of the data in a table to help with performance when searching and filtering records
+    * Default: **Binary Tree**
+* Planner: How to search
+    * Seq Scan (89 → 1,2,3...89)
+    * Index (89 → 50,75,87...89)
+* Planning time & Execution time
+    * **Planning time:** amount of time the server spends deciding the best way to solve your query
+    * **Execution time:**  the amount of time the actual query takes to run after the server has decided on a plan of attack.
+* Build an Index
+    * ```sql
+        CREATE INDEX customers_user_name_idx ON customers (user_name);
+        ```
+* Multicolumn Indexes
+    * ```sql
+        CREATE INDEX <index_name> ON <table_name> (<column_name>);
+        ```
+* Drop an Index
+    * ```sql
+        DROP INDEX IF EXISTS customers_city_idx;
+        ```
+* Indexes can improve the speed of your database queries
+    * But slow down CRUD Operations.
+* When should I add an Index?
+    *  When the benefits of searching outweigh the burdens of storage size and Insert/Update/Delete speed. 
+    * when searching will occur often enough to make the advantages worth the time and effort.
+* **Partial Index**
+    * A partial index allows for indexing on a subset of a table, allowing searches to be conducted on just this group of records in the table.
+    * ```sql
+        CREATE INDEX users_user_name_internal_idx ON users (user_name)
+        WHERE email_address LIKE '%@wellsfargo.com';
+        ```
+* A **clustered index** is and how to refresh one
+    * ```sql
+        CREATE INDEX users_user_name_internal_idx ON users (user_name)
+        WHERE email_address LIKE '%@wellsfargo.com';
+        ```
+* Indexes based on expressions
+    * ```sql
+        CREATE INDEX <index_name> ON <table_name>(<EXP>(<column_name>));
+        ```
