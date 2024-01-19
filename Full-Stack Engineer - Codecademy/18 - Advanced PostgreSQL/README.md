@@ -75,3 +75,8 @@
     * ```sql
         CREATE INDEX <index_name> ON <table_name>(<EXP>(<column_name>));
         ```
+
+### Introduction To Normalization
+* **Normalization**: The process of restructuring
+* There are formal names and definitions for different levels of restructuring.
+    * the most common are first, second, and third normal form (1NF, 2NF, 3NF). 
