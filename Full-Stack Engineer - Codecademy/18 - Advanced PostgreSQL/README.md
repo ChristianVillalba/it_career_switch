@@ -80,3 +80,33 @@
 * **Normalization**: The process of restructuring
 * There are formal names and definitions for different levels of restructuring.
     * the most common are first, second, and third normal form (1NF, 2NF, 3NF). 
+* Poor database structure can impact our ability to store, modify, and ask questions of our data.
+    * There are no universal rules about the best way to design a database schema.
+* Repeating groups of columns and columns that are not dependent on the primary key of a table can cause problems related to:
+    * Duplicated data
+    * Data modification (updates/insertions)
+    * Querying
+* Database normalization is a process by which database tables are modified/restructured to address these problems
+* Duplicated Data  can be especially problematic if we want to modify the duplicated information
+* Search and Sort Efficiency
+* Creating Versus Modifying a Database Schema
+* Database design can be modified after data has been entered, but it is usually easiest to design a normalized schema up front
+* It is important to keep database use in mind when designing an optimal database schema
+
+### POSTGRESQL DATABASE MAINTENANCE
+* The space PostgreSQL uses on disk can grow in several ways.
+* Some ways are easier to predict, for example, the addition of new tables or the addition of more data to a table.
+* There are some properties of the PostgreSQL data storage system that cause disk usage to increase in non-intuitive ways. 
+* Tools to maintain database:
+    * `UPDATE` or `DELETE` creates dead tuples on disk.
+    * `VACUUM` that can be used to manage storage space.
+    * PostgreSQL has a feature called `autovacuum` enabled on most databases by default.
+    * automatically runs periodic VACCUUMs to keep database tables disk usage efficient.
+* An understanding of when to VACUUM, VACUUM ANALYZE, or VACUUM FULL :
+    * `VACUUM` simply marks dead tuples and allows that space to be re-used by future updates.
+    * `VACUUM ANALYZE` performs a VACUUM, but also updates PostgreSQL’s internal statistics and can help further improve query performance after a large UPDATE.
+    * `VACUUM FULL` is the most aggressive VACUUM strategy, it can completely clear dead tuples from a table and return the space to disk.       However, it should be used sparingly as it can prevent other users from querying the table.
+* Interpret data from pg_stat_all_tables
+    * This is a very handy table.
+    * Being able to reference it to understand disk usage, vacuum frequency, or dead tuple count will allow you to diagnose a wide variety of database performance problems.
+    
