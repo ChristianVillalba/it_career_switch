@@ -42,3 +42,14 @@ It is very widely used, showing up in applications, operating systems, and even 
 * **Preventing CSRF attacks** are relatively easy to mitigate.
 * One of the simplest ways to prevent these attacks is to **add a CSRF token**. 
     * This token is a unique value that is added to each request. 
+
+### SQL Injection
+* That step of checking the input against the database can be abused by attackers. 
+* Through a cleverly and carefully crafted input an attacker can inject code directly into the database query
+* Preventing SQL Injection
+    * **Sanitize Inputs:**    
+    Input sanitization is a cybersecurity measure of checking, cleaning, and filtering data inpu
+    * `validator.js` is a library.    
+    It validates forms and sanitize inputs before using a form value in the application code.
+    * Using prepared statements with placeholders to ensure that SQL queries are properly escaped.
+* Check: *PreventingSQLInjectionAttacks*
