@@ -53,3 +53,27 @@ It is very widely used, showing up in applications, operating systems, and even 
     It validates forms and sanitize inputs before using a form value in the application code.
     * Using prepared statements with placeholders to ensure that SQL queries are properly escaped.
 * Check: *PreventingSQLInjectionAttacks*
+
+### DEFENSIVE CODING IN JAVASCRIPT
+* The `eval()` function in JavaScript takes a string as an argument and executes it as Javascript source code.
+    * Best practices with eval are:
+        * Avoid using it altogether!
+        * If you must use it, use a safer version, and only allow trusted, non-user input.
+* The `exec()` method takes a string as an argument and runs it as a shell command, enabling shell syntax within JavaScript. 
+    * The danger is that unrestricted commands can access, modify, and delete files. 
+* Dangers and Secure Use of the fs Module:
+    * The **fs module** coupled with improperly sanitized user input gives attackers access to our entire file system and exposes it to path traversal and file inclusion vulnerabilities.
+* Dangers and Secure Use of Regular Expressions
+    * Regular Expressions are used in almost every single programming language to validate whether user input adheres to an expected condition. 
+    * To prevent this danger, we can use the validator npm package. It provides a library of string validators and sanitizers for things like IP addresses,
+* Secure Your Code: Strict Mode
+    * Using strict mode throws errors that would otherwise be silent, which can help reveal vulnerabilities. T
+    * To invoke strict mode, simply put "use strict"; in single or double quotes on top of your JavaScript file.
+* Secure Your Code: Static Code Analysis
+    * Static Code Analysis evaluates a code without executing it.
+    * A lint, or linter, is a static code analysis tool
+    * the most popular JavaScript linters are:
+        * ESLint
+        * JSLint
+        * JSHint
+
