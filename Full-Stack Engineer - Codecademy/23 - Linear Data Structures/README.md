@@ -41,3 +41,21 @@
     * Using our Node class to hold the data and links between nodes
     * Implementing a DoublyLinkedList class to handle external operations on the list, like adding and removing nodes
     * Creating an instance of our list, and using the .printList() method to track the changes we made
+
+### Stacks
+* Stack is a **linear collection of nodes** that adds (pushes) data to one end of the data structure.
+    * Like a queue
+* A stack removes data (pops) from the same end of the data structure. 
+    * Unlike a queue
+    * Think of it as a stack of books, where you can only pick up the top book, and add a new book to the top.
+* Stacks are often thought of as a “First In, Last Out” (FILO) data structure — the first book you add to the stack won’t be removed until all other books are removed from the stack.
+* Stacks provide three methods for interaction:
+    * **Push** - adds data to the “top” of the stackfs
+    * **Pop** - returns and removes data from the “top” of the stack
+    * **Peek** - returns data from the “top” of the stack without removing it
+* Stacks:
+    * Contain data nodes
+    * Implementations include a linked list or array
+    * Can have a limited size
+    * Pushing data onto a full stack results in a stack overflow
+    * Stacks process data Last In, First Out (LIFO)   * 
