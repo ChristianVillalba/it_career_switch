@@ -21,4 +21,10 @@
 * **A recursive approach** requires the function invoking itself with different arguments.         
 * Languages make this possible with **call stacks and execution contexts**.
     * **Stacks**, a data structure, follow a strict protocol for the order data enters and exits the structure: the last thing to enter is the first thing to leave.
-* Recursion has two fundamental aspects: the base case and the recursive step.   *
+    * **Execution contexts** contains the variables within each recursive call.
+* Recursion has two fundamental aspects: the base case and the recursive step.
+* **Stack Overflow**:
+    * A recursive function which has no base case, or a recursive step that does not lead to the base case
+* Every recursive problem requires:
+    * **Recursive case** – the conditions under which the function will perform an action and call itself.
+    * **Base case** – the conditions under which the function returns a value without making any additional calls to itself.
