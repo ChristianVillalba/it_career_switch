@@ -9,4 +9,30 @@
 * Used the presentational components in the return statement of the container component.
 * Passed state and functions used to change state as props to the rendered presentational components.
 
-### React Styles
+### React Routing
+* Routing is the process by which a web application uses the current browser URL to determine what content to show a user. 
+* By organizing an application’s content and displaying only what the user has requested to see, routing allows for rich, engaging, and clear user experiences.
+* Installing React Router
+    * `npm install --save react-router-dom@6`
+* Install react-router-dom and add it to a React application.
+* Enable routing by using `RouterProvider` and providing a `router`.
+* Creating a router using `createBrowserRouter()`.
+* Use `createRoutesFromElements()` to configure a router.
+* Use the **Route component** to add static and dynamic routes to an application.
+* Use **Link** and **NavLink** components to add links to an application.
+* Access the values of URL parameters using React Router’s `useParams` **hook**.
+* Create nested routes using Route, Outlet, and relative paths.
+* Declaratively redirect users by rendering React Router’s **Navigate** component
+* Imperatively redirect users via the `useNavigate` **hook**.
+* Access and set the value of query parameters using React Router’s `useSearchParams` **hook**.
+
+
+
+
+
+
+
+
+
+
+
