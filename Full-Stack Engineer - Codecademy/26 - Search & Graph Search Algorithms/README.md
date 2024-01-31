@@ -27,4 +27,15 @@
     * Reverse post-order
 
 
-
+DIJKSTRA'S ALGORITHM: CONCEPTUAL
+* One of the most common applications of graph searches is to find the shortest distance between vertices.
+    * Finding this distance has a variety of applications such as finding the optimal route to a destination or transferring data in a computer network.
+* There is an algorithm that computes the shortest distance from a vertex to the rest of the vertices in a graph. This is called **Dijkstra’s Algorithm**:
+    * Instantiate a dictionary that will eventually map vertices to their distance from the start vertex
+    * Assign the start vertex a distance of 0 in a min heap
+    * Assign every other vertex a distance of infinity in a min heap
+    * Remove the vertex with the smallest distance from the min heap and set that to the current vertex
+    * For the current vertex, consider all of its adjacent vertices and calculate the distance to them as (distance to the current vertex) + (edge weight of current vertex to adjacent vertex).
+    * If this new distance is less than the current distance, replace the current distance.
+    * Repeat 4 and 5 until the heap is empty
+    * After the heap is empty, return the distances
