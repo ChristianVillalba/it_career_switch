@@ -27,6 +27,19 @@
 * Access and set the value of query parameters using React Router’s `useSearchParams` **hook**.
 
 
+### Jest
+* Jest a testing framework for JS
+* Jest provides the two key ingredients needed for testing:
+    * An assertion library: an API of functions for validating a program’s functionality
+    * A test runner: a tool that executes tests and provides outputted test summaries 
+
+### React Testing Library (RTL).
+* React Testing Library is a UI-layer testing framework that helps us ensure that our React components are rendering and behaving properly.
+* The main advantages of RTL over other UI-layer testing frameworks are:
+    * It is built explicitly for testing React components.
+    * It allows us to test our components in a way that mimics real user interactions.
+
+
 
 
 
