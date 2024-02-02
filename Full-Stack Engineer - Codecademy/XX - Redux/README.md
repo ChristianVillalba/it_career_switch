@@ -33,8 +33,21 @@
 * The **three promise lifecycle** actions: pending, fulfilled, and rejected
 * `createAsyncThunk()`, which abstracts the process of handling promise lifecycle states according to best practices/common design paradigms
 * Created action creators using `createAsyncThunk()`
-* Made your reducers respond to pending/fulfilled/rejected promise lifecycle actions by supplying the extraReducers property to createSlice().
+* Made your reducers respond to pending/fulfilled/rejected promise lifecycle actions by supplying the `extraReducers` property to `createSlice()`.
 
-
-
-
+### Redux Toolkit
+* Redux Toolkit (RTK) and the essential methods to **refactor** and simplify existing Redux logic.
+* It contains packages and functions that **simplify most Redux tasks**
+    * `createSlice()` simplify our Redux reducer logic and actions.
+    * `createSlice()` has one **parameter**: a configuration object, which we call options. 
+    * The configuration object has more properties.
+* A case reducer is a method that can update the state and will be executed when the corresponding action type is dispatched. 
+    * This is similar to a case in a switch statement.
+* You can write code that “mutates” the state inside the case reducers passed to `createSlice()`, 
+    *  Immer will safely and accurately return an immutably updated state.
+* `createSlice()` returns an object with the following properties: name, reducer, actions, and caseReducers.
+* We typically use a **Redux community code convention** called the **“ducks”** pattern 
+    * when exporting the action creators and the reducer.
+* `configureStore()` simplifies the store setup process. 
+    * `configureStore()` wraps around the Redux core `createStore()` function and
+    * `combineReducers()` handles most of the store setup for us automatically.

@@ -54,3 +54,29 @@
     * **Mutual exclusion**: only one thread can be inside the critical section at a time
     * **Progress**: if no thread is inside the critical section, then a thread trying to access it must be allowed to do so
     * **Bounded waiting**: each thread waiting to access the critical section must, at some point, gain access
+
+### File Systems
+* The filesystem is the data structure used by the operating system to store and retrieve data.
+* This data is organized into files that are units of storage used to describe a self-contained piece of data.
+    * Each file has a format depending on what that file contains.
+    * Indicated by the file’s extension
+
+### Introduction to IO Systems
+* IO, or Input/Output, devices refer to any physical devices that interact with a CPU.
+* Input devices send signals to a computer and output devices allow for computers to send information out from a computer.
+* The large range of IO devices can be categorized into three categories: human-readable, machine-readable, and communication.
+* There are two types of device drivers: kernel-mode and user-mode. Device drivers support the communication between IO devices and the CPU.
+* There are three methods that IO devices use to read/write data: character, block, and network.
+* In IO systems, blocking is a method in which when an IO makes a request, an application typically cannot continue executing other requests until it has the necessary information changes from the IO.
+* In contrast, non-blocking requests get placed into a queue while waiting so that the CPU resources can be used to complete other tasks from the event pool of an application.
+* The interrupt handler is like a pool or queue of interrupts being sent to the CPU. It handles the execution of interrupt signals as they are received from IO devices.
+* Memory-mapped IO refers to a system that is designed to allow both an IO device that is connected to a computer and the memory of the computer to share address space to the interface.
+* Direct memory access (DMA) refers to a method in which IO devices have direct access to the main memory of a computer. For DMA, a CPU will trigger the execution of data to/from an IO device to a computer, but then will continue to complete other tasks while the data transfer executes.
+* IO SOFTWARE
+    * The user-space is the place in memory in which user processes run and the kernel-space is the place in memory in which the kernel functions and manages system calls.
+    * The user-space interacts with the kernel by sending system calls to the kernel-space.
+    * Layers of the IO system that support kernel-space include: device-independent software, device drivers, interrupt handlers
+    * Layers of the IO system that support user-space include: user-level IO software
+    * Device drivers are device-specific code that is added to a computer so that a device may interact with a computer.
+    * The interrupt handler is a pool or queue of interrupts being sent to the CPU.
+    * Device-independent software refers to the software components that handle functions that are not specific to any single IO device.

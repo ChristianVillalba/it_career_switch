@@ -39,3 +39,6 @@ DIJKSTRA'S ALGORITHM: CONCEPTUAL
     * If this new distance is less than the current distance, replace the current distance.
     * Repeat 4 and 5 until the heap is empty
     * After the heap is empty, return the distances
+* How efficient is Dijkstra’s algorithm:
+    * Searching through the graph
+    * Keeping track of distances
