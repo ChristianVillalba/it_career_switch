@@ -38,13 +38,22 @@
     However, this complex implementation can lead to bugs such as priority inversion where less important tasks are mistakenly prioritized and run first.
 
 ### PROCESS SCHEDULING
-* How processes move within data structures depends on the algorithm used and the scheduling goals desired for the system.
-    * First come, first served, where processes are put into a queue and then executed in the order that they arrive.
-    * Priority scheduling, where each process is given a numeric priority and then those processes are organized and executed according to that priority.
-    * Shortest job first, a variation of priority scheduling, where processes with the shortest execution time, as calculated through some historical average runtime, are prioritized to run first.
-    * Shortest remaining time, a preemptive variation of shortest job first where processes with the shortest remaining execution time are prioritized to run first.
-    * Round robin, where a fixed amount of execution time, called a time slice, is chosen and assigned to each process. Each process is cycled through until eventually all of the processes are completed.
-    * Multiple-level queue scheduling, where processes are categorized and then placed in multiple queues or levels with differing priorities.
+* How **processes** move within **data structures** depends on the **algorithm** used and the scheduling goals desired for the system:
+    * **First come, first served:** 
+        * where processes are put into a queue and then executed in the order that they arrive.
+    * **Priority scheduling:** 
+        * where each process is given a numeric priority and then those processes are organized and executed according to that priority.
+    * **Shortest job first:**
+        * where processes with the shortest execution time, as calculated through some historical average runtime, are prioritized to run first.
+        * A variation of priority scheduling
+    * **Shortest remaining time:**
+        * Where processes with the shortest remaining execution time are prioritized to run first.
+        * A preemptive variation of shortest job first
+    * **Round robin:** 
+        * Where a fixed amount of execution time, called a time slice, is chosen and assigned to each process. 
+        * Each process is cycled through until eventually all of the processes are completed.
+    * **Multiple-level queue scheduling:** 
+        * where processes are categorized and then placed in multiple queues or levels with differing priorities.
 
 
 ### Introduction to Synchronization
@@ -80,18 +89,23 @@
 * In IO systems, blocking is a method in which when an IO makes a request, an application typically cannot continue executing other requests until it has the necessary information changes from the IO.
 * In contrast, non-blocking requests get placed into a queue while waiting so that the CPU resources can be used to complete other tasks from the event pool of an application.
 * The interrupt handler is like a pool or queue of interrupts being sent to the CPU. It handles the execution of interrupt signals as they are received from IO devices.
-* Memory-mapped IO refers to a system that is designed to allow both an IO device that is connected to a computer and the memory of the computer to share address space to the interface.
-* Direct memory access (DMA) refers to a method in which IO devices have direct access to the main memory of a computer. For DMA, a CPU will trigger the execution of data to/from an IO device to a computer, but then will continue to complete other tasks while the data transfer executes.
+* **Memory-mapped IO** 
+    * Ir refers to a system that is designed to allow both an IO device that is connected to a computer and the memory of the computer to share address space to the interface.
+* **Direct memory access (DMA)** 
+    * refers to a method in which IO devices have direct access to the main memory of a computer. 
+    * For DMA, a CPU will trigger the execution of data to/from an IO device to a computer, but then will continue to complete other tasks while the data transfer executes.
 * **IO SOFTWARE**
     * The **user-space** is the place in memory in which user processes run and the 
     * The **kernel-space** is the place in memory in which the kernel functions and manages system calls.
     * The user-space interacts with the kernel by sending system calls to the kernel-space.
-    * Layers of the IO system that support kernel-space include: 
+    * **Layers of the IO system** that support **user-space** include: 
+        * user-level IO software
+    * **Layers of the IO system** that support **kernel-space** include: 
         * device-independent software 
         * device drivers 
         * interrupt handlers
-    * Layers of the IO system that support user-space include: 
-        * user-level IO software
-    * Device drivers are device-specific code that is added to a computer so that a device may interact with a computer.
-    * The interrupt handler is a pool or queue of interrupts being sent to the CPU.
-    * Device-independent software refers to the software components that handle functions that are not specific to any single IO device.
+    * **Device drivers** 
+        * It **device-specific** code...  
+        * added to a computer so that **a device may interact with a computer**.
+    * **The interrupt handler** is a pool or queue of interrupts being sent to the CPU.
+    * **Device-independent** software refers to the software components that handle functions that are not specific to any single IO device.
