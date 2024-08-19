@@ -53,7 +53,6 @@ PHP is designed to interact with HTML to generate dynamic websites.
 * We can think of programs as series of instructions to be performed by the computer. 
 * A function is a set of instructions we package as a unit, often with a name, so that we can reuse it.
 <br />
-
 * Defining Functions
     * ```php
         <?php
@@ -70,36 +69,40 @@ PHP is designed to interact with HTML to generate dynamic websites.
         greetLearner()
         ```
 
-* Introduction to Functions
+* Introduction to Functions:
     * We can package a set of instructions within a named function to **reuse** whenever we’d like.
         * **Functions** can be defined with **parameters** wich are used as **variables**.
         * When Functions are invoked, the **values** given to these **parameters** are called **arguments**. 
-    * When we invoke a function, the computer will execute the function body, specified by the code block following the parameters list.
-    * Functions can return a value by using the return keyword otherwise they return NULL which means no value.
-    * We can store the return value of a function in a variable or use it any other way we’d use a value.
-    * We can define functions with parameters which are variables we can refer to throughout our function’s body.
-    * When invoking functions, the values that we give them are called arguments.
-    * Functions can have multiple parameters.
-    * The order in which the arguments are passed in decides which parameters they correspond to.
-    * You can make an argument optional by providing its corresponding parameter with a default value.
-    * If you prepend a parameter with the reference sign (&) that argument will be passed by reference.
-    * Variables within functions have local scope and can not be accessed from outside the function.
+    * When we invoke a function:
+        * the computer will execute the function body, specified by the code block following the parameters list.
+    * `return` keyword: return a value
+        * NULL means no value
+        * We can **store** the returned value as **variable** or **use** it as **value**.
+    * Define functions with **parameters** -variables we can refer to
+        * Functions can have multiple parameters.
+    * When invoking functions: given **values** are called **arguments**.
+    * The order defines which parameters they correspond to.
+    * You can make an argument optional by providing a **default value**.
+    * `&` : that argument will be passed by reference.
+    * Variables within functions have **local scope**
+        * Can not be accessed from outside the function.
     * Use the `global` keyword to use variables from the global scope within a function.
 * Build-In PHP Functions
-    *  built-in functions are functions provided by PHP
-    *  built-in functions often don’t follow the function naming conventions
+    * Functions provided by PHP
+    * (often) Don’t follow the function naming conventions
 
 ## PHP & HTML
-
-* Introduction to use PHP to generate HTML. 
-    * This will become even more powerful as we learn how to get **information from the client** and use that to **create dynamic websites**
-* The front-end of a website consists of JavaScript, CSS, HTML, images, and other static assets sent to the client.
-* **The browser** is the **client**
-    * It sends a request to the back-end for all the assets needed to view and interact with the website.
-* The back-end consists of a web server and all the logic and data needed to create and maintain a website or web application.
-* **PHP** is a **back-end language**.
-* **PHP** can be used to **generate HTML files**.
-* We **embed PHP scripts** within HTML by inserting PHP code between the opening `<?php` and closing `?>` tags.
+* Extremely powerful when using **information from the client** to create **dynamic websites**
+* **The front-end** 
+    * consists of JS, CSS, HTML, and static assets sent to the client.
+    * **The browser** is the **client**
+    * It sends a request to the back-end for all the assets needed (to view and interact with the website).
+* **The back-end:** 
+    * a web server and the logic and the data needed to create and maintain a website or web app.
+* **PHP** 
+    * is a **back-end language**.
+    * can be used to **generate HTML files**.
+    * `<?php` and `?>` to **embed PHP scripts** within HTML
 
 ### PHP shorthand
 
@@ -110,13 +113,13 @@ PHP is designed to interact with HTML to generate dynamic websites.
     * Use `endforeach` to close a foreach loop
     * Use `endwhile` to close a while loop
 * The closing keyword needs to be followed by a semicolon `:`.
-* Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` b**efore using PHP variables** in the loop
+* Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` before using PHP variables in the loop
 * Check: *Loops in Html > reviewLesson.php*
 * Check: *Cafe Menu > index.php*
 
 ### HTML FORM HANDLING IN PHP
 
-* **Superglobals** are automatic global variables which are **available in all scopes** throughout a script.
+* **Superglobals** are automatic global variables **available in all scopes**.
 * Request Superglobals
     * PHP has functionality to ease processing of HTML requests. 
 * The list of superglobals in PHP 
@@ -137,17 +140,20 @@ PHP is designed to interact with HTML to generate dynamic websites.
 * The `action` attribute is used to specify which file should handle data from the form request.
 * Check: *HtmlForms > ReviewExercise*
 
-### HTML FORM HANDLING IN PHP
+### Regular expressions
 
-* *I am too stupid to understand regular expressions, but here I come (again):*
 * **Regular expressions** are special sequences of characters that describe a pattern of text that is to be matched
 * **Literals** to match the exact characters that we desire
 * **Alternation**, using the pipe symbol `|`, allows us to match the text preceding or following the `|`
 * **Character sets** `[]`, let us match one character from a series of characters
 * **Wildcards**`.`, will match any single character (letter, number, symbol or whitespace)
 * **Ranges** allow us to specify a range of characters in which we can make a match
-**Shorthand character classes** like `\w`, `\d` and `\s` represent the ranges representing word characters, digit characters, and whitespace characters, respectively
-* **Groupings** `()`, group parts of a regular expression together, and allows us to limit alternation to part of a regex
+* **Shorthand character classes** like: 
+    * `\w` word characters
+    * `\d` digit characters
+    * `\s` whitespace characters
+* **Groupings** `()`, group parts of a regular expression together, and 
+    * allows us to limit alternation to part of a regex
 * **Fixed quantifiers** `{}`, let us indicate the exact quantity or a range of quantity of a character we wish to match
 * **Optional quantifiers** `?`, allow us to indicate a character in a regex is optional, or can appear either 0 times or 1 time
 * **The Kleene star** `*`, is a quantifier that matches the preceding character 0 or more times
@@ -200,8 +206,9 @@ PHP is designed to interact with HTML to generate dynamic websites.
 ### CLASSES AND OBJECTS
 
 * **Classes** are defined using the `class` keyword.
-* Functions defined within a class become methods and variables within the class are considered properties.
-* **Functions** defined within a class become **methods** and **variables** within the class are considered properties.
+* within a class:
+    * **Functions** become **methods** 
+    * **Variables** are **properties**.
 * There are three levels of visibility for class members:
     * `public` (default) - accessible from outside of the class
     * `protected` - only accessible within the class or its descendants
