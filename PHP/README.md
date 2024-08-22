@@ -217,3 +217,281 @@ PHP is designed to interact with HTML to generate dynamic websites.
 * Static members are accessed using the Scope Resolution Operator `::`.
 * Classes are instantiated into objects using the `new` keyword.
 * Members of an object are accessed using the Object Operator `->`.
+
+
+
+### PHP Fundamentals for Intermediate Web Developers
+
+* 1. Setting Up PHP
+    * Install PHP:
+    Use XAMPP or MAMP for an easy local environment setup.
+    Run PHP scripts through a local server (localhost).
+    * Basic PHP Syntax:
+    ```php  
+    <?php
+    echo "Hello, World!";
+    ?>
+    ```
+    * PHP code is written between <?php and ?>.
+    * Use echo to output content.
+* 2. Variables & Data Types
+    * Variables:
+        ```php
+        $name = "John";
+        $age = 25;
+        ```
+        * Variables start with $.
+        * No need to declare types; PHP is loosely typed.
+    * Data Types:
+        * String: $string = "Hello";
+        * Integer: $number = 10;
+        * Float: $price = 10.99;
+        * Boolean: $isTrue = true;
+        * Array: $fruits = array("apple", "banana", "orange");
+## 3. Basic Control Structures
+* If-Else:
+    ```php
+    if ($age >= 18) {
+        echo "Adult";
+    } else {
+        echo "Minor";
+    }
+    ```
+* Switch:
+    ```php
+    $day = "Monday";
+    switch ($day) {
+        case "Monday":
+            echo "Start of the week!";
+            break;
+        // More cases...
+        default:
+            echo "Unknown day!";
+    }
+    ```
+* Loops:
+    * For Loop:
+    ```php
+    for ($i = 0; $i < 10; $i++) {
+        echo $i;
+    }
+    ```
+    * While Loop:
+    ```php
+    $i = 0;
+    while ($i < 10) {
+        echo $i;
+        $i++;
+    }
+    ```
+## 4. Functions
+Defining & Using Functions:
+
+```php
+function greet($name) {
+    return "Hello, " . $name;
+}
+
+echo greet("Alice");
+Default Parameters:
+
+```php
+function greet($name = "Guest") {
+    return "Hello, " . $name;
+}
+
+echo greet(); // Outputs: Hello, Guest
+## 5. Working with Forms
+Handling Form Data:
+
+```php
+
+// HTML Form Example:
+<form method="POST" action="process.php">
+    <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
+// PHP (process.php):
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    echo "Hello, " . $username;
+}
+?>
+Validation & Sanitization:
+
+php
+
+$username = htmlspecialchars($_POST['username']);
+if (!empty($username)) {
+    // Process the form
+} else {
+    echo "Username is required!";
+}
+## 6. Rendering Dynamic Content
+Embedding PHP in HTML:
+
+php
+
+<h1><?php echo "Welcome, " . $username; ?></h1>
+Looping through Arrays for Dynamic Content:
+
+php
+
+$fruits = ["Apple", "Banana", "Orange"];
+foreach ($fruits as $fruit) {
+    echo "<li>" . $fruit . "</li>";
+}
+
+## 7. Introduction to AJAX with PHP
+AJAX Call in JavaScript:
+
+javascript
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "process.php", true);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById("response").innerHTML = xhr.responseText;
+    }
+};
+xhr.send("name=John");
+Processing AJAX Request in PHP:
+
+php
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    echo "Hello, " . $name;
+}
+?>
+
+## 8. Crucial PHP Functionalities
+Connecting to a Database:
+
+php
+
+$conn = new mysqli("localhost", "username", "password", "database");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+Basic CRUD Operations:
+
+Create:
+php
+
+$sql = "INSERT INTO users (name, email) VALUES ('John', 'john@example.com')";
+$conn->query($sql);
+Read:
+php
+
+$result = $conn->query("SELECT * FROM users");
+while($row = $result->fetch_assoc()) {
+    echo $row['name'];
+}
+Update:
+php
+
+$sql = "UPDATE users SET email='newemail@example.com' WHERE id=1";
+$conn->query($sql);
+Delete:
+php
+
+$sql = "DELETE FROM users WHERE id=1";
+$conn->query($sql);
+
+
+## 9. Classes and Objects in PHP
+Introduction to OOP in PHP
+Classes:
+
+A class is a blueprint for creating objects.
+It defines properties (variables) and methods (functions) that objects created from the class can use.
+Defining a Class:
+
+php
+
+class Car {
+    // Properties
+    public $make;
+    public $model;
+    
+    // Constructor
+    public function __construct($make, $model) {
+        $this->make = $make;
+        $this->model = $model;
+    }
+    
+    // Method
+    public function getDetails() {
+        return "Make: " . $this->make . ", Model: " . $this->model;
+    }
+}
+Creating Objects:
+
+Objects are instances of a class.
+Use the new keyword to create an object.
+php
+
+$myCar = new Car("Toyota", "Corolla");
+Accessing Properties and Methods:
+
+php
+
+echo $myCar->make; // Outputs: Toyota
+echo $myCar->getDetails(); // Outputs: Make: Toyota, Model: Corolla
+Key Concepts in PHP OOP
+Encapsulation:
+
+Control access to the properties and methods of a class using visibility keywords.
+Public: Accessible from anywhere.
+Private: Accessible only within the class.
+Protected: Accessible within the class and by inheriting classes.
+php
+
+class Car {
+    private $make;
+    
+    public function setMake($make) {
+        $this->make = $make;
+    }
+    
+    public function getMake() {
+        return $this->make;
+    }
+}
+Inheritance:
+
+A class can inherit properties and methods from another class.
+Use the extends keyword.
+php
+
+class ElectricCar extends Car {
+    public $batteryLife;
+    
+    public function setBatteryLife($batteryLife) {
+        $this->batteryLife = $batteryLife;
+    }
+}
+
+$tesla = new ElectricCar("Tesla", "Model S");
+$tesla->setBatteryLife("85 kWh");
+Constructors & Destructors:
+
+Constructor: Automatically called when an object is created. Initialize properties.
+Destructor: Automatically called when an object is destroyed. Clean up resources.
+php
+
+class Car {
+    public function __construct($make, $model) {
+        $this->make = $make;
+        $this->model = $model;
+    }
+    
+    public function __destruct() {
+        echo "Destroying " . $this->make . " " . $this->model;
+    }
+}
