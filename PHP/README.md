@@ -1,108 +1,212 @@
 # PHP
 
-## INTRODUCTION TO PHP
+## Introduction to PHP
 
-PHP is designed to interact with HTML to generate dynamic websites.
-*  `<?php` and `?>` tags:  Embedding PHP in HTML
-* Every statement in PHP must be terminated with a semicolon `;`
-* PHP files have a **.php** extension.
-    * The file always starts with the opening PHP tag `<?php`.
-    * The closing tag `?>` is implied and left out by convention.
-* Every statement in PHP must be terminated with a semicolon `;`
-*  Whitespace is generally ignored when executing PHP code.
-*  Keywords are not case sensitive in PHP. As a convention, use the standard casing.
-* Comments in PHP:
-    * Single line comments are made using `#` or `//`
-    * Multi-line comments are placed between `/*` and `*/`
+1. Introduction to PHP
+Purpose: PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.
 
-## PHP STRINGS AND VARIABLES
+Basic Syntax:
 
-* Strings are collections of text that the computer treats as a single piece of data.
-    * A string can be any length and contain any letters, numbers, symbols, or spaces surrounded by quotation marks.
-    * In order to include certain characters inside strings we have to use escape sequences `\`.
-* An operator is a character that performs a task in our code.
-    * We can use the concatenation operator `.` to combine two strings into one.
-* Variables allow us to easily reuse data in our code.
-    * We declare a variable using the dollar sign `$` followed by the variable name and then use the assignment operator `=` to give it a value:
-    * `$myVariable = ___`
-* PHP has **variable parsing**: includes variables directly in our strings.
-* **Reassignment**: Once a variable has been assigned, we can change its value. .
-* We can create an **alias for a variable**, instead of just a copy, using the reference assignment operator `=&`.
-* Operations to the right of the assignment operator will be evaluated before assignment takes place.
-* The concatenating assignment operator `.=` is a shorthand notation for reassigning a string variable to its current value appended with another string value.
+PHP Tags: PHP code is embedded in HTML using <?php and ?>.
+File Extension: PHP files have a .php extension.
+Statements: Each statement ends with a semicolon ;.
+Comments:
+Single-line: // or #
+Multi-line: /* comment */
+Case Sensitivity:
+Keywords are not case-sensitive (e.g., echo vs. Echo), but variables are case-sensitive.
+Whitespace: Ignored between code elements.
 
-## PHP NUMBERS
-* PHP has two number data types: integers and floating point numbers
-* We can use arithmetic operators for performing math operations:
-    * Addition	+	`echo 1 + 4.5;` // Prints: 5.5
-    * Subtraction	-	`echo 9 - 1;` // Prints: 8
-    * Multiplication	*	`echo -1.9 * 2.9;` // Prints: -5.51
-    * Division	/	`echo 9 / 1;` // Prints: 9
-    * Modulo	%	`echo 11 % 3;` // Prints: 2
-    * Exponentiation	**	`echo 8**2;` // Prints: 64
-* We can assign number values to variables and then perform numerical operations with them
-* We can use mathematical assignment operators as a shorthand when reassigning number variables:
-    * Add	`$x = $x + $y` ⮕ `$x += $y`
-    * Subtract	`$x = $x - $y` ⮕ `$x -= $y`
-    * Multiply	`$x = $x * $y` ⮕ `$x *= $y`
-    * Divide	`$x = $x / $y` ⮕ `$x /= $y`
-    * Mod	`$x = $x % $y` ⮕ `$x %= $y`
+php
+Copy code
+<?php
+echo "Hello, World!";
+?>
+2. PHP Strings and Variables
+Strings:
 
-## PHP FUNCTIONS
+Text enclosed in quotes.
+Can include special characters using escape sequences (\).
+Concatenation: Combine strings with . operator.
+Example:
+php
+Copy code
+$greeting = "Hello, " . "World!";
+Variables:
 
-* We can think of programs as series of instructions to be performed by the computer. 
-* A function is a set of instructions we package as a unit, often with a name, so that we can reuse it.
-<br />
-* Defining Functions
-    * ```php
-        <?php
-        function greetLearner()
-        {
-        echo "Hello, Learner! \n";
-        echo "I hope you're enjoying PHP! \n";
-        }
-        ```
-* Invoking functions
-    * ```php
-        <!-- ... -->
-        greetLearner()
-        greetLearner()
-        ```
+Defined using $ followed by the variable name.
+Variables can store strings, numbers, arrays, objects, etc.
+Example:
+php
+Copy code
+$name = "John";
+Variable Parsing:
 
-* Introduction to Functions:
-    * We can package a set of instructions within a named function to **reuse** whenever we’d like.
-        * **Functions** can be defined with **parameters** wich are used as **variables**.
-        * When Functions are invoked, the **values** given to these **parameters** are called **arguments**. 
-    * When we invoke a function:
-        * the computer will execute the function body, specified by the code block following the parameters list.
-    * `return` keyword: return a value
-        * NULL means no value
-        * We can **store** the returned value as **variable** or **use** it as **value**.
-    * Define functions with **parameters** -variables we can refer to
-        * Functions can have multiple parameters.
-    * When invoking functions: given **values** are called **arguments**.
-    * The order defines which parameters they correspond to.
-    * You can make an argument optional by providing a **default value**.
-    * `&` : that argument will be passed by reference.
-    * Variables within functions have **local scope**
-        * Can not be accessed from outside the function.
-    * Use the `global` keyword to use variables from the global scope within a function.
-* Build-In PHP Functions
-    * Functions provided by PHP
-    * (often) Don’t follow the function naming conventions
+Variables inside double-quoted strings are automatically parsed.
+Example:
+php
+Copy code
+$message = "Hello, $name!";
+Variable Reassignment:
 
-## PHP & HTML
-* Extremely powerful when using **information from the client** to create **dynamic websites**
-* **The front-end** 
-    * consists of JS, CSS, HTML, and static assets sent to the client.
-    * **The browser** is the **client**
-    * It sends a request to the back-end for all the assets needed (to view and interact with the website).
-* **The back-end:** 
-    * a web server and the logic and the data needed to create and maintain a website or web app.
-* **PHP** 
-    * is a **back-end language**.
-    * can be used to **generate HTML files**.
-    * `<?php` and `?>` to **embed PHP scripts** within HTML
+Reassign with new values using = operator.
+Reference assignment uses =&.
+Example:
+php
+Copy code
+$alias = &$name;
+3. PHP Numbers
+Data Types:
+
+Integers: Whole numbers.
+Floating-Point Numbers: Numbers with decimal points.
+Arithmetic Operators:
+
+Addition: +
+Subtraction: -
+Multiplication: *
+Division: /
+Modulus: %
+Exponentiation: **
+Example:
+
+php
+Copy code
+$sum = 10 + 5;
+$product = 2 * 3;
+Mathematical Assignment Operators:
+
++=, -=, *=, /=, %=
+Example:
+php
+Copy code
+$x = 10;
+$x += 5; // $x is now 15
+4. PHP Functions
+Defining Functions:
+
+Functions package reusable code blocks.
+Syntax:
+php
+Copy code
+function functionName() {
+    // Code to execute
+}
+Invoking Functions:
+
+Example:
+php
+Copy code
+function greet() {
+    echo "Hello!";
+}
+
+greet(); // Calls the function
+Parameters and Arguments:
+
+Functions can accept parameters, which are variables used within the function.
+Example:
+php
+Copy code
+function greet($name) {
+    return "Hello, $name!";
+}
+
+echo greet("John"); // Output: Hello, John!
+Return Values:
+
+Use return to send a value back from a function.
+Example:
+php
+Copy code
+function add($a, $b) {
+    return $a + $b;
+}
+
+$result = add(3, 4); // $result is 7
+Scope:
+
+Local Scope: Variables defined within a function.
+Global Scope: Variables accessible throughout the script.
+Use global keyword to access global variables inside a function.
+5. PHP and HTML Integration
+Embedding PHP in HTML:
+
+PHP can be used to dynamically generate HTML content.
+Example:
+php
+Copy code
+<h1><?php echo "Welcome, $name!"; ?></h1>
+Shorthand PHP Syntax:
+
+Use <?= as shorthand for <?php echo.
+Example:
+php
+Copy code
+<h1><?= "Welcome, $name!"; ?></h1>
+HTML Forms:
+
+Form Handling:
+Data from HTML forms is handled using PHP superglobals: $_GET, $_POST, $_REQUEST.
+Example:
+php
+Copy code
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    echo "Hello, $username!";
+}
+6. PHP Classes and Objects
+Defining Classes:
+
+Classes are blueprints for creating objects.
+Syntax:
+php
+Copy code
+class MyClass {
+    public $property;
+    public function myMethod() {
+        // Code
+    }
+}
+Creating Objects:
+
+Instantiate a class using the new keyword.
+Example:
+php
+Copy code
+$object = new MyClass();
+Accessing Properties and Methods:
+
+Use -> to access properties and methods.
+Example:
+php
+Copy code
+$object->property = "Value";
+$object->myMethod();
+Visibility:
+
+Public: Accessible from outside the class.
+Private: Accessible only within the class.
+Protected: Accessible within the class and subclasses.
+Static Members:
+
+Access using :: operator.
+Example:
+php
+Copy code
+class MyClass {
+    public static $staticProperty = "Value";
+    public static function staticMethod() {
+        // Code
+    }
+}
+
+echo MyClass::$staticProperty;
+MyClass::staticMethod();
+This structured guide should help you understand and take concise notes on the basics of PHP, its integration with HTML, and fundamental principles of classes and objects in PHP. As you continue with more advanced concepts, building on these foundations will be much easier.
+
+
+
 
 ### PHP shorthand
 
