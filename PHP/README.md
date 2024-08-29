@@ -1,88 +1,75 @@
-# PHP
+* **# PHP
 
 ## Introduction to PHP
 
-1. Introduction to PHP
-Purpose: PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.
-
-Basic Syntax:
-
-PHP Tags: PHP code is embedded in HTML using <?php and ?>.
-File Extension: PHP files have a .php extension.
-Statements: Each statement ends with a semicolon ;.
-Comments:
-Single-line: // or #
-Multi-line: /* comment */
-Case Sensitivity:
-Keywords are not case-sensitive (e.g., echo vs. Echo), but variables are case-sensitive.
-Whitespace: Ignored between code elements.
-
-php
-Copy code
+* **1 - Introduction to PHP**
+* Purpose:      
+    PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.
+* Basic Syntax:
+    * PHP Tags: PHP code is embedded in HTML using <?php and ?>.
+    * File Extension: PHP files have a .php extension.
+    * Statements: Each statement ends with a semicolon ;.
+    * Comments:
+        * Single-line: // or #
+        * Multi-line: /* comment */
+    * Case Sensitivity:
+    * Keywords are not case-sensitive (e.g., echo vs. Echo), but variables are case-sensitive.
+    * Whitespace: Ignored between code elements.
+```php
 <?php
 echo "Hello, World!";
 ?>
-2. PHP Strings and Variables
-Strings:
+```
 
-Text enclosed in quotes.
-Can include special characters using escape sequences (\).
-Concatenation: Combine strings with . operator.
-Example:
-php
-Copy code
+* **2 - PHP Strings and Variables**
+* Strings:
+    * Text enclosed in quotes.
+    * Can include special characters using escape sequences (\).
+    * Concatenation: Combine strings with . operator.
+```php
 $greeting = "Hello, " . "World!";
-Variables:
-
-Defined using $ followed by the variable name.
-Variables can store strings, numbers, arrays, objects, etc.
-Example:
-php
-Copy code
+```
+* Variables:
+    * Defined using $ followed by the variable name.
+    * Variables can store strings, numbers, arrays, objects, etc.
+```php
 $name = "John";
-Variable Parsing:
-
-Variables inside double-quoted strings are automatically parsed.
-Example:
-php
-Copy code
+```
+* Variable Parsing:
+    * Variables inside double-quoted strings are automatically parsed.
+```php
 $message = "Hello, $name!";
-Variable Reassignment:
-
-Reassign with new values using = operator.
-Reference assignment uses =&.
-Example:
-php
-Copy code
+```
+* Variable Reassignment:
+    * Reassign with new values using = operator.
+    * Reference assignment uses =&.
+```php
 $alias = &$name;
-3. PHP Numbers
-Data Types:
+```
 
-Integers: Whole numbers.
-Floating-Point Numbers: Numbers with decimal points.
-Arithmetic Operators:
-
-Addition: +
-Subtraction: -
-Multiplication: *
-Division: /
-Modulus: %
-Exponentiation: **
-Example:
-
-php
-Copy code
+* **3 -  PHP Numbers**
+* Data Types:
+    * Integers: Whole numbers.
+    * Floating-Point Numbers: Numbers with decimal points.
+* Arithmetic Operators:
+    * Addition: +
+    * Subtraction: -
+    * Multiplication: *
+    * Division: /
+    * Modulus: %
+    * Exponentiation: **
+    * Example:
+```php
 $sum = 10 + 5;
 $product = 2 * 3;
-Mathematical Assignment Operators:
-
-+=, -=, *=, /=, %=
-Example:
-php
-Copy code
+```
+* Mathematical Assignment Operators:
+    * +=, -=, *=, /=, %=
+```php
 $x = 10;
 $x += 5; // $x is now 15
-4. PHP Functions
+```
+* **4 - - PHP Functions**
 Defining Functions:
 
 Functions package reusable code blocks.
@@ -129,7 +116,7 @@ Scope:
 Local Scope: Variables defined within a function.
 Global Scope: Variables accessible throughout the script.
 Use global keyword to access global variables inside a function.
-5. PHP and HTML Integration
+* **5 - PHP and HTML Integration**
 Embedding PHP in HTML:
 
 PHP can be used to dynamically generate HTML content.
@@ -155,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     echo "Hello, $username!";
 }
-6. PHP Classes and Objects
+* **6 - PHP Classes and Objects**
 Defining Classes:
 
 Classes are blueprints for creating objects.
