@@ -3,133 +3,123 @@
 ## Introduction to PHP
 
 * **1 - Introduction to PHP**
-* Purpose:      
-    PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.
-* Basic Syntax:
-    * PHP Tags: PHP code is embedded in HTML using <?php and ?>.
-    * File Extension: PHP files have a .php extension.
-    * Statements: Each statement ends with a semicolon ;.
-    * Comments:
-        * Single-line: // or #
-        * Multi-line: /* comment */
-    * Case Sensitivity:
-    * Keywords are not case-sensitive (e.g., echo vs. Echo), but variables are case-sensitive.
-    * Whitespace: Ignored between code elements.
-```php
-<?php
-echo "Hello, World!";
-?>
-```
+    * Purpose:      
+        PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.
+    * Basic Syntax:
+        * PHP Tags: PHP code is embedded in HTML using <?php and ?>.
+        * File Extension: PHP files have a .php extension.
+        * Statements: Each statement ends with a semicolon ;.
+        * Comments:
+            * Single-line: // or #
+            * Multi-line: /* comment */
+        * Case Sensitivity:
+        * Keywords are not case-sensitive (e.g., echo vs. Echo), but variables are case-sensitive.
+        * Whitespace: Ignored between code elements.
+    ```php
+    <?php
+    echo "Hello, World!";
+    ?>
+    ```
 
 * **2 - PHP Strings and Variables**
-* Strings:
-    * Text enclosed in quotes.
-    * Can include special characters using escape sequences (\).
-    * Concatenation: Combine strings with . operator.
-```php
-$greeting = "Hello, " . "World!";
-```
-* Variables:
-    * Defined using $ followed by the variable name.
-    * Variables can store strings, numbers, arrays, objects, etc.
-```php
-$name = "John";
-```
-* Variable Parsing:
-    * Variables inside double-quoted strings are automatically parsed.
-```php
-$message = "Hello, $name!";
-```
-* Variable Reassignment:
-    * Reassign with new values using = operator.
-    * Reference assignment uses =&.
-```php
-$alias = &$name;
-```
+    * Strings:
+        * Text enclosed in quotes.
+        * Can include special characters using escape sequences (\).
+        * Concatenation: Combine strings with . operator.
+    ```php
+    $greeting = "Hello, " . "World!";
+    ```
+    * Variables:
+        * Defined using $ followed by the variable name.
+        * Variables can store strings, numbers, arrays, objects, etc.
+    ```php
+    $name = "John";
+    ```
+    * Variable Parsing:
+        * Variables inside double-quoted strings are automatically parsed.
+    ```php
+    $message = "Hello, $name!";
+    ```
+    * Variable Reassignment:
+        * Reassign with new values using = operator.
+        * Reference assignment uses =&.
+    ```php
+    $alias = &$name;
+    ```
 
 * **3 -  PHP Numbers**
-* Data Types:
-    * Integers: Whole numbers.
-    * Floating-Point Numbers: Numbers with decimal points.
-* Arithmetic Operators:
-    * Addition: +
-    * Subtraction: -
-    * Multiplication: *
-    * Division: /
-    * Modulus: %
-    * Exponentiation: **
-    * Example:
-```php
-$sum = 10 + 5;
-$product = 2 * 3;
-```
-* Mathematical Assignment Operators:
-    * +=, -=, *=, /=, %=
-```php
-$x = 10;
-$x += 5; // $x is now 15
-```
+    * Data Types:
+        * Integers: Whole numbers.
+        * Floating-Point Numbers: Numbers with decimal points.
+    * Arithmetic Operators:
+        * Addition: +
+        * Subtraction: -
+        * Multiplication: *
+        * Division: /
+        * Modulus: %
+        * Exponentiation: **
+        * Example:
+    ```php
+    $sum = 10 + 5;
+    $product = 2 * 3;
+    ```
+    * Mathematical Assignment Operators:
+        * +=, -=, *=, /=, %=
+    ```php
+    $x = 10;
+    $x += 5; // $x is now 15
+    ```
+
 * **4 - - PHP Functions**
-Defining Functions:
+    * Functions: package reusable code blocks.    
+    * Syntax:
+    ```php
+    function functionName() {
+        // Code to execute
+    }
+    ```
+    * Invoking Functions:
+    ```php
+    function greet() {
+        echo "Hello!";
+    }
+    greet(); // Calls the function
+    ```
+    * Parameters and Arguments:
+    Functions can accept **parameters**, variables used within the function.
+    ```php
+    function greet($name) {
+        return "Hello, $name!";
+    }
+    echo greet("John"); // Output: Hello, John!
+    Return Values:
+    ```
+    * Use `return` to send a value back from a function.
+    Example:
+    ```php
+    function add($a, $b) {
+        return $a + $b;
+    }
+    $result = add(3, 4); // $result is 7
+    ```
+    * Scope:
+        * **Local Scope:** Variables defined within a function.
+        * **Global Scope:** Variables accessible throughout the script.
+        * Use `global` keyword to access global variables inside a function.
 
-Functions package reusable code blocks.
-Syntax:
-php
-Copy code
-function functionName() {
-    // Code to execute
-}
-Invoking Functions:
-
-Example:
-php
-Copy code
-function greet() {
-    echo "Hello!";
-}
-
-greet(); // Calls the function
-Parameters and Arguments:
-
-Functions can accept parameters, which are variables used within the function.
-Example:
-php
-Copy code
-function greet($name) {
-    return "Hello, $name!";
-}
-
-echo greet("John"); // Output: Hello, John!
-Return Values:
-
-Use return to send a value back from a function.
-Example:
-php
-Copy code
-function add($a, $b) {
-    return $a + $b;
-}
-
-$result = add(3, 4); // $result is 7
-Scope:
-
-Local Scope: Variables defined within a function.
-Global Scope: Variables accessible throughout the script.
-Use global keyword to access global variables inside a function.
 * **5 - PHP and HTML Integration**
-Embedding PHP in HTML:
-
+* Embedding PHP in HTML:
 PHP can be used to dynamically generate HTML content.
 Example:
 php
-Copy code
+
 <h1><?php echo "Welcome, $name!"; ?></h1>
 Shorthand PHP Syntax:
 
 Use <?= as shorthand for <?php echo.
 Example:
 php
-Copy code
+
 <h1><?= "Welcome, $name!"; ?></h1>
 HTML Forms:
 
@@ -137,7 +127,7 @@ Form Handling:
 Data from HTML forms is handled using PHP superglobals: $_GET, $_POST, $_REQUEST.
 Example:
 php
-Copy code
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     echo "Hello, $username!";
@@ -148,7 +138,7 @@ Defining Classes:
 Classes are blueprints for creating objects.
 Syntax:
 php
-Copy code
+
 class MyClass {
     public $property;
     public function myMethod() {
@@ -160,14 +150,14 @@ Creating Objects:
 Instantiate a class using the new keyword.
 Example:
 php
-Copy code
+
 $object = new MyClass();
 Accessing Properties and Methods:
 
 Use -> to access properties and methods.
 Example:
 php
-Copy code
+
 $object->property = "Value";
 $object->myMethod();
 Visibility:
@@ -180,7 +170,7 @@ Static Members:
 Access using :: operator.
 Example:
 php
-Copy code
+
 class MyClass {
     public static $staticProperty = "Value";
     public static function staticMethod() {
@@ -638,7 +628,7 @@ class Car {
 Sending JSON Data:
 
 javascript
-Copy code
+
 var xhr = new XMLHttpRequest();
 xhr.open("POST", "server-script.php", true);
 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -648,7 +638,7 @@ xhr.send(data);
 Handling JSON on the Server (PHP Example):
 
 php
-Copy code
+
 <?php
 $data = json_decode(file_get_contents("php://input"), true);
 $name = $data['name'];
@@ -660,7 +650,7 @@ echo json_encode(["message" => "Hello, $name. You are $age years old."]);
 Handling Errors:
 
 javascript
-Copy code
+
 xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
         if (xhr.status == 200) {
@@ -673,7 +663,7 @@ xhr.onreadystatechange = function() {
 Timeouts:
 
 javascript
-Copy code
+
 xhr.timeout = 5000; // Set timeout to 5 seconds
 xhr.ontimeout = function() {
     alert("The request timed out.");
@@ -685,21 +675,21 @@ jQuery provides easy-to-use methods for AJAX, such as $.ajax(), $.get(), and $.p
 Example: GET Request with jQuery
 
 javascript
-Copy code
+
 $.get("server-script.php", { name: "John" }, function(data) {
     $("#result").html(data);
 });
 Example: POST Request with jQuery
 
 javascript
-Copy code
+
 $.post("server-script.php", { name: "John", age: 30 }, function(data) {
     $("#result").html(data);
 });
 Handling JSON Responses with jQuery
 
 javascript
-Copy code
+
 $.post("server-script.php", { name: "John" }, function(data) {
     var response = JSON.parse(data);
     $("#result").html(response.message);
