@@ -108,69 +108,65 @@
         * Use `global` keyword to access global variables inside a function.
 
 * **5 - PHP and HTML Integration**
-* Embedding PHP in HTML:
-PHP can be used to dynamically generate HTML content.
-Example:
-php
-
+    * Embedding PHP in HTML:
+    * PHP can be used to dynamically generate HTML content.
+    * Example:
+```php
 <h1><?php echo "Welcome, $name!"; ?></h1>
+```
 Shorthand PHP Syntax:
 
 Use <?= as shorthand for <?php echo.
 Example:
-php
-
+```php
 <h1><?= "Welcome, $name!"; ?></h1>
+```
 HTML Forms:
 
 Form Handling:
 Data from HTML forms is handled using PHP superglobals: $_GET, $_POST, $_REQUEST.
 Example:
-php
-
+```php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     echo "Hello, $username!";
 }
+```
 * **6 - PHP Classes and Objects**
 Defining Classes:
 
 Classes are blueprints for creating objects.
 Syntax:
-php
-
+```php
 class MyClass {
     public $property;
     public function myMethod() {
         // Code
     }
 }
+```
 Creating Objects:
 
 Instantiate a class using the new keyword.
 Example:
-php
-
+```php
 $object = new MyClass();
-Accessing Properties and Methods:
+```
+* Accessing Properties and Methods:
 
 Use -> to access properties and methods.
-Example:
-php
 
+```php
 $object->property = "Value";
 $object->myMethod();
-Visibility:
-
-Public: Accessible from outside the class.
-Private: Accessible only within the class.
-Protected: Accessible within the class and subclasses.
-Static Members:
-
-Access using :: operator.
-Example:
-php
-
+```
+* Visibility:
+    * ***Public:*** Accessible from outside the class.
+    * ***Private:*** Accessible only within the class.
+    * ***Protected:*** Accessible within the class and subclasses.
+* Static Members:
+* Access using `::` operator.
+```php
 class MyClass {
     public static $staticProperty = "Value";
     public static function staticMethod() {
@@ -180,6 +176,7 @@ class MyClass {
 
 echo MyClass::$staticProperty;
 MyClass::staticMethod();
+```
 This structured guide should help you understand and take concise notes on the basics of PHP, its integration with HTML, and fundamental principles of classes and objects in PHP. As you continue with more advanced concepts, building on these foundations will be much easier.
 
 
