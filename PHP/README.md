@@ -1,4 +1,4 @@
-* **# PHP
+# PHP
 
 ## Introduction to PHP
 
@@ -70,7 +70,7 @@
     $x += 5; // $x is now 15
     ```
 
-* **4 - - PHP Functions**
+* **4 - PHP Functions**
     * Functions: package reusable code blocks.    
     * Syntax:
     ```php
@@ -109,75 +109,63 @@
 
 * **5 - PHP and HTML Integration**
     * Embedding PHP in HTML:
-    * PHP can be used to dynamically generate HTML content.
-    * Example:
-```php
-<h1><?php echo "Welcome, $name!"; ?></h1>
-```
-Shorthand PHP Syntax:
-
-Use <?= as shorthand for <?php echo.
-Example:
-```php
-<h1><?= "Welcome, $name!"; ?></h1>
-```
-HTML Forms:
-
-Form Handling:
-Data from HTML forms is handled using PHP superglobals: $_GET, $_POST, $_REQUEST.
-Example:
-```php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    echo "Hello, $username!";
-}
-```
+        * PHP can be used to dynamically generate HTML content.
+        ```php
+        <h1><?php echo "Welcome, $name!"; ?></h1>
+        ```
+    * Shorthand PHP Syntax:
+        * Use <?= as shorthand for <?php echo.
+        ```php
+        <h1><?= "Welcome, $name!"; ?></h1>
+        ```
+    * HTML Form Handling:
+        * Data is handled using PHP superglobals: `$_GET`, `$_POST`, `$_REQUEST`.
+        ```php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $username = $_POST['username'];
+            echo "Hello, $username!";
+        }
+        ```
 * **6 - PHP Classes and Objects**
-Defining Classes:
+    * **Defining classes:**
+        * Classes are blueprints for creating objects.
+        * Syntax:
+        ```php
+        class MyClass {
+            public $property;
+            public function myMethod() {
+                // Code
+            }
+        }
+        ```
+    * **Creating Objects:**
+        * Instantiate a class using the new keyword.
+        ```php
+        $object = new MyClass();
+        ```
+    * Accessing Properties and Methods:
+        * Use `->` to access properties and methods.
+        ```php
+        $object->property = "Value";
+        $object->myMethod();
+        ```
+    * Visibility:
+        * ***Public:*** Accessible from outside the class.
+        * ***Private:*** Accessible only within the class.
+        * ***Protected:*** Accessible within the class and subclasses.
+    * Static Members:
+        * Access using `::` operator.
+        ```php
+        class MyClass {
+            public static $staticProperty = "Value";
+            public static function staticMethod() {
+                // Code
+            }
+        }
 
-Classes are blueprints for creating objects.
-Syntax:
-```php
-class MyClass {
-    public $property;
-    public function myMethod() {
-        // Code
-    }
-}
-```
-Creating Objects:
-
-Instantiate a class using the new keyword.
-Example:
-```php
-$object = new MyClass();
-```
-* Accessing Properties and Methods:
-
-Use -> to access properties and methods.
-
-```php
-$object->property = "Value";
-$object->myMethod();
-```
-* Visibility:
-    * ***Public:*** Accessible from outside the class.
-    * ***Private:*** Accessible only within the class.
-    * ***Protected:*** Accessible within the class and subclasses.
-* Static Members:
-* Access using `::` operator.
-```php
-class MyClass {
-    public static $staticProperty = "Value";
-    public static function staticMethod() {
-        // Code
-    }
-}
-
-echo MyClass::$staticProperty;
-MyClass::staticMethod();
-```
-This structured guide should help you understand and take concise notes on the basics of PHP, its integration with HTML, and fundamental principles of classes and objects in PHP. As you continue with more advanced concepts, building on these foundations will be much easier.
+        echo MyClass::$staticProperty;
+        MyClass::staticMethod();
+        ```
 
 
 
