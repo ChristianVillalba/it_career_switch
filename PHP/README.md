@@ -19,7 +19,14 @@
     <?php
     echo "Hello, World!";
     ?>
-    ```
+    ```        
+    * Data Types:
+        * String: $string = "Hello";
+        * Integer: $number = 10;
+        * Float: $price = 10.99;
+        * Boolean: $isTrue = true;
+        * Array: $fruits = array("apple", "banana", "orange");
+        * ***Note:*** No need to declare types; PHP is loosely typed.
 
 * **2 - PHP Strings and Variables**
     * Strings:
@@ -69,6 +76,13 @@
     $x = 10;
     $x += 5; // $x is now 15
     ```
+* **2 - Variables & Data Types**
+    * Variables:
+        ```php
+        $name = "John";
+        $age = 25;
+        ```
+        * Variables start with $.
 
 * **4 - PHP Functions**
     * Functions: package reusable code blocks.    
@@ -93,6 +107,13 @@
     }
     echo greet("John"); // Output: Hello, John!
     Return Values:
+    ```
+    * Default Parameters:
+    ```php
+    function greet($name = "Guest") {
+        return "Hello, " . $name;
+    }
+    echo greet(); // Outputs: Hello, Guest
     ```
     * Use `return` to send a value back from a function.
     Example:
@@ -129,6 +150,9 @@
 * **6 - PHP Classes and Objects**
     * **Defining classes:**
         * Classes are blueprints for creating objects.
+        * within a class:
+            * **Functions** become **methods** 
+            * **Variables** are **properties**.
         * Syntax:
         ```php
         class MyClass {
@@ -139,18 +163,17 @@
         }
         ```
     * **Creating Objects:**
-        * Instantiate a class using the new keyword.
+        * Instantiate a class using the `new` keyword.
         ```php
         $object = new MyClass();
         ```
-    * Accessing Properties and Methods:
         * Use `->` to access properties and methods.
         ```php
         $object->property = "Value";
         $object->myMethod();
         ```
     * Visibility:
-        * ***Public:*** Accessible from outside the class.
+        * ***Public:*** (default) Accessible from outside the class.
         * ***Private:*** Accessible only within the class.
         * ***Protected:*** Accessible within the class and subclasses.
     * Static Members:
@@ -162,49 +185,60 @@
                 // Code
             }
         }
-
         echo MyClass::$staticProperty;
         MyClass::staticMethod();
         ```
+    * Constructors & Destructors:
+        * Constructor: Automatically called when an object is created. Initialize properties.
+        * Destructor: Automatically called when an object is destroyed. Clean up resources.
+        ```php
+        class Car {
+            public function __construct($make, $model) {
+                $this->make = $make;
+                $this->model = $model;
+            }
+            
+            public function __destruct() {
+                echo "Destroying " . $this->make . " " . $this->model;
+            }
+        }
+        ```
+    * Inheritance:
+        * A class can inherit properties and methods from another class.
+        * Use the `extends` keyword.
+        ```php
+        class ElectricCar extends Car {
+            public $batteryLife;
+            
+            public function setBatteryLife($batteryLife) {
+                $this->batteryLife = $batteryLife;
+            }
+        }
 
-
-
-
-### PHP shorthand
-
-* The PHP shorthand for loops uses a colon `:`  to open the code block.
-    * Instead of a bracket `{`
-* The shorthand uses keywords to close the code block instead of a bracket `}`:
-    * Use `endfor` to close a for loop
-    * Use `endforeach` to close a foreach loop
-    * Use `endwhile` to close a while loop
-* The closing keyword needs to be followed by a semicolon `:`.
-* Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` before using PHP variables in the loop
-* Check: *Loops in Html > reviewLesson.php*
-* Check: *Cafe Menu > index.php*
-
-### HTML FORM HANDLING IN PHP
-
-* **Superglobals** are automatic global variables **available in all scopes**.
-* Request Superglobals
-    * PHP has functionality to ease processing of HTML requests. 
-* The list of superglobals in PHP 
-    * $GLOBALS
-    * $_SERVER
-    * $_GET
-    * $_POST
-    * $_FILES
-    * $_COOKIE
-    * $_SESSION
-    * $_REQUEST
-    * $_ENV
-* `$_GET` - this contains an associative array of variables passed to the current script using **query parameters** in the **URL**
-* `$_POST` - this contains an associative array of variables passed to the current script using **a form submitted** using the **“POST” method**
-* `$_REQUEST` - this contains the contents of `$_GET`, `$_POST`, and `$_COOKIE`
-* `<?=` is shorthand for `<?php` echo.
-* The array keys in the PHP request superglobals are set by the `name` attributes in the HTML form, which need to be unique.
-* The `action` attribute is used to specify which file should handle data from the form request.
-* Check: *HtmlForms > ReviewExercise*
+        $tesla = new ElectricCar("Tesla", "Model S");
+        $tesla->setBatteryLife("85 kWh");
+        ```
+* **8 - Superglobals** 
+    * Automatic global variables **available in all scopes**.
+    * Request Superglobals
+        * PHP has functionality to ease processing of HTML requests. 
+    * The list of superglobals in PHP 
+        * $GLOBALS
+        * $_SERVER
+        * $_GET
+        * $_POST
+        * $_FILES
+        * $_COOKIE
+        * $_SESSION
+        * $_REQUEST
+        * $_ENV
+    * `$_GET` - this contains an associative array of variables passed to the current script using **query parameters** in the **URL**
+    * `$_POST` - this contains an associative array of variables passed to the current script using **a form submitted** using the **“POST” method**
+    * `$_REQUEST` - this contains the contents of `$_GET`, `$_POST`, and `$_COOKIE`
+    * `<?=` is shorthand for `<?php` echo.
+    * The array keys in the PHP request superglobals are set by the `name` attributes in the HTML form, which need to be unique.
+    * The `action` attribute is used to specify which file should handle data from the form request.
+    * Check: *HtmlForms > ReviewExercise*
 
 ### Regular expressions
 
@@ -226,72 +260,14 @@
 * **The Kleene plus** `+`, matches the preceding character 1 or more times
 * **The anchor symbols** hat `^` and dollar sign `$` are used to match text at the start and end of a string, respectively
 
-### INTRODUCTION TO PHP FORM VALIDATION
-
-* **Sanitize the data** Transform it into a safe and standardized format.
-* We can use the built-in PHP 
-    * `trim()` 
-        * function to remove any whitespace
-    * `htmlspecialchars()` 
-        * Transforms HTML elements into HTML entities (characters that represent HTML elements but won’t display as HTML), 
-        * The PHP interpreter doesn’t recognize them as HTML. 
-        * This prevents, for example, a man-in-the-middle attack in which malicious HTML is injected into a user’s  view of our site.
-    * `filter_var()` 
-        * The most powerful PHP function for sanitizing data
-        * This function operates on a variable and passes it through a “filter” that produces the desired outcome.
-        * As its first argument, filter_var() takes a variable. As its second, it takes an ID representing the type of filtering that should be performed.
-        * [PHP Sanitize filters Documentation](https://www.php.net/manual/en/filter.filters.sanitize)
-        * eg: `FILTER_SANITIZE_EMAIL`  
-        * It filtered out any characters not allowed in emails. Once sanitized, we can safely display user inputs.
-        * We can use `filter_var()` to validate as well as sanitize
-            * Check: *basicValidation > index.php*
-        * `filter_var()` accepts an optional third argument , often called `$options`, that allows us to fine-tune the operation of a given filter. 
-            * Check: *HtmlForms Php > OptionsInValidation > index.php*
-    * **Regex**
-        * A very common method for **validating data** is to **compare** the input to a pattern we define with a **regular expression**
-        * Check: *HtmlForms Php > CustomValidation > index.php*
-* Validating Against Back-end Data 
-    * Modern websites and web applications need to store a lot of data, they usually interact with databases on the back-end.
-    * An important application of this kind of validation is handling the creation of a user’s account
-    * Check: *HtmlForms Php > ValidationWithDatabase > index.php*
-* Sanitizing for Back-end Storage
-    * We always need to sanitize all data before storing it in our own databases.
-    * `preg_replace()` to sanitize data formatting (built-in func)
-* **Rerouting**
-    * the user has submitted a valid form
-        * `header()` function performs redirects
-        * Argument: str `"Location: url"`
-        *  `exit` to terminate the current script
-    * ```php
-        if (/* Is the submission data validated? */) {
-        header("Location: https://www.best-puppy-pix.com/");
-        exit;
-        }
-        ```
-
-### CLASSES AND OBJECTS
-
-* **Classes** are defined using the `class` keyword.
-* within a class:
-    * **Functions** become **methods** 
-    * **Variables** are **properties**.
-* There are three levels of visibility for class members:
-    * `public` (default) - accessible from outside of the class
-    * `protected` - only accessible within the class or its descendants
-    * `private` - only accessible within the defining class
-* Members can be defined to be `static`.
-* Static members are accessed using the Scope Resolution Operator `::`.
-* Classes are instantiated into objects using the `new` keyword.
-* Members of an object are accessed using the Object Operator `->`.
-
-
-
 ## PHP Fundamentals for Intermediate Web Developers
 
 * **1 - Setting Up PHP**
     * Install PHP:
-    Use XAMPP or MAMP for an easy local environment setup.
-    Run PHP scripts through a local server (localhost).
+        * Use XAMPP or MAMP for an easy local environment setup.
+        * Run PHP scripts through a local server (localhost).
+    * PHP code is written between <?php and ?>.
+    * Use echo to output content.
     * Basic PHP Syntax:
     ```php  
     <?php
@@ -300,21 +276,7 @@
     ```
     * PHP code is written between <?php and ?>.
     * Use echo to output content.
-* **2 - Variables & Data Types**
-    * Variables:
-        ```php
-        $name = "John";
-        $age = 25;
-        ```
-        * Variables start with $.
-        * No need to declare types; PHP is loosely typed.
-    * Data Types:
-        * String: $string = "Hello";
-        * Integer: $number = 10;
-        * Float: $price = 10.99;
-        * Boolean: $isTrue = true;
-        * Array: $fruits = array("apple", "banana", "orange");
-* **3 - Basic Control Structures**
+* **2 - Basic Control Structures**
     * If-Else:
         ```php
         if ($age >= 18) {
@@ -350,22 +312,19 @@
             $i++;
         }
         ```
-* **4 - Functions**
-    * Defining & Using Functions:
+* **3 - Rendering Dynamic Content**
+    * Embedding PHP in HTML:
     ```php
-    function greet($name) {
-        return "Hello, " . $name;
-    }
-    echo greet("Alice");
+    <h1><?php echo "Welcome, " . $username; ?></h1>
     ```
-    * Default Parameters:
+    * Looping through Arrays for Dynamic Content:
     ```php
-    function greet($name = "Guest") {
-        return "Hello, " . $name;
+    $fruits = ["Apple", "Banana", "Orange"];
+    foreach ($fruits as $fruit) {
+        echo "<li>" . $fruit . "</li>";
     }
-    echo greet(); // Outputs: Hello, Guest
     ```
-* **5 - Working with Forms**
+* **4 - Working with Forms**
     * Handling Form Data:
     ```php
     // HTML Form Example:
@@ -373,7 +332,6 @@
         <input type="text" name="username">
         <input type="submit" value="Submit">
     </form>
-
     // PHP (process.php):
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -391,103 +349,48 @@
         echo "Username is required!";
     }
     ```
-* **6. Rendering Dynamic Content**
-    * Embedding PHP in HTML:
-    ```php
-    <h1><?php echo "Welcome, " . $username; ?></h1>
-    ```
-    * Looping through Arrays for Dynamic Content:
-    ```php
-    $fruits = ["Apple", "Banana", "Orange"];
-    foreach ($fruits as $fruit) {
-        echo "<li>" . $fruit . "</li>";
-    }
-    ```
-* **7. Classes and Objects in PHP**
-#### Introduction to OOP in PHP
-* Classes:
-    * A class is a blueprint for creating objects.
-    * It defines properties (variables) and methods (functions) that objects created from the class can use.
-* Defining a Class:
-```php
-class Car {
-    // Properties
-    public $make;
-    public $model;
-    
-    // Constructor
-    public function __construct($make, $model) {
-        $this->make = $make;
-        $this->model = $model;
-    }
-    
-    // Method
-    public function getDetails() {
-        return "Make: " . $this->make . ", Model: " . $this->model;
-    }
-}
-```
-* Creating Objects:
-    * Objects are instances of a class.
-    * Use the `new` keyword to create an object.
-```php
-$myCar = new Car("Toyota", "Corolla");
-```
-* Accessing Properties and Methods:
-```php
-echo $myCar->make; // Outputs: Toyota
-echo $myCar->getDetails(); // Outputs: Make: Toyota, Model: Corolla
-```
-#### Key Concepts in PHP OOP
-* Encapsulation:
-    * Control access to the properties and methods of a class using visibility keywords.
-    * ***Public:*** Accessible from anywhere.
-    * ***Private:*** Accessible only within the class.
-    * ***Protected:*** Accessible within the class and by inheriting classes.
-```php
-class Car {
-    private $make;
-    
-    public function setMake($make) {
-        $this->make = $make;
-    }
-    
-    public function getMake() {
-        return $this->make;
-    }
-}
-```
-* Inheritance:
-    * A class can inherit properties and methods from another class.
-    * Use the `extends` keyword.
-    ```php
-    class ElectricCar extends Car {
-        public $batteryLife;
-        
-        public function setBatteryLife($batteryLife) {
-            $this->batteryLife = $batteryLife;
-        }
-    }
-
-    $tesla = new ElectricCar("Tesla", "Model S");
-    $tesla->setBatteryLife("85 kWh");
-    ```
-* Constructors & Destructors:
-    * Constructor: Automatically called when an object is created. Initialize properties.
-    * Destructor: Automatically called when an object is destroyed. Clean up resources.
-```php
-class Car {
-    public function __construct($make, $model) {
-        $this->make = $make;
-        $this->model = $model;
-    }
-    
-    public function __destruct() {
-        echo "Destroying " . $this->make . " " . $this->model;
-    }
-}
-```
-* **8 - Crucial PHP Functionalities**
+* **5 - Introduction to PHP Form Validation**
+    * **Sanitize the data:** Transform it into a safe and standardized format.
+    * We can use the built-in PHP 
+        * `trim()` 
+            * function to remove any whitespace
+        * `htmlspecialchars()` 
+            * Transforms HTML elements into HTML entities (characters that represent HTML elements but won’t display as HTML), 
+            * The PHP interpreter doesn’t recognize them as HTML. 
+            * This prevents, for example, a man-in-the-middle attack in which malicious HTML is injected into a user’s  view of our site.
+        * `filter_var()` 
+            * The most powerful PHP function for sanitizing data
+            * This function operates on a variable and passes it through a “filter” that produces the desired outcome.
+            * As its first argument, filter_var() takes a variable. As its second, it takes an ID representing the type of filtering that should be performed.
+            * [PHP Sanitize filters Documentation](https://www.php.net/manual/en/filter.filters.sanitize)
+            * eg: `FILTER_SANITIZE_EMAIL`  
+            * It filtered out any characters not allowed in emails. Once sanitized, we can safely display user inputs.
+            * We can use `filter_var()` to validate as well as sanitize
+                * Check: *basicValidation > index.php*
+            * `filter_var()` accepts an optional third argument , often called `$options`, that allows us to fine-tune the operation of a given filter. 
+                * Check: *HtmlForms Php > OptionsInValidation > index.php*
+        * **Regex**
+            * A very common method for **validating data** is to **compare** the input to a pattern we define with a **regular expression**
+            * Check: *HtmlForms Php > CustomValidation > index.php*
+    * Validating Against Back-end Data 
+        * Modern websites and web applications need to store a lot of data, they usually interact with databases on the back-end.
+        * An important application of this kind of validation is handling the creation of a user’s account
+        * Check: *HtmlForms Php > ValidationWithDatabase > index.php*
+    * Sanitizing for Back-end Storage
+        * We always need to sanitize all data before storing it in our own databases.
+        * `preg_replace()` to sanitize data formatting (built-in func)
+    * **Rerouting**
+        * the user has submitted a valid form
+            * `header()` function performs redirects
+            * Argument: str `"Location: url"`
+            *  `exit` to terminate the current script
+        * ```php
+            if (/* Is the submission data validated? */) {
+            header("Location: https://www.best-puppy-pix.com/");
+            exit;
+            }
+            ```
+* **6 - Crucial PHP Functionalities**
     * Connecting to a Database:
     ```php
     $conn = new mysqli("localhost", "username", "password", "database");
@@ -518,28 +421,17 @@ class Car {
     $sql = "DELETE FROM users WHERE id=1";
     $conn->query($sql);
     ```
-* **9 - Introduction to AJAX with PHP**
-    * AJAX Call in JavaScript:
-    ```javascript
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "process.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("response").innerHTML = xhr.responseText;
-        }
-    };
-    xhr.send("name=John");
-    ```
-    * Processing AJAX Request in PHP:
-    ```php
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST['name'];
-        echo "Hello, " . $name;
-    }
-    ?>
-    ```
+* **7 -  PHP shorthand**
+    * The PHP shorthand for loops uses a colon `:`  to open the code block.
+        * Instead of a bracket `{`
+    * The shorthand uses keywords to close the code block instead of a bracket `}`:
+        * Use `endfor` to close a for loop
+        * Use `endforeach` to close a foreach loop
+        * Use `endwhile` to close a while loop
+    * The closing keyword needs to be followed by a semicolon `:`.
+    * Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` before using PHP variables in the loop
+    * Check: *Loops in Html > reviewLesson.php*
+    * Check: *Cafe Menu > index.php*
 
 ## AJAX Fundamentals for Intermediate Web Developers
 * 1 - What is AJAX?
