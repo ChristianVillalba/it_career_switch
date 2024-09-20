@@ -27,7 +27,6 @@
         * Boolean: $isTrue = true;
         * Array: $fruits = array("apple", "banana", "orange");
         * ***Note:*** No need to declare types; PHP is loosely typed.
-
 * **2 - PHP Strings and Variables**
     * Strings:
         * Text enclosed in quotes.
@@ -53,7 +52,6 @@
     ```php
     $alias = &$name;
     ```
-
 * **3 -  PHP Numbers**
     * Data Types:
         * Integers: Whole numbers.
@@ -76,14 +74,6 @@
     $x = 10;
     $x += 5; // $x is now 15
     ```
-* **2 - Variables & Data Types**
-    * Variables:
-        ```php
-        $name = "John";
-        $age = 25;
-        ```
-        * Variables start with $.
-
 * **4 - PHP Functions**
     * Functions: package reusable code blocks.    
     * Syntax:
@@ -127,7 +117,6 @@
         * **Local Scope:** Variables defined within a function.
         * **Global Scope:** Variables accessible throughout the script.
         * Use `global` keyword to access global variables inside a function.
-
 * **5 - PHP and HTML Integration**
     * Embedding PHP in HTML:
         * PHP can be used to dynamically generate HTML content.
@@ -218,10 +207,9 @@
         $tesla = new ElectricCar("Tesla", "Model S");
         $tesla->setBatteryLife("85 kWh");
         ```
-* **8 - Superglobals** 
+* **7 - Superglobals** 
     * Automatic global variables **available in all scopes**.
-    * Request Superglobals
-        * PHP has functionality to ease processing of HTML requests. 
+    * PHP has functionality to ease processing of HTML requests. 
     * The list of superglobals in PHP 
         * $GLOBALS
         * $_SERVER
@@ -235,7 +223,6 @@
     * `$_GET` - this contains an associative array of variables passed to the current script using **query parameters** in the **URL**
     * `$_POST` - this contains an associative array of variables passed to the current script using **a form submitted** using the **“POST” method**
     * `$_REQUEST` - this contains the contents of `$_GET`, `$_POST`, and `$_COOKIE`
-    * `<?=` is shorthand for `<?php` echo.
     * The array keys in the PHP request superglobals are set by the `name` attributes in the HTML form, which need to be unique.
     * The `action` attribute is used to specify which file should handle data from the form request.
     * Check: *HtmlForms > ReviewExercise*
@@ -274,8 +261,7 @@
     echo "Hello, World!";
     ?>
     ```
-    * PHP code is written between <?php and ?>.
-    * Use echo to output content.
+    * Use `<?=` as shorthand for `<?php echo`.
 * **2 - Basic Control Structures**
     * If-Else:
         ```php
