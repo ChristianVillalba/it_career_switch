@@ -253,7 +253,7 @@
     * Install PHP:
         * Use XAMPP or MAMP for an easy local environment setup.
         * Run PHP scripts through a local server (localhost).
-    * PHP code is written between <?php and ?>.
+    * PHP code is written between `<?php` and `?>`.
     * Use echo to output content.
     * Basic PHP Syntax:
     ```php  
