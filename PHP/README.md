@@ -312,12 +312,14 @@
     ```
 * **4 - Working with Forms**
     * Handling Form Data:
-    ```php
+    ```html
     // HTML Form Example:
     <form method="POST" action="process.php">
         <input type="text" name="username">
         <input type="submit" value="Submit">
     </form>
+    ```
+    ```php
     // PHP (process.php):
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -337,7 +339,7 @@
     ```
 * **5 - Introduction to PHP Form Validation**
     * **Sanitize the data:** Transform it into a safe and standardized format.
-    * We can use the built-in PHP 
+    * Built-in PHP Sanitization:
         * `trim()` 
             * function to remove any whitespace
         * `htmlspecialchars()` 
@@ -346,25 +348,26 @@
             * This prevents, for example, a man-in-the-middle attack in which malicious HTML is injected into a user’s  view of our site.
         * `filter_var()` 
             * The most powerful PHP function for sanitizing data
-            * This function operates on a variable and passes it through a “filter” that produces the desired outcome.
-            * As its first argument, filter_var() takes a variable. As its second, it takes an ID representing the type of filtering that should be performed.
-            * [PHP Sanitize filters Documentation](https://www.php.net/manual/en/filter.filters.sanitize)
-            * eg: `FILTER_SANITIZE_EMAIL`  
-            * It filtered out any characters not allowed in emails. Once sanitized, we can safely display user inputs.
+            * It filters a single variable using a specified filter: 
+                * As its first argument, it takes a variable. 
+                * As its second, it takes an ID representing the type of filtering.
+                * ... `filter_var($email, FILTER_VALIDATE_EMAIL)` ...
+                * [PHP Sanitize filters Documentation](https://www.php.net/manual/en/filter.filters.sanitize) 
+                * It filtered out any characters not allowed in emails. Once sanitized, we can safely display user inputs.
             * We can use `filter_var()` to validate as well as sanitize
                 * Check: *basicValidation > index.php*
             * `filter_var()` accepts an optional third argument , often called `$options`, that allows us to fine-tune the operation of a given filter. 
                 * Check: *HtmlForms Php > OptionsInValidation > index.php*
-        * **Regex**
-            * A very common method for **validating data** is to **compare** the input to a pattern we define with a **regular expression**
+        * ***Regular expressions***
+            * A very common method for **validating data** is to **compare** the input to a **Regex**
             * Check: *HtmlForms Php > CustomValidation > index.php*
-    * Validating Against Back-end Data 
+    * **Validating Against Back-end Data** 
         * Modern websites and web applications need to store a lot of data, they usually interact with databases on the back-end.
-        * An important application of this kind of validation is handling the creation of a user’s account
-        * Check: *HtmlForms Php > ValidationWithDatabase > index.php*
-    * Sanitizing for Back-end Storage
-        * We always need to sanitize all data before storing it in our own databases.
+            * eg: An important application of this kind of validation is handling the creation of a user’s account
+            * Check: *HtmlForms Php > ValidationWithDatabase > index.php*
+        * **Sanitizing for Back-end Storage**
         * `preg_replace()` to sanitize data formatting (built-in func)
+        * We always need to sanitize all data before storing it in our own databases.
     * **Rerouting**
         * the user has submitted a valid form
             * `header()` function performs redirects
