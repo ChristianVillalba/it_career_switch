@@ -369,25 +369,23 @@
         * `preg_replace()` to sanitize data formatting (built-in func)
         * We always need to sanitize all data before storing it in our own databases.
     * **Rerouting**
-        * the user has submitted a valid form
-            * `header()` function performs redirects
-            * Argument: str `"Location: url"`
-            *  `exit` to terminate the current script
+        * The user has submitted a valid input
+        * `header()` function performs redirects. Argument: str `"Location: url"`
+        *  `exit` to terminate the current script
         * ```php
             if (/* Is the submission data validated? */) {
             header("Location: https://www.best-puppy-pix.com/");
             exit;
             }
             ```
-* **6 - Crucial PHP Functionalities**
-    * Connecting to a Database:
+* **6 - Connecting to a Database**
     ```php
     $conn = new mysqli("localhost", "username", "password", "database");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     ```
-    * Basic CRUD Operations:
+* **7 - Basic CRUD Operations:**
     * Create:
     ```php
     $sql = "INSERT INTO users (name, email) VALUES ('John', 'john@example.com')";
@@ -410,21 +408,21 @@
     $sql = "DELETE FROM users WHERE id=1";
     $conn->query($sql);
     ```
-* **7 -  PHP shorthand**
-    * The PHP shorthand for loops uses a colon `:`  to open the code block.
+* **8 -  For Loop: shorthand**
+    * A colon `:`  to open the code block.
         * Instead of a bracket `{`
     * The shorthand uses keywords to close the code block instead of a bracket `}`:
         * Use `endfor` to close a for loop
         * Use `endforeach` to close a foreach loop
         * Use `endwhile` to close a while loop
-    * The closing keyword needs to be followed by a semicolon `:`.
+    * The closing keyword needs to be followed by a semicolon `;`.
     * Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` before using PHP variables in the loop
     * Check: *Loops in Html > reviewLesson.php*
     * Check: *Cafe Menu > index.php*
 
 ## AJAX Fundamentals for Intermediate Web Developers
-* 1 - What is AJAX?
-    * Definition:
+* 1 - AJAX
+    * Definition:     
     AJAX (Asynchronous JavaScript and XML) is a technique that allows web pages to update asynchronously by exchanging small amounts of data with the server behind the scenes.
     * Enables web applications to send and receive data without reloading the entire page.
     * Core Technologies:
