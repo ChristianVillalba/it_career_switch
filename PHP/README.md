@@ -423,18 +423,15 @@
 ## Form Handling in PHP
 
 * **1 - Introduction to Form Handling**
-Purpose: Form handling in PHP involves processing user inputs submitted via HTML forms.
-PHP Superglobals:
-$_GET: Retrieves form data sent via the URL (query string).
-$_POST: Retrieves form data sent via the POST method.
-$_REQUEST: Contains data from both $_GET and $_POST.
+    * Form handling in PHP involves processing user inputs submitted via HTML forms.
+    * PHP Superglobals:
+        * `$_GET`: Retrieves form data sent via the URL (query string).
+        * `$_POST`: Retrieves form data sent via the POST method.
+        * `$_REQUEST`: Contains data from both $_GET and $_POST.
 
 * **2-Basic Form Structure**
-HTML Form:
-Forms are used to collect user data and send it to a PHP script for processing.
-Example:
-html
-Copy code
+    * HTML Form: Forms are used to collect user data and send it to a PHP script for processing.
+```html
 <form action="process.php" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name">
@@ -444,122 +441,77 @@ Copy code
     
     <input type="submit" value="Submit">
 </form>
-Attributes:
-action: Specifies the PHP file that will handle the form data.
-method: Defines the HTTP method (GET or POST) used to send form data.
+```
+
+* Attributes:
+    * `action`: Specifies the PHP file that will handle the form data.
+    * `method`: Defines the HTTP method (GET or POST) used to send form data.
 
 * **3- Handling Form Data in PHP**
-Accessing Form Data:
-Use $_GET or $_POST superglobals to retrieve data.
-Example:
-php
-Copy code
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    * Accessing Form Data: `$_GET` or `$_POST` superglobals to retrieve data.
+    ```php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    
-    echo "Name: $name<br>";
+
+    echo "Name: $name<br>"; 
     echo "Email: $email<br>";
-}
-Note: Always check the request method ($_SERVER["REQUEST_METHOD"]) to ensure proper handling.
+    }
+    ```
+    * ***Note:*** Always check the request method `($_SERVER["REQUEST_METHOD"])` to ensure proper handling.
 
 * **4 - Validating Form Data**
-Purpose: Ensure the data received is valid and secure.
-Common Validation Techniques:
-Required Fields:
-
-Check if fields are filled out.
-Example:
-php
-Copy code
-if (empty($_POST["name"])) {
-    echo "Name is required";
-}
-Sanitizing Input:
-
-Use functions like htmlspecialchars() to prevent XSS attacks.
-Example:
-php
-Copy code
-$name = htmlspecialchars($_POST['name']);
-Validating Input:
-
-Use filter_var() to validate specific types of data (e.g., email).
-Example:
-php
-Copy code
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "Invalid email format";
-}
+    * Ensure the data received is **valid and secure**.
+    * Common Validation Techniques:
+        * **Required Fields:** Check if fields are filled out.
+        ```php
+        if (empty($_POST["name"])) {
+            echo "Name is required";
+        }
+        ```
+        * **Sanitizing Input:** Use functions like htmlspecialchars() to prevent XSS attacks.
+        ```php
+        $name = htmlspecialchars($_POST['name']);
+        ```
+        * **Validating Input:** `filter_var()` to validate specific types of data (e.g., email).
+        ```php
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email format";
+        }
+        ```
 
 * **5 - Processing Form Data**
-Storing Data:
-Data can be stored in a database, file, or sent via email.
-Example:
-php
-Copy code
+* **Storing Data:** Data can be stored in a database, file, or sent via email.
+```php
 // Example of storing in a database
 $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
-Redirecting After Submission:
-Use header() to redirect users after processing the form.
-Example:
-php
-Copy code
+```
+* **Redirecting After Submission:** `header()` to redirect users after processing the form.
+```php
 if ($formIsValid) {
     header("Location: thank_you.php");
     exit;
 }
+```
 
 * **6 - Form Handling Best Practices**
-Security Considerations:
-
-Always sanitize and validate inputs to prevent SQL injection and XSS.
-Use prepared statements when interacting with databases.
-User Feedback:
-
-Provide clear feedback to users on the status of their submission (e.g., success or error messages).
-Preserving Form Data:
-
-When validation fails, repopulate the form with the user's previously entered data.
-Example:
-php
-Copy code
+* Always **sanitize and validate** inputs to prevent SQL injection and XSS.
+* Use **prepared statements** when interacting with databases.
+* Provide clear **feedback to users** on the status of their submission (e.g., success or error messages).
+* Preserving Form Data: when validation fails, repopulate the form with the user's previously entered data.
+```php
 <input type="text" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
+```
 
 * **7 - Example: Complete Form Handling Script**
-php
-Copy code
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize inputs
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-
-    // Validate inputs
-    if (empty($name)) {
-        $errors[] = "Name is required";
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format";
-    }
-
-    // If no errors, process data
-    if (empty($errors)) {
-        // For example, store data in a database
-        // $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
-        
-        // Redirect after successful submission
-        header("Location: thank_you.php");
-        exit;
-    }
-}
-?>
-
-<!-- HTML Form -->
-<form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+```php
+// form_view.php
+<form action="../includes/form_processing.php" method="post"> // to process.php
+// if wanted to do it on to same page: index.php
+<!-- <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> --> 
+// if wanted to do it on to same page: index.php
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
-
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
 
@@ -570,11 +522,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 if (!empty($errors)) {
     foreach ($errors as $error) {
-        echo "<p>$error</p>";
+        echo "<p style='color:red;'>$error</p>";
     }
 }
 ?>
+```
 
+```php
+// form_processing.php
+<?php
+// Check if form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Initialize an errors array
+    $errors = [];
+    // Sanitize inputs
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    // Validate inputs
+    if (empty($name)) {
+        $errors[] = "Name is required";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    }
+    // If no errors, process data
+    if (empty($errors)) {
+        // Example: Store data in a database (logic not implemented here)
+        // $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
+
+        // Redirect after successful form submission
+        header("Location: ../thank_you.php");
+        exit;
+    }
+}
+?>
+```
+
+```php
+// thank_you.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+</head>
+<body>
+    <h1>Thank you for submitting the form!</h1>
+    <p>We have received your information.</p>
+</body>
+</html>
+```
 
 ## AJAX Fundamentals for Intermediate Web Developers
 * 1 - AJAX
