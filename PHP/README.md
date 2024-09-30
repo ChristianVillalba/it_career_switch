@@ -584,6 +584,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         * JavaScript: For creating AJAX requests.
         * XMLHttpRequest (XHR): The object used to interact with servers.
         * JSON: Commonly used data format in AJAX instead of XML.
+        
 * **2 - Basic Structure of an AJAX Request**
     * Steps to Perform an AJAX Call:
         * Create an XMLHttpRequest object.
@@ -621,8 +622,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     };
     ```
 
-* **4 - Common AJAX Methods**
-    * GET VS POST
+* **4 - Common AJAX Methods: GET VS POST**
     * GET:
         * Used for requesting data from a server.
         * Data is appended to the URL.
@@ -643,24 +643,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     xhr.send("name=John&age=30");
     ```
 
-* 5 - AJAX with JSON
-Sending JSON Data:
-```javascript
-var xhr = new XMLHttpRequest();
-xhr.open("POST", "server-script.php", true);
-xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-var data = JSON.stringify({ name: "John", age: 30 });
-xhr.send(data);
-Handling JSON on the Server (PHP Example):
-```
-```php
-<?php
-$data = json_decode(file_get_contents("php://input"), true);
-$name = $data['name'];
-$age = $data['age'];
-echo json_encode(["message" => "Hello, $name. You are $age years old."]);
-?>
-```
+* **5 - AJAX with JSON**
+    * Sending JSON Data:
+    ```javascript
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "server-script.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    var data = JSON.stringify({ name: "John", age: 30 });
+    xhr.send(data);
+    ```
+    * Handling JSON on the Server (PHP Example): 
+    ```php
+    <?php
+    $data = json_decode(file_get_contents("php://input"), true);
+    $name = $data['name'];
+    $age = $data['age'];
+    echo json_encode(["message" => "Hello, $name. You are $age years old."]);
+    ?>
+    ```
 
 * **6 - AJAX Error Handling**
     * Handling Errors:
@@ -675,37 +675,33 @@ echo json_encode(["message" => "Hello, $name. You are $age years old."]);
         }
     };
     ```
-
     * Timeouts:
     ```javascript
     xhr.timeout = 5000; // Set timeout to 5 seconds
     xhr.ontimeout = function() {
         alert("The request timed out.");
     };
-    * 7 - Using AJAX with jQuery
-    Simplifying AJAX Calls with jQuery:
-
-    jQuery provides easy-to-use methods for AJAX, such as $.ajax(), $.get(), and $.post().
-    Example: GET Request with jQuery
     ```
 
-javascript
-
-$.get("server-script.php", { name: "John" }, function(data) {
-    $("#result").html(data);
-});
-Example: POST Request with jQuery
-
-javascript
-
-$.post("server-script.php", { name: "John", age: 30 }, function(data) {
-    $("#result").html(data);
-});
-Handling JSON Responses with jQuery
-
-javascript
-
-$.post("server-script.php", { name: "John" }, function(data) {
-    var response = JSON.parse(data);
-    $("#result").html(response.message);
-});
+* **7 - Using AJAX with jQuery**
+    * Simplifying AJAX Calls with jQuery:    
+     jQuery provides easy-to-use methods for AJAX, such as `$.ajax()`, `$.get()`, and `$.post()`.
+    * GET Request with jQuery. Example: 
+    ```javascript
+    $.get("server-script.php", { name: "John" }, function(data) {
+        $("#result").html(data);
+    });
+    ```
+    * POST Request with jQuery. Example:  
+    ```javascript
+    $.post("server-script.php", { name: "John", age: 30 }, function(data) {
+        $("#result").html(data);
+    });
+    ```
+    * Handling JSON Responses with jQuery. Example: 
+    ```javascript
+    $.post("server-script.php", { name: "John" }, function(data) {
+        var response = JSON.parse(data);
+        $("#result").html(response.message);
+    });
+    ```
