@@ -575,133 +575,108 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>
 ```
 
-## AJAX Fundamentals for Intermediate Web Developers
+## AJAX Fundamentals 
 * **1 - AJAX**
     * Definition:     
-        * AJAX (Asynchronous JavaScript and XML) is a technique that allows web pages to update asynchronously by exchanging small amounts of data with the server behind the scenes.
+        * **AJAX (Asynchronous JavaScript and XML)** is a technique that allows web pages to update asynchronously by exchanging small amounts of data with the server behind the scenes.
         * Enables web applications to send and receive data without reloading the entire page.
-    * Core Technologies:
-        * JavaScript: For creating AJAX requests.
-        * XMLHttpRequest (XHR): The object used to interact with servers.
-        * JSON: Commonly used data format in AJAX instead of XML.
-        
-* **2 - Basic Structure of an AJAX Request**
-    * Steps to Perform an AJAX Call:
-        * Create an XMLHttpRequest object.
-        * Define a callback function to handle the server's response.
-        * Open a connection to the server.
-        * Send the request to the server.
-    * Basic Syntax Example:
-    ```javascript
-    // 1. Create an XMLHttpRequest object
-    var xhr = new XMLHttpRequest();
 
-    // 2. Define a callback function
-    xhr.onreadystatechange = function() {
+* **2 - AJAX Flow:**
+    * User interacts with the web page (e.g., clicks a button).
+    * JavaScript makes a request to the server using AJAX.
+    * Server processes the request (using PHP).
+    * Server responds with data (e.g., JSON, HTML).
+    * JavaScript dynamically updates the webpage with the server's response.
+
+* **3 - Basic Syntax of AJAX**
+    *  XMLHttpRequest or the Fetch API to send asynchronous requests from the client-side (JavaScript) to the server-side (PHP).
+    * Using XMLHttpRequest:
+    ```js
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "process.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // 5. Handle the response
-            document.getElementById("result").innerHTML = xhr.responseText;
+            // Handle server response
+            document.getElementById("response").innerHTML = xhr.responseText;
         }
     };
-    // 3. Open a connection
-    xhr.open("GET", "server-script.php", true);
-    // 4. Send the request
-    xhr.send();
+    // Sending data
+    xhr.send("name=John&email=john@example.com");
+    ```
+    * Using the Fetch API (modern approach):
+    ```js
+    fetch('process.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'name=John&email=john@example.com'
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Update the page dynamically with the response
+        document.getElementById('response').innerHTML = data;
+    });
     ```
 
-* **3 - Handling Responses - Response Types:**
-    * **Text:** xhr.responseText - Returns the response as a **string**.
-    * **XML:** xhr.responseXML - Returns the response as an **XML document**.
-    * Handling JSON Response:
-    ```javascript
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var data = JSON.parse(xhr.responseText);
-            document.getElementById("result").innerHTML = data.message;
+* **4 - Handling AJAX Requests with PHP**
+    * On the server-side, we use **PHP** to **process** the AJAX request and send a response.
+    * When using `POST` requests in **AJAX**, we can access data sent via `$_POST` in **PHP**:
+    ```php
+    // process.php
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Get POST data
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+
+        // Process data (e.g., store it, validate, etc.)
+        if (empty($name) || empty($email)) {
+            echo "Name and Email are required!";
+        } else {
+            // Respond with a success message or other data
+            echo "Hello, $name! Your email is $email.";
         }
-    };
+    }
     ```
 
-* **4 - Common AJAX Methods: GET VS POST**
-    * GET:
-        * Used for requesting data from a server.
-        * Data is appended to the URL.
-        * Limited data size.
-    * POST:
-        * Used for sending data to the server (e.g., form submissions).
-        * Data is sent in the request body.
-        * Can handle larger amounts of data.
-    * Example: GET Request
+* **6 - Returning JSON Responses**
+    * You can also use AJAX to request and return data in JSON format
+    * Useful for APIs or dynamic data.
+    * **JavaScript: Requesting & Handling JSON Responses:**
     ```javascript
-    xhr.open("GET", "server-script.php?name=John", true);
-    xhr.send();
+    fetch('process.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('response').innerHTML = `Welcome, ${data.name}!`;
+        } else {
+            document.getElementById('response').innerHTML = data.error;
+        }
+    });
     ```
-    * Example: POST Request
-    ```javascript
-    xhr.open("POST", "server-script.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("name=John&age=30");
-    ```
-
-* **5 - AJAX with JSON**
-    * Sending JSON Data:
-    ```javascript
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "server-script.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    var data = JSON.stringify({ name: "John", age: 30 });
-    xhr.send(data);
-    ```
-    * Handling JSON on the Server (PHP Example): 
+    * **PHP: Sending JSON Responses**
     ```php
     <?php
-    $data = json_decode(file_get_contents("php://input"), true);
-    $name = $data['name'];
-    $age = $data['age'];
-    echo json_encode(["message" => "Hello, $name. You are $age years old."]);
+    header('Content-Type: application/json');
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+
+        if (empty($name) || empty($email)) {
+            echo json_encode(["success" => false, "error" => "Fields are required!"]);
+        } else {
+            echo json_encode(["success" => true, "name" => $name, "email" => $email]);
+        }
+    }
     ?>
     ```
 
-* **6 - AJAX Error Handling**
-    * Handling Errors:
-    ```javascript
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                document.getElementById("result").innerHTML = xhr.responseText;
-            } else {
-                document.getElementById("result").innerHTML = "Error: " + xhr.status;
-            }
-        }
-    };
-    ```
-    * Timeouts:
-    ```javascript
-    xhr.timeout = 5000; // Set timeout to 5 seconds
-    xhr.ontimeout = function() {
-        alert("The request timed out.");
-    };
-    ```
+* **7 - AJAX Best Practices**
 
-* **7 - Using AJAX with jQuery**
-    * Simplifying AJAX Calls with jQuery:    
-     jQuery provides easy-to-use methods for AJAX, such as `$.ajax()`, `$.get()`, and `$.post()`.
-    * GET Request with jQuery. Example: 
-    ```javascript
-    $.get("server-script.php", { name: "John" }, function(data) {
-        $("#result").html(data);
-    });
-    ```
-    * POST Request with jQuery. Example:  
-    ```javascript
-    $.post("server-script.php", { name: "John", age: 30 }, function(data) {
-        $("#result").html(data);
-    });
-    ```
-    * Handling JSON Responses with jQuery. Example: 
-    ```javascript
-    $.post("server-script.php", { name: "John" }, function(data) {
-        var response = JSON.parse(data);
-        $("#result").html(response.message);
-    });
-    ```
+* **8 - Contact Form with PHP and AJAX. Full Example:**
