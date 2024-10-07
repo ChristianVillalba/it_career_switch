@@ -743,10 +743,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     document.addEventListener("DOMContentLoaded", function() {
         const form = document.getElementById('contactForm');
         const responseDiv = document.getElementById('response');
-
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
-
             const formData = new FormData(form);
             const requestOptions = {
                 method: 'POST',
@@ -814,3 +812,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode($response);  // Encode the response as JSON
     ?>
     ```
+    * ***Note:*** `sendAjaxRequest`
+        * The function sendAjaxRequest keeps the code **modular and reusable** (AJAX best practices)
+        * **Code Reusability:**
+            * By defining the sendAjaxRequest function, you can reuse this function in multiple places if you have more AJAX requests in your project. 
+            * eg: submit another form or make another request to a different URL, just call sendAjaxRequest()
+        * **Separation of Concerns:**
+            * It keeps the code organized and makes the form handling code cleaner.
+            * This way, you can focus on handling the form submission (or response) in one place and delegate the actual network communication to another function.
+        * **Maintainability:**
+            * We might need to make changes to the way AJAX requests are sent (e.g., adding custom headers, changing the request method). 
+            * By centralizing the AJAX request logic in the `sendAjaxRequest` function, you only need to **make updates in one place** rather than in every part of your code.
+
+
