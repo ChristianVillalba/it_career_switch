@@ -227,6 +227,8 @@
     * The `action` attribute is used to specify which file should handle data from the form request.
     * Check: *HtmlForms > ReviewExercise*
 
+-----
+
 ### Regular expressions
 
 * **Regular expressions** are special sequences of characters that describe a pattern of text that is to be matched
@@ -246,6 +248,8 @@
 * **The Kleene star** `*`, is a quantifier that matches the preceding character 0 or more times
 * **The Kleene plus** `+`, matches the preceding character 1 or more times
 * **The anchor symbols** hat `^` and dollar sign `$` are used to match text at the start and end of a string, respectively
+
+-----
 
 ## PHP Fundamentals for Intermediate Web Developers
 
@@ -419,6 +423,7 @@
     * Make sure to re-enter PHP mode using `<?php` or the echo shorthand `<?=` before using PHP variables in the loop
     * Check: *Loops in Html > reviewLesson.php*
     * Check: *Cafe Menu > index.php*
+ -----
 
 ## Form Handling in PHP
 
@@ -511,10 +516,11 @@ if ($formIsValid) {
 <!-- <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> --> 
 // if wanted to do it on to same page: index.php
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
+    <input type="text" id="name" name="name" 
+        value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
-
+    <input type="email" id="email" name="email" 
+        value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
     <input type="submit" value="Submit">
 </form>
 
@@ -558,7 +564,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 ```
 
-```php
+```html
 // thank_you.php
 <!DOCTYPE html>
 <html lang="en">
@@ -574,6 +580,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 ```
+
+-----
 
 ## AJAX Fundamentals 
 * **1 - AJAX**
