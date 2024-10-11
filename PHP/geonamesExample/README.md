@@ -1,33 +1,33 @@
 Task: Point 5
 
 Best practices :
-● Write a meaningful <title> tag as this will be used by search engines.
-● All CSS stylesheets and JavaScript files must reside in the same folder structure as
+• Write a meaningful `<title>` tag as this will be used by search engines.    
+• All CSS stylesheets and JavaScript files must reside in the same folder structure as
 the application. Stylesheets and JavaScript libraries delivered from Content Delivery
 Networks (CDNs) are useful for online demos and examples but should not be used
-in production systems.
-● Use minified files whenever possible including your own. Most good program
+in production systems.    
+• Use minified files whenever possible including your own. Most good program
 editors will have extensions to do this and they can also act as an early warning for
-syntax errors.
-● Whilst links to stylesheets are always in the <head> section, links to JavaScript files
-should always be the last statements before the closing </body> tag. Browsers do
+syntax errors.    
+• Whilst links to stylesheets are always in the `<head>` section, links to JavaScript files
+should always be the last statements before the closing `</body>` tag. Browsers do
 not support asynchronous loading of files and so loading the JavaScript last will
-ensure that the HTML renders uninterrupted. Always use relative paths.
-● Ensure that your style sheet is the last to be loaded and that your JavaScript is also.
-● Never use inline styling or embed CSS in the <head> section.
-● Indent code to make it more readable.
-● Where possible combine CSS files together and JS files together to reduce the
-number of downloads.
-● Minify CSS and JS files.
-● Include a favicon.png in the root folder as some external systems search for it and
-use it as a default avatar.
-● Create folders to separate your CSS and JavaScript from external libraries.
-● Use a preloader to hide the main HTML whilst it loads. The window load event fires
-once the site has been rendered:
+ensure that the HTML renders uninterrupted. Always use relative paths.    
+• Ensure that your style sheet is the last to be loaded and that your JavaScript is also.    
+• Never use inline styling or embed CSS in the `<head>` section.    
+• Indent code to make it more readable.    
+• Where possible combine CSS files together and JS files together to reduce the
+number of downloads.    
+• Minify CSS and JS files.    
+• Include a favicon.png in the root folder as some external systems search for it and
+use it as a default avatar.    
+• Create folders to separate your CSS and JavaScript from external libraries.    
+• Use a preloader to hide the main HTML whilst it loads. The window load event fires
+once the site has been rendered:     
 ```HTML
 <div id=”preloader”></div>
 ```
-```CSS:
+```css:
 #preloader {
     position: fixed;
     top: 0;
