@@ -688,7 +688,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 * **7 - AJAX Best Practices**
     * **Error Handling:** Ensure you handle errors for failed requests (e.g., server issues, validation errors).
     ```js
-    Copy code
     fetch('process.php', { method: 'POST', body: formData })
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');

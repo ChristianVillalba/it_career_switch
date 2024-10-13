@@ -1,6 +1,6 @@
 Task: Point 5
 
-Best practices :
+Best practices :     
 • Write a meaningful `<title>` tag as this will be used by search engines.    
 • All CSS stylesheets and JavaScript files must reside in the same folder structure as
 the application. Stylesheets and JavaScript libraries delivered from Content Delivery
@@ -81,3 +81,19 @@ $(this).remove();
 }
 });
 ```
+
+--------
+--------
+
+Notes:
+
+* XAMPP: 
+    * Once you have a web server installed then you will have a new folder for storing your web applications.
+    * XAMPP will have a folder named “htdocs”.
+* cURL:
+    * It is a tool for transferring files and data with URL syntax.
+    * there is also a component in PHP that provides access to it.
+* getCountryInfo.php
+    * It makes use of cURL:
+        * A method that emulates typing the address into a browser bar, 
+        * and then stores the results to a variable
