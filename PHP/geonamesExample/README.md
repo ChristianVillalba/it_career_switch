@@ -97,3 +97,17 @@ Notes:
     * It makes use of cURL:
         * A method that emulates typing the address into a browser bar, 
         * and then stores the results to a variable
+    * syntax:
+        * The code that is provided here will work in many scenarios
+        * If other options are required to make other APIs work, then they will be provided as examples by the API provider.
+* index.HTML    
+    * each cell in the second column of the table
+have been assigned an id as has the two select and the button
+    * The last two lines before
+the </body> tag ensure that both jQUery and script.js are included in the app
+* script.js
+    * event handler on the “click” event of the button,
+    * Click > AJAX call to the PHP routine “getCountryInfo.php”,
+    * sets the expected format of whatever returns to json,
+    * and, passes the values as the parameters: country & lang.
+*  Tasks:
