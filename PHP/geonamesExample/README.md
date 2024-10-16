@@ -111,3 +111,8 @@ the </body> tag ensure that both jQUery and script.js are included in the app
     * sets the expected format of whatever returns to json,
     * and, passes the values as the parameters: country & lang.
 *  Tasks:
+    * Create a very simple HTML application with a table of other API’s
+    * The middle column, “API description”, should also include user inputs for the parameters required by each API.
+    * Select three other APIs from this list GeoNames WebServices overview to include in your app. 
+    * You’ll have to create your own free account and also enable API access in your account
+settings. 
