@@ -1,4 +1,4 @@
-Task: Point 5
+## Task: 
 
 Best practices :     
 • Write a meaningful `<title>` tag as this will be used by search engines.    
@@ -85,7 +85,7 @@ $(window).on('load', function () {
 --------
 --------
 
-Notes:
+## Notes:
 
 * XAMPP: 
     * Once you have a web server installed then you will have a new folder for storing your web applications.
@@ -116,3 +116,12 @@ the </body> tag ensure that both jQUery and script.js are included in the app
     * Select three other APIs from this list GeoNames WebServices overview to include in your app. 
     * You’ll have to create your own free account and also enable API access in your account
 settings. 
+
+
+--------
+--------
+
+## Completed Tasks:
+* ✔ Install Xampp (Web Server)
+* ✔ Run Geonames in localhost (using Xampp)
+* ✔ 
