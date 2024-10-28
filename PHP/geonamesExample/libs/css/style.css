@@ -1,43 +1,82 @@
-/* General Layout */
+/* Base styling for Bootstrap-like appearance */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #212529;
     text-align: center;
     margin: 0;
     padding: 20px;
+    font-size: rem;
 }
 
+/* Typography */
 h1 {
-    color: #56829e;
-    font-size: 24px;
+    color: #1b6ca8 ;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-/* Form Styling */
-select, button {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
-}
-
-select {
-    width: 180px;
+/* Form Control Styling */
+.selectButton {
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
     background-color: #fff;
-    color: #333;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    margin: 5px;
 }
 
+select:focus, button:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styling */
 button {
-    background-color: #56829e;
-    color: white;
-    border: none;
+    color: #fff;
+    background-color: #1b6ca8 ;
+    border: 1px solid transparent;
     cursor: pointer;
+    font-weight: bold;
 }
 button:hover {
-    background-color: #45697a;
+    background-color: #0056b3;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: #fff;
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 6px solid #e9ecef;
+    border-top: 6px solid #1b6ca8 ;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Results Table */
@@ -45,14 +84,51 @@ button:hover {
     margin-top: 20px;
     display: inline-block;
     text-align: left;
+    background: #fff;
+    padding: 15px;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
     border-collapse: collapse;
 }
+
+td {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+td:first-child {
+    text-align: right;
+    font-weight: 500;
+    color: #495057;
+}
+
+td:last-child {
+    text-align: left;
+    color: #343a40;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    select, button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #divResults {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Given css or the preloader html component */
 
 #preloader {
     position: fixed;
