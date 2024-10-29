@@ -4,129 +4,65 @@ body {
     background-color: #f8f9fa;
     color: #212529;
     text-align: center;
-    margin: 0;
     padding: 20px;
     font-size: rem;
 }
 
-/* Typography */
+/* css styles inspired in this project: 
+https://github.com/ChristianVillalba/react_complete_guide/tree/main/01-starting-project */
+
 h1 {
     color: #1b6ca8 ;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
+ .divSelection {
+    background-color: #1b6ca8;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 80%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  .selectMenu{ 
+    background-color: #FFFECB;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 30%;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 
-/* Form Control Styling */
-.selectButton {
-    display: inline-block;
-    width: auto;
-    padding: 10px 15px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease;
-    margin: 5px;
-}
-
-select:focus, button:focus {
-    border-color: #80bdff;
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-/* Button Styling */
-button {
-    color: #fff;
-    background-color: #1b6ca8 ;
-    border: 1px solid transparent;
+  }
+  .runButton {
+    font-weight: 600;
     cursor: pointer;
-    font-weight: bold;
-}
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Preloader */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background: #fff;
-}
-
-#preloader:before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border: 6px solid #e9ecef;
-    border-top: 6px solid #1b6ca8 ;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Results Table */
-#divResults {
-    margin-top: 20px;
-    display: inline-block;
+    padding: 1rem 1.5rem;
+    border: 1px solid #FFFECB;
+    background-color: #F5F4B3;
+    color: #1b6ca8;
+    border-radius: 12px;
+    margin-right: 1rem;
+  }
+  .runButton:hover,
+  .runButton:active {
+    background-color: white;
+    border-color: white;
+  }
+  .divResults {
+    background-color: #FFFECB;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 80%;
+    border-radius: 12px;
     text-align: left;
-    background: #fff;
-    padding: 15px;
-    border-radius: 0.25rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  
 
-table {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #e9ecef;
-    vertical-align: middle;
-}
-
-td:first-child {
-    text-align: right;
-    font-weight: 500;
-    color: #495057;
-}
-
-td:last-child {
-    text-align: left;
-    color: #343a40;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-    select, button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    #divResults {
-        width: 100%;
-        max-width: 100%;
-    }
-}
 
 /* Given css or the preloader html component */
 

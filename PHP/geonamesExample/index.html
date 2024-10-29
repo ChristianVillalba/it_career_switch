@@ -18,28 +18,33 @@
 	<body>
 		<h1>GeoNames Example</h1>
 
-		<select id="selCountry" class="selectButton">
+		<div class="divSelection">
+
+		<select id="selCountry" class="selectMenu">
 			<option value="GB">Great Britain</option>
 			<option value="FR">France</option>
 			<option value="DE">Germany</option>
 			<option value="US">USA</option>
 		</select>
 
-		<select id="selLanguage" class="selectButton">
+		<select id="selLanguage" class="selectMenu">
 			<option value="en">English</option>
 			<option value="fr">Francais</option>
 			<option value="de">Deutsche</option>
 		</select>
 
-		<button id="btnRun">Run</button>
+		<button id="btnRun" class="runButton">Run</button>
+
+	</div>
+
 		<!-- preloadoer -->
 		<div id="preloader"></div>
 
 
 		<br><br>
 
-		<div id="divResults">
-			<table>
+		<div id="divResults" class="divResults">
+			<table class="tableResults">
 				<tr>
 					<td align="right">
 						Continent: 
