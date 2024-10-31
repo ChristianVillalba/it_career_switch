@@ -1,3 +1,7 @@
+/* css styles inspired in this project: 
+https://github.com/ChristianVillalba/react_complete_guide/tree/main/01-starting-project */
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -6,17 +10,16 @@ body {
     padding: 20px;
     font-size: rem;
 }
-
-/* css styles inspired in this project: 
-https://github.com/ChristianVillalba/react_complete_guide/tree/main/01-starting-project */
-
 h1 {
     color: #1b6ca8 ;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
- .divSelection {
-    background-color: #1b6ca8;
+
+
+/* Table Container */
+.apiSelection {
+    background-color: #ffffd5;
     padding: 1rem;
     margin: 1rem auto;
     width: 50rem;
@@ -24,47 +27,50 @@ h1 {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  }
-  .selectMenu{ 
-    background-color: #FFFECB;
-    padding: 1rem;
-    margin: 1rem auto;
-    width: 50rem;
-    max-width: 30%;
-    border-radius: 12px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
 
-  }
-  .runButton {
+.apiTableSelection {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.tableRowHeader {
+    background-color: #1b6ca8;
+    color: white;
     font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 12px;
+}
+
+.tableCell {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    color: #343a40;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.runButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #1b6ca8;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    padding: 1rem 1.5rem;
-    border: 1px solid #FFFECB;
-    background-color: #F5F4B3;
-    color: #1b6ca8;
-    border-radius: 12px;
-    margin-right: 1rem;
-  }
-  .runButton:hover,
-  .runButton:active {
-    background-color: white;
-    border-color: white;
-  }
-  .divResults {
-    background-color: #FFFECB;
-    padding: 1rem;
-    margin: 1rem auto;
-    width: 50rem;
-    max-width: 80%;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  }
-  
+    transition: background-color 0.3s ease;
+}
+.runButton:hover {
+    background-color: #007bff;
+}
+.runButton:active {
+    background-color: #004080;
+    transform: scale(0.95); /* Slightly shrinks button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow depth */
+}
 
-
-/* Given css or the preloader html component */
-
+/* Given css on the preloader html component */
 #preloader {
     position: fixed;
     top: 0;
@@ -108,4 +114,5 @@ h1 {
     transform: rotate(360deg);
     }
 }
-
+    
+    
