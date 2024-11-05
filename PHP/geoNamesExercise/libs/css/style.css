@@ -66,6 +66,18 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow depth */
 }
 
+.divResults {
+    background-color: #FFFECB;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 80%;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+
 /* Given css on the preloader html component */
 #preloader {
     position: fixed;

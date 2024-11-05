@@ -1,81 +1,26 @@
-// geonames - example button
-// $('#btnRun').click(function() {
-// 		$.ajax({
-// 			url: "libs/php/getCountryInfo.php",
-// 			type: 'POST',
-// 			dataType: 'json',
-// 			data: {
-// 				country: $('#selCountry').val(),
-// 				lang: $('#selLanguage').val()
-// 			},
-// 			success: function(result) {
-// 				console.log(JSON.stringify(result));
-// 				if (result.status.name == "ok") {
-// 					$('#txtContinent').html(result['data'][0]['continent']);
-// 					$('#txtCapital').html(result['data'][0]['capital']);
-// 					$('#txtLanguages').html(result['data'][0]['languages']);
-// 					$('#txtPopulation').html(result['data'][0]['population']);
-// 					$('#txtArea').html(result['data'][0]['areaInSqKm']);
-// 				}
-			
-// 			},
-// 			error: function(jqXHR, textStatus, errorThrown) {
-// 				// your error code
-// 			}
-// 		}); 
-// 	});
-// $('#btnRun').click(function() {
-// 		$.ajax({
-// 			url: "libs/php/getCountryInfo.php",
-// 			type: 'POST',
-// 			dataType: 'json',
-// 			data: {
-// 				country: $('#selCountry').val(),
-// 				lang: $('#selLanguage').val()
-// 			},
-// 			success: function(result) {
-// 				console.log(JSON.stringify(result));
-// 				if (result.status.name == "ok") {
-// 					$('#txtContinent').html(result['data'][0]['continent']);
-// 					$('#txtCapital').html(result['data'][0]['capital']);
-// 					$('#txtLanguages').html(result['data'][0]['languages']);
-// 					$('#txtPopulation').html(result['data'][0]['population']);
-// 					$('#txtArea').html(result['data'][0]['areaInSqKm']);
-// 				}
-			
-// 			},
-// 			error: function(jqXHR, textStatus, errorThrown) {
-// 				// your error code
-// 			}
-// 		}); 
-// 	});
-
-// $('#btnRun').click(function() {
-// 		$.ajax({
-// 			url: "libs/php/getCountryInfo.php",
-// 			type: 'POST',
-// 			dataType: 'json',
-// 			data: {
-// 				country: $('#selCountry').val(),
-// 				lang: $('#selLanguage').val()
-// 			},
-// 			success: function(result) {
-// 				console.log(JSON.stringify(result));
-// 				if (result.status.name == "ok") {
-// 					$('#txtContinent').html(result['data'][0]['continent']);
-// 					$('#txtCapital').html(result['data'][0]['capital']);
-// 					$('#txtLanguages').html(result['data'][0]['languages']);
-// 					$('#txtPopulation').html(result['data'][0]['population']);
-// 					$('#txtArea').html(result['data'][0]['areaInSqKm']);
-// 				}
-			
-// 			},
-// 			error: function(jqXHR, textStatus, errorThrown) {
-// 				// your error code
-// 			}
-// 		}); 
-// 	});
-
+// btnPostalCodeLookup.php
+$('#btnPostalCodeLookup').click(function() {
+    $.ajax({
+        url: "libs/php/getPostalCodeInfo.php",
+        type: "POST",
+        dataType: "json",
+        data: {
+            postalcode: $('#postalCode').val().trim(), //.trim() removes whitespaces
+            country: 'GB'  // Fixed to United Kingdom
+        },
+        success: function(result) {
+            console.log(JSON.stringify(result));
+			if (result.status.name == "ok") {
+				$('#placeName').html(result['data'][0]['placeName']);
+				$('#state').html(result['data'][0]['countryCode']);
+				$('#countryCodeResult').html(result['data'][0]['postalcode']);
+			}
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert("An error occurred");
+		}
+    });
+});
 
 $(window).on('load', function () {
 	if ($('#preloader').length) {
@@ -84,3 +29,11 @@ $(window).on('load', function () {
 		});
 	}
 })
+
+$(window).on('load', function () {
+	if ($('#preloader').length) {
+		$('#preloader').delay(1000).fadeOut('slow', function () {
+			(this).remove();
+	});
+	}
+});

@@ -28,17 +28,25 @@
 					  <th class="tableHeader">Api Description</th>
 					  <th class="tableHeader"></th>
 					</tr>
+
 					<tr class="tableRow"> 
-					  <td class="tableCell">1. Recent Earthquakes</td>
-					  <td class="tableCell">1. Returns a list of earthquakes, ordered by magnitude.				
+					  <td class="tableCell">1. UK Postal Code Lookup</td>
+					  <td class="tableCell">Returns a list of places for the given postalcode
+						<br><br>
+						<label for="postalCode">Postal Code:</label>
+            			<input type="text" id="postalCode" class="inputField" placeholder="e.g., SW1A 1AA" required>
+						</td>
+					  <td class="tableCell">
+						<button id="btnPostalCodeLookup" class="runButton">Run</button>
 					</td>
-					  <td class="tableCell"><button id="btnEarthquakesInfoRun" class="runButton">Run</button></td>
 					</tr>
+
 					<tr class="tableRow"> 
 						<td class="tableCell">2. Api</td>
 						<td class="tableCell">2. description</td>
 						<td class="tableCell"><button id="btnRun" class="runButton">Run</button></td>
 					  </tr>
+
 					  <tr class="tableRow"> 
 						<td class="tableCell">3. Api</td>
 						<td class="tableCell">3. description</td>
@@ -48,7 +56,14 @@
 			</div>
 		</div>
 
-		<div class="header"></div>
+		<div id="divResults" class="divResults">
+			<div id="postalCodeResults" class="resultDisplay">
+				<h2>Postal Code Lookup Results</h2>
+				<p>Place Name: <span id="placeName"></span></p>
+				<p>State: <span id="state"></span></p>
+				<p>Country Code: <span id="countryCodeResult"></span></p>
+			</div>
+		</div>
 
 
 

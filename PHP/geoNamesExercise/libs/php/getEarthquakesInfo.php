@@ -1,7 +1,5 @@
 <!-- <?php
-
 	// remove for production
-
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 
@@ -19,7 +17,6 @@
 
 	// Executes the cURL object and stores the results to $result.
 	$result=curl_exec($ch);
-
 	curl_close($ch);
 
 	// This1245 API returns data as JSON and so we decode it as an associative array
