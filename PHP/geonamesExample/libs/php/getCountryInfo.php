@@ -1,14 +1,12 @@
 <?php
-
 	// remove for production
-
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 
 	$executionStartTime = microtime(true);
 
 	// Concatenates the url for the API call
-	$url='http://api.geonames.org/countryInfoJSON?formatted=true&lang=' . $_REQUEST['lang'] . '&country=' . $_REQUEST['country'] . '&username=flightltd&style=full';
+	$url='http://api.geonames.org/countryInfoJSON?formatted=true&lang=' . $_REQUEST['lang'] . '&country=' . $_REQUEST['country'] . '&username=christianv&style=full';
 
 	// Initiates the cURL object and sets some parameters
 	// Curl: It is a tool for transferring files and data with URL syntax
@@ -32,7 +30,5 @@
 	$output['data'] = $decode['geonames'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
-
 	echo json_encode($output); 
-
 ?>

@@ -12,7 +12,7 @@ $('#btnPostalCodeLookup').click(function() {
             console.log(JSON.stringify(result));
 			if (result.status.name == "ok") {
 				$('#placeName').html(result['data'][0]['placeName']);
-				$('#state').html(result['data'][0]['countryCode']);
+				$('#state').html(result['data'][0]['adminName1']);
 				$('#countryCodeResult').html(result['data'][0]['postalcode']);
 			}
 		},

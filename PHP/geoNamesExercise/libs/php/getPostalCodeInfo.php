@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 $executionStartTime = microtime(true);
 
 // Concatenates the url for the API call
-$url = 'http://api.geonames.org/postalCodeLookupJSON?postalcode=' . $_REQUEST['postalcode'] . '&country=' . 'GB' . '&username=christianv';
+$url = 'http://api.geonames.org/postalCodeLookupJSON?postalcode=' . $_REQUEST['postalcode'] . '&country=' . 'GB' . '&username=christianv&style=full';
 // '&country=' . 'GB' == Fixed to United Kingdom
 
 // Initiates the cURL object and sets some parameters
