@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>GeoNames Api Exercise</title>
+		<meta name="description" content="The best app in the world">
+		<meta name="author" content="Christian Villalba">
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" href="libs/css/style.css">
+		
+
+	</head>
+
+	<body>
+		<div class="header">
+		<h1>GeoNames Api's</h1>
+		</div>
+
+		<div class="main">
+			<div class="apiSelection">
+				<table class="apiTableSelection">
+					<tr class="tableRowHeader">
+					  <th class="tableHeader">Api Name</th>
+					  <th class="tableHeader">Api Description</th>
+					  <th class="tableHeader"></th>
+					</tr>
+
+					<tr class="tableRow"> 
+					  <td class="tableCell">1. UK Postal Code Lookup</td>
+					  <td class="tableCell">Returns the place and the state for the given postal code.
+						<br><br>
+						<label for="postalCode">Postal Code:</label>
+            			<input type="text" id="postalCode" class="inputField" placeholder=" e.g., SW1A1AA (no spaces)" required>
+						<br><br>
+						</td>
+					  <td class="tableCell">
+						<button id="btnPostalCodeLookup" class="runButton">Run</button>
+					</td>
+					</tr>
+
+					<tr class="tableRow"> 
+						<td class="tableCell">2. Europe: sunrise and sunset time.</td>
+						<td class="tableCell">Uses the timezone webservice to provide sunrise and sunset data.
+						<br><br>
+						<select id="selCountry" class="selectMenu">
+							<option value="AL">Albania</option>
+							<option value="AD">Andorra</option>
+							<option value="AM">Armenia</option>
+							<option value="AT">Austria</option>
+							<option value="AZ">Azerbaijan</option>
+							<option value="BY">Belarus</option>
+							<option value="BE">Belgium</option>
+							<option value="BA">Bosnia and Herzegovina</option>
+							<option value="BG">Bulgaria</option>
+							<option value="HR">Croatia</option>
+							<option value="CY">Cyprus</option>
+							<option value="CZ">Czech Republic</option>
+							<option value="DK">Denmark</option>
+							<option value="EE">Estonia</option>
+							<option value="FI">Finland</option>
+							<option value="FR">France</option>
+							<option value="GE">Georgia</option>
+							<option value="DE">Germany</option>
+							<option value="GR">Greece</option>
+							<option value="HU">Hungary</option>
+							<option value="IS">Iceland</option>
+							<option value="IE">Ireland</option>
+							<option value="IT">Italy</option>
+							<option value="KZ">Kazakhstan</option>
+							<option value="XK">Kosovo</option>
+							<option value="LV">Latvia</option>
+							<option value="LI">Liechtenstein</option>
+							<option value="LT">Lithuania</option>
+							<option value="LU">Luxembourg</option>
+							<option value="MT">Malta</option>
+							<option value="MD">Moldova</option>
+							<option value="MC">Monaco</option>
+							<option value="ME">Montenegro</option>
+							<option value="NL">Netherlands</option>
+							<option value="MK">North Macedonia</option>
+							<option value="NO">Norway</option>
+							<option value="PL">Poland</option>
+							<option value="PT">Portugal</option>
+							<option value="RO">Romania</option>
+							<option value="RU">Russia</option>
+							<option value="SM">San Marino</option>
+							<option value="RS">Serbia</option>
+							<option value="SK">Slovakia</option>
+							<option value="SI">Slovenia</option>
+							<option value="ES">Spain</option>
+							<option value="SE">Sweden</option>
+							<option value="CH">Switzerland</option>
+							<option value="TR">Turkey</option>
+							<option value="UA">Ukraine</option>
+							<option value="GB">United Kingdom</option>
+						</select>
+						
+
+						<br><br>
+						</td>
+						
+						
+						<td class="tableCell"><button id="btnRun" class="runButton">Run</button></td>
+					  </tr>
+
+					  <tr class="tableRow"> 
+						<td class="tableCell">3. Api</td>
+						<td class="tableCell">3. description</td>
+						<td class="tableCell"><button id="btnRun" class="runButton">Run</button></td>
+					  </tr>
+				  </table>
+			</div>
+		</div>
+
+
+	<div id=”preloader class="divResults">
+		<div id="divResults" >
+			<div id="postalCodeResults" class="resultDisplay">
+				<h4>Postal Code Lookup Results</h4>
+				<p>Place Name: <span id="placeName"></span></p>
+				<p>State: <span id="state"></span></p>
+				<p>Country Code: <span id="countryCodeResult"></span></p>
+			</div>
+		</div>
+		<div id="divResults">
+			<div id="postalCodeResults" class="resultDisplay">
+				<h4>Sunrise and sunset time.</h4>
+				<p>Country: <span id="placeName"></span></p>
+				<p>Sunrise: <span id="state"></span></p>
+				<p>Sunset: <span id="countryCodeResult"></span></p>
+			</div>
+		</div>
+	</div>
+
+		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+		<script type="application/javascript" src="libs/js/script.js"></script>
+
+	</body>
+
+</html>

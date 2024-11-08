@@ -1,0 +1,137 @@
+/* css styles inspired in this project: 
+https://github.com/ChristianVillalba/react_complete_guide/tree/main/01-starting-project */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    text-align: center;
+    padding: 20px;
+    font-size: rem;
+}
+h1 {
+    color: #1b6ca8 ;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+
+/* Table Container */
+.apiSelection {
+    background-color: #ffffd5;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    min-width: 80%;
+    max-width: 90%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+.apiTableSelection {
+    width: 100%;
+    border-radius: 8px;
+}
+.tableRowHeader {
+    background-color: #1b6ca8;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 12px;
+    height: 50px;
+}
+.tableCell {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    min-width: 75%;
+    max-width: 78%;
+    color: #343a40;
+    border-bottom: 1px solid #1b6ca8;
+}
+.inputField{
+    border-radius: 3px;
+    width: 250px;
+    height: 1.2rem;
+}
+.selectMenu{
+    border-radius: 3px;
+    height: 1.5rem;
+}
+.runButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #1b6ca8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.runButton:hover {
+    background-color: #007bff;
+}
+.runButton:active {
+    background-color: #004080;
+    transform: scale(0.95); /* Slightly shrinks button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /*Reduces shadow depth */
+} 
+.divResults {
+    background-color: #FFFECB;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 80%;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+
+
+/* Given css on the preloader html component */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #56829e ;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+@-webkit-keyframes animate-preloader {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+    100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@keyframes animate-preloader {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    }
+}
+    
+    
