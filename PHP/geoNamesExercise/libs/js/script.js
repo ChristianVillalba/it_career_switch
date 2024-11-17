@@ -11,9 +11,12 @@ $('#btnGetPostalCodeInfo').click(function() {
         success: function(result) {
             console.log(JSON.stringify(result));
 			if (result.status.name == "ok") {
-				$('#placeName').html(result['data'][0]['placeName']);
-				$('#state').html(result['data'][0]['adminName1']);
-				$('#countryCodeResult').html(result['data'][0]['postalcode']);
+				$('#universalResults').html(`
+                    <h4>Postal Code Lookup Results</h4>
+                    <p><strong>Place Name:</strong> ${result.data[0]?.placeName || 'N/A'}</p>
+                    <p><strong>State:</strong> ${result.data[0]?.adminName1 || 'N/A'}</p>
+                    <p><strong>Postal Code:</strong> ${result.data[0]?.postalcode || 'N/A'}</p>
+                `);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -35,9 +38,12 @@ $('#btnGetSunriseSunsetInfo').click(function() {
         success: function(result) {
             console.log(JSON.stringify(result));
 			if (result.status.name == "ok") {
-				$('#placeName').text(result.data.countryName);
-                $('#state').text(result.data.sunrise);
-                $('#countryCodeResult').text(result.data.sunset);
+                $('#universalResults').html(`
+                    <h4>Sunrise and Sunset Times</h4>
+                    <p><strong>Country:</strong> ${result.data.countryName || 'N/A'}</p>
+                    <p><strong>Sunrise:</strong> ${result.data.sunrise || 'N/A'}</p>
+                    <p><strong>Sunset:</strong> ${result.data.sunset || 'N/A'}</p>
+                `);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
