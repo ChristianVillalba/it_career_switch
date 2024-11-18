@@ -1,3 +1,5 @@
+// It needs to be debbuged
+
 // btnPostalCodeLookup - getPostalCodeInfo.php
 $('#btnGetPostalCodeInfo').click(function() {
     $.ajax({
