@@ -13,12 +13,12 @@ $('#btnGetPostalCodeInfo').click(function() {
         success: function(result) {
             console.log(JSON.stringify(result));
 			if (result.status.name == "ok") {
-				$('#universalResults').html(`
-                    <h4>Postal Code Lookup Results</h4>
-                    <p><strong>Place Name:</strong> ${result.data[0]?.placeName || 'N/A'}</p>
-                    <p><strong>State:</strong> ${result.data[0]?.adminName1 || 'N/A'}</p>
-                    <p><strong>Postal Code:</strong> ${result.data[0]?.postalcode || 'N/A'}</p>
-                `);
+				// $('#universalResults').html(`
+                //     <h4>Postal Code Lookup Results</h4>
+                //     <p><strong>Place Name:</strong> ${result.data[0]?.placeName || 'N/A'}</p>
+                //     <p><strong>State:</strong> ${result.data[0]?.adminName1 || 'N/A'}</p>
+                //     <p><strong>Postal Code:</strong> ${result.data[0]?.postalcode || 'N/A'}</p>
+                // `);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -40,12 +40,12 @@ $('#btnGetSunriseSunsetInfo').click(function() {
         success: function(result) {
             console.log(JSON.stringify(result));
 			if (result.status.name == "ok") {
-                $('#universalResults').html(`
-                    <h4>Sunrise and Sunset Times</h4>
-                    <p><strong>Country:</strong> ${result.data.countryName || 'N/A'}</p>
-                    <p><strong>Sunrise:</strong> ${result.data.sunrise || 'N/A'}</p>
-                    <p><strong>Sunset:</strong> ${result.data.sunset || 'N/A'}</p>
-                `);
+                // $('#universalResults').html(`
+                //     <h4>Sunrise and Sunset Times</h4>
+                //     <p><strong>Country:</strong> ${result.data.countryName || 'N/A'}</p>
+                //     <p><strong>Sunrise:</strong> ${result.data.sunrise || 'N/A'}</p>
+                //     <p><strong>Sunset:</strong> ${result.data.sunset || 'N/A'}</p>
+                // `);
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
