@@ -5,12 +5,9 @@ error_reporting(E_ALL);
 
 $executionStartTime = microtime(true);
 
-// Capture the selected country code from the request
-$country = $_REQUEST['country'];
-
 // Build the GeoNames Timezone API URL
 // Using a fixed timezone lookup on the country's capital coordinates to get sunrise and sunset
-$url = 'http://api.geonames.org/timezoneJSON?country=' . $country . '&username=christianv&style=full';
+$url = 'http://api.geonames.org/timezoneJSON?country=' . $_REQUEST['country'] . '&username=christianv&style=full';
 
 // Initialize cURL session
 $ch = curl_init();
