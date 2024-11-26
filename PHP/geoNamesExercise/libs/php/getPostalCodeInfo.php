@@ -18,6 +18,7 @@ curl_setopt($ch, CURLOPT_URL, $url);
 
 // Execute cURL session and retrieve result
 $result = curl_exec($ch);
+
 curl_close($ch);
 
 // Decode JSON response from GeoNames
