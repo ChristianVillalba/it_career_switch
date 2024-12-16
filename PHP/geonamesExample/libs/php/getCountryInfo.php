@@ -20,7 +20,7 @@
 
 	curl_close($ch);
 
-	// This1245 API returns data as JSON and so we decode it as an associative array
+	// This API returns data as JSON and so we decode it as an associative array
 	$decode = json_decode($result,true);	
 
 	$output['status']['code'] = "200";
