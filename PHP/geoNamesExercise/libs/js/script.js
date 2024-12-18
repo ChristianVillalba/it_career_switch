@@ -1,4 +1,4 @@
-// It needs to be debbuged
+// this comment will give me a green tile in github
 
 // btnPostalCodeLookup - getPostalCodeInfo.php
 $('#btnGetPostalCodeInfo').click(function() {
