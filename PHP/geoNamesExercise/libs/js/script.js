@@ -1,5 +1,5 @@
 // this comment will give me a green tile in github
-
+// opps i did it again
 // btnPostalCodeLookup - getPostalCodeInfo.php
 $('#btnGetPostalCodeInfo').click(function() {
     $.ajax({
