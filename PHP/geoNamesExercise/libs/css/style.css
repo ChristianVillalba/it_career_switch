@@ -113,7 +113,7 @@ h1 {
     -webkit-animation: animate-preloader 1s linear infinite;
     animation: animate-preloader 1s linear infinite;
 }
-@-webkit-keyframes animate-preloader {
+/* @-webkit-keyframes animate-preloader {
     0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -132,6 +132,6 @@ h1 {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     }
-}
+} */
     
     
