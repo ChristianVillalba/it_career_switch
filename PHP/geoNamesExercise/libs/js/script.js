@@ -1,5 +1,3 @@
-// this comment will give me a green tile in github
-// opps i did it again
 // btnPostalCodeLookup - getPostalCodeInfo.php
 $('#btnGetPostalCodeInfo').click(function() {
     $.ajax({
@@ -12,6 +10,7 @@ $('#btnGetPostalCodeInfo').click(function() {
         },
         success: function(result) {
             console.log(JSON.stringify(result));
+            console.log('Postal Code API Response:', result); // Debugging output . Not sure what will work for debbugging
 			if (result.status.name == "ok") {
 				$('#universalResults').html(`
                     <h4>Postal Code Lookup Results</h4>
