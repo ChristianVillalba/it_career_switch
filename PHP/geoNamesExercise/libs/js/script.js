@@ -29,6 +29,7 @@ $('#btnGetPostalCodeInfo').click(function() {
 // btnPostalCodeLookup - getSunriseSunsetInfo.php
 $('#btnGetSunriseSunsetInfo').click(function() {
 	const country = $('#selCountry').val();
+    console.log(`Country selected: ${country}`); // Debug selected country code
     $.ajax({
         url: "libs/php/getSunriseSunsetInfo.php",
         type: "POST",
