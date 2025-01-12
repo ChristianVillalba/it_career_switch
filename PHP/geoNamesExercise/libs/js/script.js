@@ -46,7 +46,9 @@ $('#btnGetSunriseSunsetInfo').click(function() {
                     <p><strong>Sunrise:</strong> ${result.data.sunrise || 'N/A'}</p>
                     <p><strong>Sunset:</strong> ${result.data.sunset || 'N/A'}</p>
                 `);
-			}
+			} else {
+                $('#universalResults').html('<p>No results found for the selected country.</p>');
+            }
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			alert("An error occurred");
