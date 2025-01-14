@@ -64,3 +64,36 @@ $(window).on('load', function () {
 	}
 })
 
+// btnGetEarthquakesInfo - getEarthquakesInfo.php
+$('#btnGetEarthquakesInfo').click(function () {
+    $.ajax({
+        url: 'libs/php/getEarthquakes.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function (result) {
+            console.log('Earthquakes API Response:', result); // Debugging output
+
+            if (result.status.name === 'ok' && result.data.length > 0) {
+                let earthquakesHTML = '<h4>Recent Earthquakes</h4><ul>';
+                result.data.forEach((quake) => {
+                    earthquakesHTML += `
+                        <li>
+                            <strong>Location:</strong> ${quake.lat}, ${quake.lng}<br>
+                            <strong>Magnitude:</strong> ${quake.magnitude}<br>
+                            <strong>Depth:</strong> ${quake.depth} km<br>
+                            <strong>Date/Time:</strong> ${quake.datetime}
+                        </li>
+                        <hr>
+                    `;
+                });
+                earthquakesHTML += '</ul>';
+                $('#universalResults').html(earthquakesHTML);
+            } else {
+                $('#universalResults').html('<p>No earthquake data available.</p>');
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error retrieving data from Earthquakes API:', textStatus, errorThrown); // Log errors
+        }
+    });
+});
