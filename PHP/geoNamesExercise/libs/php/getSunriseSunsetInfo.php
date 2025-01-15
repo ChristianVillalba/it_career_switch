@@ -7,7 +7,7 @@ $executionStartTime = microtime(true);
 
 // Build the GeoNames Timezone API URL
 // Using a fixed timezone lookup on the country's capital coordinates to get sunrise and sunset
-$url = 'http://api.geonames.org/timezoneJSON?country=' . $_REQUEST['country'] . '&username=christianv&style=full';
+$url = 'http://api.geonames.org/timezoneJSON?' . $_REQUEST['selLatLng'] . '&username=christianv&style=full';
 
 // Initialize cURL session
 $ch = curl_init();
@@ -28,7 +28,6 @@ $output['status']['name'] = "ok";
 $output['status']['description'] = "success";
 $output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
 // doublecheck this
-$output['data']['countryName'] = $decode['countryName'] ?? "Unknown";
 $output['data']['sunrise'] = $decode['sunrise'] ?? "No data";
 $output['data']['sunset'] = $decode['sunset'] ?? "No data";
 

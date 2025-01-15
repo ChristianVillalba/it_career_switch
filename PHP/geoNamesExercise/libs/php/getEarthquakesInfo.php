@@ -7,7 +7,7 @@ $executionStartTime = microtime(true);
 
 // GeoNames Earthquakes API URL
 // Retrieve the last 5 earthquakes globally (adjustable via maxRows)
-$url = 'http://api.geonames.org/earthquakesJSON?maxRows=5&username=christianv';
+$url = 'http://api.geonames.org/earthquakesJSON?maxRows=5&username=christianv&style=full';
 
 // Initialize cURL session
 $ch = curl_init();
