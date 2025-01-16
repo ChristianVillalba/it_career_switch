@@ -27,7 +27,7 @@ $output['status']['code'] = "200";
 $output['status']['name'] = "ok";
 $output['status']['description'] = "success";
 $output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
-// doublecheck this
+// data that will be rendered
 $output['data']['sunrise'] = $decode['sunrise'] ?? "No data";
 $output['data']['sunset'] = $decode['sunset'] ?? "No data";
 
